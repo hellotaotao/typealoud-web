@@ -262,6 +262,399 @@
       }
     },
     {
+      "id": "superwhisper-alternative",
+      "checked": "2026-10-18",
+      "sources": [
+        { "label": "superwhisper.com", "url": "https://superwhisper.com/" },
+        { "label": "superwhisper.com/docs/get-started/sw-pro", "url": "https://superwhisper.com/docs/get-started/sw-pro" }
+      ],
+      "en": {
+        "title": "Free, open-source Superwhisper alternative for Mac — TypeAloud",
+        "description": "TypeAloud is a free, open-source Superwhisper alternative: local dictation on your Mac with no Pro plan and no account, built for sentences that mix Chinese and English.",
+        "nav": "Superwhisper alternative",
+        "eyebrow": "TypeAloud vs Superwhisper",
+        "heading": ["A Superwhisper alternative", "with nothing behind a Pro plan."],
+        "intro": "Superwhisper's free plan already runs Whisper on your Mac. Its Pro plan, at $8.49 a month, $84.99 a year or $249.99 once, adds AI modes, cloud models and more local models. TypeAloud is free and open source with no paid tier, and its local model is Qwen3-ASR instead of Whisper.",
+        "table": {
+          "caption": "TypeAloud and Superwhisper compared",
+          "columns": ["", "TypeAloud", "Superwhisper"],
+          "rows": [
+            ["Price", "Free", "Free plan; Pro at $8.49/month, $84.99/year or $249.99 once"],
+            ["Local speech model", "Qwen3-ASR 0.6B, or 1.7B as an option", "Whisper on the free plan; Parakeet and Cohere Transcribe with Pro"],
+            ["Word limit", "None with a local model", "None for local Whisper models"],
+            ["Source code", "Open source (GPL-3.0)", "Closed source"],
+            ["AI rewriting modes", "No. It writes what you said", "Pro: message, email, custom and context-aware modes"],
+            ["Meeting and file transcription", "No", "Meetings on Mac; file transcription with Pro"],
+            ["Platforms", "macOS; Windows and Linux builds are experimental", "Mac, Windows, iOS and Android"]
+          ]
+        },
+        "sections": [
+          {
+            "heading": "Both are local. The model is the difference.",
+            "body": [
+              "Superwhisper's free plan and TypeAloud both transcribe on your Mac with no word limit, so price alone does not decide it. What you dictate does.",
+              "TypeAloud runs Qwen3-ASR, which works out the language from the audio itself. A sentence that starts in Chinese and switches to English halfway is written down as you said it, with no language setting to change first. Whisper picks one language per recording, and mixed sentences are where it slips most often."
+            ]
+          },
+          {
+            "heading": "Every feature is in the free app",
+            "body": [
+              "There is no Pro plan to unlock. The larger Qwen3-ASR 1.7B model (about 2.52 GB), the dictionary and automatic replacements, History with retry for failed transcriptions, and the optional cloud mode with your own Groq or OpenAI key are all part of the same free download.",
+              "The source is on GitHub under GPL-3.0, so you can check exactly what happens to your audio."
+            ]
+          },
+          {
+            "heading": "Where Superwhisper is the better choice",
+            "body": [
+              "Superwhisper's Pro modes rewrite what you say into an email, a message or your own format, and Super Mode adapts to what is on screen. TypeAloud gives you a faithful transcript and leaves the wording to you.",
+              "Superwhisper also records meetings, transcribes audio files and has iPhone and Android apps. If you need those, or want your speech turned into finished prose, Superwhisper fits better."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Is TypeAloud free in the same way as Superwhisper's free plan?",
+            "a": "TypeAloud has no paid plan at all. Local transcription, both Qwen3-ASR model sizes and every feature are free. Optional cloud transcription uses your own Groq or OpenAI key, which those providers may charge for."
+          },
+          {
+            "q": "Can I still use Whisper?",
+            "a": "Not as a local model. Locally TypeAloud runs Qwen3-ASR. Whisper is available through the optional cloud mode, with your own Groq or OpenAI API key."
+          },
+          {
+            "q": "Does my audio leave my Mac?",
+            "a": "Not in local mode. The model runs on your device and transcripts are saved there. Audio is only uploaded if you choose a cloud engine with your own API key."
+          },
+          {
+            "q": "Which Macs can run it?",
+            "a": "Apple Silicon is recommended for local dictation. The recommended model is a one-time download of about 1 GB."
+          }
+        ]
+      },
+      "zh": {
+        "title": "Superwhisper 免费开源平替：Mac 本地语音输入 — TypeAloud",
+        "description": "TypeAloud 是免费开源的 Superwhisper 平替：在 Mac 上本地听写，没有 Pro 订阅，无需账号，中英混说也能准确转写。",
+        "nav": "Superwhisper 平替",
+        "eyebrow": "TypeAloud 对比 Superwhisper",
+        "heading": ["Superwhisper 的平替，", "没有任何功能锁在 Pro 里。"],
+        "intro": "Superwhisper 的免费版本来就能在 Mac 上本地跑 Whisper。它的 Pro 版每月 8.49 美元、每年 84.99 美元，或一次性 249.99 美元，加上了 AI 模式、云端模型和更多本地模型。TypeAloud 免费开源，没有付费版，本地模型用的是千问 Qwen3-ASR，不是 Whisper。",
+        "table": {
+          "caption": "TypeAloud 与 Superwhisper 对比",
+          "columns": ["", "TypeAloud", "Superwhisper"],
+          "rows": [
+            ["价格", "免费", "有免费版；Pro 每月 8.49 美元、每年 84.99 美元或一次性 249.99 美元"],
+            ["本地语音模型", "Qwen3-ASR 0.6B，可选 1.7B", "免费版用 Whisper；Parakeet 和 Cohere Transcribe 需 Pro"],
+            ["字数限制", "使用本地模型时没有", "本地 Whisper 模型没有"],
+            ["源代码", "开源（GPL-3.0）", "闭源"],
+            ["AI 改写模式", "没有，说什么就写什么", "Pro：消息、邮件、自定义和感知屏幕内容的模式"],
+            ["会议与文件转写", "没有", "Mac 上可录会议；文件转写需 Pro"],
+            ["平台", "macOS；Windows 和 Linux 版本为实验性", "Mac、Windows、iOS、Android"]
+          ]
+        },
+        "sections": [
+          {
+            "heading": "两者都是本地转写，区别在模型",
+            "body": [
+              "Superwhisper 免费版和 TypeAloud 都在你的 Mac 上转写，也都不限字数，所以光看价格分不出高下，要看你平时说什么。",
+              "TypeAloud 用的千问 Qwen3-ASR 会直接从声音里判断语言。一句话前半句中文、后半句英文，写出来就是你说的样子，事先不用切换任何语言设置。Whisper 每段录音只认一种语言，中英混说正是它最容易出错的地方。"
+            ]
+          },
+          {
+            "heading": "所有功能都在免费版里",
+            "body": [
+              "没有 Pro 需要解锁。更大的 Qwen3-ASR 1.7B 模型（约 2.52 GB）、词典和自动替换、带失败重试的历史记录，以及填入自己 Groq 或 OpenAI key 的云端模式，都在同一个免费安装包里。",
+              "源代码以 GPL-3.0 协议放在 GitHub 上，录音经过了哪些处理，你可以自己去看。"
+            ]
+          },
+          {
+            "heading": "哪些情况下 Superwhisper 更合适",
+            "body": [
+              "Superwhisper 的 Pro 模式能把你说的话改写成邮件、消息或你自定义的格式，Super Mode 还会参考屏幕上的内容。TypeAloud 给你的是忠实的逐字转写，措辞由你自己决定。",
+              "Superwhisper 还能录会议、转写音频文件，并且有 iPhone 和 Android 应用。如果你需要这些，或者希望说出来的话直接变成成稿，Superwhisper 更合适。"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "TypeAloud 的免费和 Superwhisper 免费版一样吗？",
+            "a": "TypeAloud 根本没有付费版。本地转写、两种大小的 Qwen3-ASR 模型和所有功能都免费。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+          },
+          {
+            "q": "还能用 Whisper 吗？",
+            "a": "本地不能。TypeAloud 本地跑的是 Qwen3-ASR。想用 Whisper，可以开启云端模式，填入你自己的 Groq 或 OpenAI API key。"
+          },
+          {
+            "q": "我的录音会离开 Mac 吗？",
+            "a": "本地模式下不会。模型在你的设备上运行，转写结果也保存在本机。只有当你选择云端引擎并填入自己的 API key 时，音频才会上传。"
+          },
+          {
+            "q": "哪些 Mac 可以运行？",
+            "a": "本地听写推荐使用 Apple Silicon 芯片的 Mac。推荐模型只需下载一次，约 1 GB。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "voiceink-alternative",
+      "checked": "2026-10-18",
+      "sources": [
+        { "label": "tryvoiceink.com", "url": "https://tryvoiceink.com/" },
+        { "label": "github.com/Beingpax/VoiceInk", "url": "https://github.com/Beingpax/VoiceInk" }
+      ],
+      "en": {
+        "title": "Free VoiceInk alternative for Mac — TypeAloud",
+        "description": "TypeAloud is a free VoiceInk alternative: open-source local dictation for Mac with no licence to buy, no device limit and accurate mixed Chinese–English transcription.",
+        "nav": "VoiceInk alternative",
+        "eyebrow": "TypeAloud vs VoiceInk",
+        "heading": ["A VoiceInk alternative", "that costs nothing, on every Mac."],
+        "intro": "VoiceInk is a well-made local dictation app for Mac, sold as a one-time licence from $25 for one Mac. TypeAloud also transcribes on your Mac and is open source, but it is free and has no device limit.",
+        "table": {
+          "caption": "TypeAloud and VoiceInk compared",
+          "columns": ["", "TypeAloud", "VoiceInk"],
+          "rows": [
+            ["Price", "Free", "One-time: $25 for 1 Mac, $39 for 2, $49 for 3"],
+            ["Local speech model", "Qwen3-ASR 0.6B, or 1.7B as an option", "Whisper and Parakeet models"],
+            ["Where speech is transcribed", "On your Mac, in local mode", "On your Mac"],
+            ["Source code", "Open source (GPL-3.0)", "Source on GitHub"],
+            ["AI enhancement", "No. It writes what you said", "Optional: filler removal, formatting, rewriting by voice instruction"],
+            ["Requirements", "Apple Silicon recommended", "Apple Silicon Mac with macOS 14.4 or later"],
+            ["Platforms", "macOS; Windows and Linux builds are experimental", "macOS, plus an iOS app"]
+          ]
+        },
+        "sections": [
+          {
+            "heading": "Same idea, different speech model",
+            "body": [
+              "Both apps keep your voice on your Mac: hold a shortcut, speak, and the text lands at your cursor. In TypeAloud the shortcut is Ctrl+Shift, and a double tap records hands-free until the next press.",
+              "The difference is the model underneath. VoiceInk uses Whisper and Parakeet. Parakeet's multilingual model covers European languages, not Chinese. TypeAloud uses Qwen3-ASR, which detects the language from the audio and handles a sentence that moves between Chinese and English without a setting change."
+            ]
+          },
+          {
+            "heading": "No licence to count",
+            "body": [
+              "VoiceInk's licences are per device: one, two or three Macs. TypeAloud is free, so a work Mac, a home Mac and an old laptop cost the same as one. It also has Windows and Linux builds, though those are still experimental."
+            ]
+          },
+          {
+            "heading": "Where VoiceInk is the better choice",
+            "body": [
+              "VoiceInk can clean up what you say with an AI pass, removing filler words and formatting text, and it can rewrite selected text from a spoken instruction. TypeAloud gives you a faithful transcript and leaves the wording to you.",
+              "VoiceInk also has an iOS app and a large community behind it. If you dictate mostly in English and want AI cleanup on top, VoiceInk is worth its price."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Is TypeAloud really free?",
+            "a": "Yes. Local transcription needs no account, API key, licence or subscription, and there is no word limit. Cloud transcription is optional and uses your own Groq or OpenAI key, which those providers may charge for."
+          },
+          {
+            "q": "Are both apps open source?",
+            "a": "Both publish their source on GitHub. TypeAloud is GPL-3.0, and its signed builds are free to download."
+          },
+          {
+            "q": "Does my audio leave my Mac?",
+            "a": "Not in local mode. The model runs on your device and transcripts are saved there. Audio is only uploaded if you choose a cloud engine with your own API key."
+          },
+          {
+            "q": "Which Macs can run it?",
+            "a": "Apple Silicon is recommended for local dictation. The recommended model is a one-time download of about 1 GB."
+          }
+        ]
+      },
+      "zh": {
+        "title": "VoiceInk 免费平替：Mac 本地语音输入，开源 — TypeAloud",
+        "description": "TypeAloud 是免费的 VoiceInk 平替：开源的 Mac 本地听写，不用买授权，不限设备数，中英混说也能准确转写。",
+        "nav": "VoiceInk 平替",
+        "eyebrow": "TypeAloud 对比 VoiceInk",
+        "heading": ["VoiceInk 的平替，", "免费，装几台 Mac 都行。"],
+        "intro": "VoiceInk 是一款做得不错的 Mac 本地听写应用，一次性买断，单台 Mac 25 美元起。TypeAloud 同样在你的 Mac 上转写、同样开源，但完全免费，也不限设备数。",
+        "table": {
+          "caption": "TypeAloud 与 VoiceInk 对比",
+          "columns": ["", "TypeAloud", "VoiceInk"],
+          "rows": [
+            ["价格", "免费", "一次性买断：1 台 Mac 25 美元，2 台 39 美元，3 台 49 美元"],
+            ["本地语音模型", "Qwen3-ASR 0.6B，可选 1.7B", "Whisper 和 Parakeet 模型"],
+            ["语音在哪里转写", "本地模式下在你的 Mac 上", "在你的 Mac 上"],
+            ["源代码", "开源（GPL-3.0）", "源代码公开在 GitHub"],
+            ["AI 增强", "没有，说什么就写什么", "可选：去口头禅、排版、按语音指令改写"],
+            ["运行要求", "推荐 Apple Silicon", "Apple Silicon Mac，macOS 14.4 或更高"],
+            ["平台", "macOS；Windows 和 Linux 版本为实验性", "macOS，另有 iOS 应用"]
+          ]
+        },
+        "sections": [
+          {
+            "heading": "思路一样，语音模型不同",
+            "body": [
+              "两个应用都让你的声音留在 Mac 上：按住快捷键，说话，文字出现在光标处。TypeAloud 的快捷键是 Ctrl+Shift，双击则进入免按住录音，再按一下结束。",
+              "区别在底层模型。VoiceInk 用的是 Whisper 和 Parakeet，而 Parakeet 的多语种模型只覆盖欧洲语言，不支持中文。TypeAloud 用千问 Qwen3-ASR，它直接从声音里判断语言，一句话在中英文之间来回切换也不用改设置。"
+            ]
+          },
+          {
+            "heading": "不用数授权",
+            "body": [
+              "VoiceInk 按设备授权：一台、两台或三台 Mac。TypeAloud 免费，公司电脑、家里电脑加一台旧笔记本，和装一台没有区别。它还有 Windows 和 Linux 版本，不过目前仍是实验性的。"
+            ]
+          },
+          {
+            "heading": "哪些情况下 VoiceInk 更合适",
+            "body": [
+              "VoiceInk 可以用 AI 再过一遍你说的话，去掉口头禅、整理格式，还能按你的语音指令改写选中的文字。TypeAloud 给你的是忠实的逐字转写，措辞由你自己决定。",
+              "VoiceInk 还有 iOS 应用，社区也很大。如果你主要说英文，又想要 AI 帮你润色，VoiceInk 值这个价。"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "TypeAloud 真的免费吗？",
+            "a": "是的。本地转写不需要账号、API key、授权码或订阅，也没有字数限制。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+          },
+          {
+            "q": "两个都是开源的吗？",
+            "a": "两者都在 GitHub 上公开源代码。TypeAloud 使用 GPL-3.0 协议，签名后的安装包也免费下载。"
+          },
+          {
+            "q": "我的录音会离开 Mac 吗？",
+            "a": "本地模式下不会。模型在你的设备上运行，转写结果也保存在本机。只有当你选择云端引擎并填入自己的 API key 时，音频才会上传。"
+          },
+          {
+            "q": "哪些 Mac 可以运行？",
+            "a": "本地听写推荐使用 Apple Silicon 芯片的 Mac。推荐模型只需下载一次，约 1 GB。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "spokenly-alternative",
+      "checked": "2026-10-18",
+      "sources": [
+        { "label": "spokenly.app", "url": "https://spokenly.app/" }
+      ],
+      "en": {
+        "title": "Spokenly alternative for Mac, open source — TypeAloud",
+        "description": "Comparing TypeAloud and Spokenly: both offer free, unlimited local dictation on Mac. TypeAloud is open source and runs Qwen3-ASR for mixed Chinese–English speech.",
+        "nav": "Spokenly alternative",
+        "eyebrow": "TypeAloud vs Spokenly",
+        "heading": ["A Spokenly alternative", "that is open source."],
+        "intro": "Spokenly's local transcription is free and unlimited, with no account, and so is TypeAloud's. The real differences are the speech model, whether you can read the source, and how much AI sits on top of the transcript.",
+        "table": {
+          "caption": "TypeAloud and Spokenly compared",
+          "columns": ["", "TypeAloud", "Spokenly"],
+          "rows": [
+            ["Price", "Free", "Free for local models and your own API keys; Pro at $9.99/month or $99.99/year"],
+            ["Local speech model", "Qwen3-ASR 0.6B, or 1.7B as an option", "Whisper and Parakeet models"],
+            ["Word limit", "None with a local model", "None with a local model"],
+            ["Account", "Not needed", "Not needed for local use"],
+            ["Source code", "Open source (GPL-3.0)", "Closed source"],
+            ["AI text processing", "No. It writes what you said", "Yes, with GPT, Claude or Gemini"],
+            ["Platforms", "macOS; Windows and Linux builds are experimental", "macOS, Windows, Linux and iPhone"]
+          ]
+        },
+        "sections": [
+          {
+            "heading": "Chinese and English in one sentence",
+            "body": [
+              "Spokenly runs Whisper and Parakeet on your device. Parakeet's multilingual model covers European languages, not Chinese, and Whisper picks one language per recording.",
+              "TypeAloud's local model, Qwen3-ASR, works out the language from the audio. That suits the way a lot of technical work in Chinese sounds: Chinese grammar around English product names, API names and half the nouns, all in one breath."
+            ]
+          },
+          {
+            "heading": "Source you can read",
+            "body": [
+              "TypeAloud is GPL-3.0 on GitHub. When it says local mode keeps your audio on your Mac, you can check the code that records it, transcribes it and saves it to History.",
+              "It also does one job: dictation into the app you are using. There is no Pro plan, so there is nothing to upsell inside the app."
+            ]
+          },
+          {
+            "heading": "Where Spokenly is the better choice",
+            "body": [
+              "Spokenly can pass your transcript through GPT, Claude or Gemini with modes and instructions, run voice-controlled actions on macOS, record meetings and work as an iPhone keyboard. TypeAloud does none of these.",
+              "If you dictate mainly in English and want AI processing, an iPhone keyboard or meeting notes, Spokenly fits better."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Both are free. Why pick TypeAloud?",
+            "a": "Mostly for its local model. If your dictation mixes Chinese and English, Qwen3-ASR handles that without a language setting. TypeAloud is also open source."
+          },
+          {
+            "q": "Can I bring my own API key?",
+            "a": "Yes. Cloud transcription is optional and uses your own Groq or OpenAI key, which those providers may charge for."
+          },
+          {
+            "q": "Does my audio leave my Mac?",
+            "a": "Not in local mode. The model runs on your device and transcripts are saved there. Audio is only uploaded if you choose a cloud engine with your own API key."
+          },
+          {
+            "q": "Which Macs can run it?",
+            "a": "Apple Silicon is recommended for local dictation. The recommended model is a one-time download of about 1 GB."
+          }
+        ]
+      },
+      "zh": {
+        "title": "Spokenly 替代：开源的 Mac 本地语音输入 — TypeAloud",
+        "description": "TypeAloud 与 Spokenly 对比：两者在 Mac 上本地听写都免费、不限量。TypeAloud 是开源的，本地跑千问 Qwen3-ASR，中英混说更准。",
+        "nav": "Spokenly 替代",
+        "eyebrow": "TypeAloud 对比 Spokenly",
+        "heading": ["Spokenly 的替代，", "而且是开源的。"],
+        "intro": "Spokenly 的本地转写免费、不限量、不用注册，TypeAloud 也一样。真正的区别在三处：用什么语音模型，源代码能不能看，以及转写结果上面叠了多少 AI。",
+        "table": {
+          "caption": "TypeAloud 与 Spokenly 对比",
+          "columns": ["", "TypeAloud", "Spokenly"],
+          "rows": [
+            ["价格", "免费", "本地模型和自带 API key 免费；Pro 每月 9.99 美元或每年 99.99 美元"],
+            ["本地语音模型", "Qwen3-ASR 0.6B，可选 1.7B", "Whisper 和 Parakeet 模型"],
+            ["字数限制", "使用本地模型时没有", "使用本地模型时没有"],
+            ["账号", "不需要", "本地使用不需要"],
+            ["源代码", "开源（GPL-3.0）", "闭源"],
+            ["AI 文本处理", "没有，说什么就写什么", "有，可接 GPT、Claude 或 Gemini"],
+            ["平台", "macOS；Windows 和 Linux 版本为实验性", "macOS、Windows、Linux、iPhone"]
+          ]
+        },
+        "sections": [
+          {
+            "heading": "一句话里中英混说",
+            "body": [
+              "Spokenly 在本机跑的是 Whisper 和 Parakeet。Parakeet 的多语种模型只覆盖欧洲语言，不支持中文；Whisper 每段录音只认一种语言。",
+              "TypeAloud 的本地模型千问 Qwen3-ASR 直接从声音里判断语言。很多中文技术工作就是这么说话的：中文语法，中间夹着英文产品名、API 名和一半的名词，一口气说完。"
+            ]
+          },
+          {
+            "heading": "源代码看得见",
+            "body": [
+              "TypeAloud 以 GPL-3.0 协议开源在 GitHub 上。它说本地模式下录音不离开你的 Mac，你可以去看录音、转写、存进历史记录的那几段代码。",
+              "它也只做一件事：往你正在用的应用里听写。没有 Pro 版，应用里也就没有任何东西要推销给你。"
+            ]
+          },
+          {
+            "heading": "哪些情况下 Spokenly 更合适",
+            "body": [
+              "Spokenly 可以把转写结果交给 GPT、Claude 或 Gemini 按模式和指令处理，能在 macOS 上执行语音指令操作，能录会议，还能当 iPhone 键盘用。这些 TypeAloud 都没有。",
+              "如果你主要说英文，又需要 AI 处理、iPhone 键盘或会议记录，Spokenly 更合适。"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "两个都免费，为什么选 TypeAloud？",
+            "a": "主要是本地模型。如果你听写时中英混说，Qwen3-ASR 不用设置语言就能处理。另外 TypeAloud 是开源的。"
+          },
+          {
+            "q": "能用自己的 API key 吗？",
+            "a": "能。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+          },
+          {
+            "q": "我的录音会离开 Mac 吗？",
+            "a": "本地模式下不会。模型在你的设备上运行，转写结果也保存在本机。只有当你选择云端引擎并填入自己的 API key 时，音频才会上传。"
+          },
+          {
+            "q": "哪些 Mac 可以运行？",
+            "a": "本地听写推荐使用 Apple Silicon 芯片的 Mac。推荐模型只需下载一次，约 1 GB。"
+          }
+        ]
+      }
+    },
+    {
       "id": "offline-dictation-mac",
       "en": {
         "title": "Offline dictation for Mac — free, no account — TypeAloud",

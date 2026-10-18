@@ -4,6 +4,8 @@ import { readFile, stat } from 'node:fs/promises';
 import { landingPages, sitePages, pageMetadata } from './site-pages.mjs';
 const releases = JSON.parse(await readFile('src/content/releases.json', 'utf8'));
 const milestones = JSON.parse(await readFile('src/content/milestones.json', 'utf8'));
+// Matches how React's server renderer escapes text content.
+const escapeText = value => value.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#x27;');
 
 test('built pages contain localized HTML, reciprocal metadata and working local assets', async () => {
   for(const {page,locale,path,url,lang,title} of sitePages) {
@@ -33,7 +35,7 @@ test('built pages contain localized HTML, reciprocal metadata and working local 
     } else if(landingPages.some(({id}) => id === page)) {
       const copy = landingPages.find(({id}) => id === page)[locale];
       assert.ok(html.includes('application/ld+json'));
-      for(const {q} of copy.faq) assert.ok(html.includes(`<dt>${q}</dt>`),`${path}: ${q}`);
+      for(const {q} of copy.faq) assert.ok(html.includes(`<dt>${escapeText(q)}</dt>`),`${path}: ${q}`);
       for(const {id} of landingPages) assert.ok(html.includes(`href="${pageMetadata(id,locale).path}"`),`${path} links to ${id}`);
     } else {
       for(const {id} of landingPages) assert.ok(html.includes(`href="${pageMetadata(id,locale).path}"`),`${path} links to ${id}`);
