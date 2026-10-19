@@ -8,14 +8,6 @@
   "functions": {
     "api/polish.js": { "maxDuration": 15 }
   },
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "saytype.taotao.au" }],
-      "destination": "https://typealoud.app/:path*",
-      "statusCode": 301
-    }
-  ],
   "rewrites": [
     { "source": "/v1/polish", "destination": "/api/polish" },
     {
