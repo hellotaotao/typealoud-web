@@ -1,6 +1,11 @@
 export type Locale = 'en' | 'zh'
 export const landingPageIds = [
   'best-dictation-apps-mac',
+  'wispr-flow-vs-typeless',
+  'wispr-flow-vs-superwhisper',
+  'superwhisper-vs-macwhisper',
+  'wispr-flow-pricing',
+  'typeless-pricing',
   'wispr-flow-alternative',
   'typeless-alternative',
   'superwhisper-alternative',

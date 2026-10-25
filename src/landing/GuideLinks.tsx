@@ -2,9 +2,11 @@ import landingPages from '../content/landingPages.json'
 import { localizedPath, type LandingPageId, type Locale, type Page } from '../i18n'
 import './GuideLinks.css'
 
+const isReview = (id: string) => id.startsWith('best-') || id.includes('-vs-') || id.endsWith('-pricing')
 const groups = [
-  { en: 'Compare', zh: '对比', match: (id: string) => id.endsWith('-alternative') },
-  { en: 'Guides', zh: '指南', match: (id: string) => !id.endsWith('-alternative') },
+  { en: 'Reviews', zh: '横评与价格', match: isReview },
+  { en: 'Alternatives', zh: '平替', match: (id: string) => id.endsWith('-alternative') },
+  { en: 'Guides', zh: '指南', match: (id: string) => !isReview(id) && !id.endsWith('-alternative') },
 ]
 
 export default function GuideLinks({ locale, current }: { locale: Locale; current?: Page }) {

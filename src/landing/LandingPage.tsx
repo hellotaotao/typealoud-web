@@ -3,6 +3,7 @@ import { localizedPath, type LandingPageId, type Locale } from '../i18n'
 import SiteHeader from '../SiteHeader'
 import DownloadButton from '../DownloadButton'
 import GuideLinks from './GuideLinks'
+import RichText from './RichText'
 import '../updates/UpdatesPage.css'
 import './LandingPage.css'
 
@@ -17,6 +18,7 @@ interface LandingCopy {
 }
 interface LandingEntry {
   id: string
+  related?: LandingPageId[]
   checked?: string
   sources?: { label: string; url: string }[]
   en: LandingCopy & { nav: string }
@@ -36,6 +38,9 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
   const copy = entry[locale]
   const zh = locale === 'zh'
   const home = localizedPath('home', locale)
+  const hub = entries[0]
+  const navName = (id: string) => entries.find((candidate) => candidate.id === id)![locale].nav
+  const columnIndex = copy.table?.columns.indexOf('TypeAloud') ?? -1
 
   return (
     <div className="updates-shell landing-shell" lang={zh ? 'zh-CN' : 'en'}>
@@ -43,6 +48,13 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
       <SiteHeader locale={locale} page={page} />
       <main id="main" tabIndex={-1}>
         <section className="updates-hero landing-hero" aria-labelledby="landing-title">
+          <nav className="landing-breadcrumbs" aria-label={zh ? '页面路径' : 'Breadcrumb'}>
+            <ol>
+              <li><a href={home}>TypeAloud</a></li>
+              {entry !== hub && <li><a href={localizedPath(hub.id as LandingPageId, locale)}>{hub[locale].nav}</a></li>}
+              <li aria-current="page">{copy.nav}</li>
+            </ol>
+          </nav>
           <p className="updates-eyebrow">{copy.eyebrow}</p>
           <h1 id="landing-title">{copy.heading[0]}<br /><span>{copy.heading[1]}</span></h1>
           <p>{copy.intro}</p>
@@ -56,13 +68,13 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
             <section className="landing-compare" aria-labelledby="landing-compare-title">
               <h2 id="landing-compare-title">{copy.table.caption}</h2>
               <div className="landing-table-scroll" tabIndex={0} role="group" aria-labelledby="landing-compare-title">
-                <table className={copy.table.columns[1] === 'TypeAloud' ? 'landing-table-versus' : 'landing-table-roundup'}>
+                <table>
                   <thead>
-                    <tr>{copy.table.columns.map((column, index) => index === 0 ? <td key="corner" /> : <th key={column} scope="col">{column}</th>)}</tr>
+                    <tr>{copy.table.columns.map((column, index) => index === 0 ? <td key="corner" /> : <th key={column} scope="col" className={index === columnIndex ? 'is-ours' : undefined}>{column}</th>)}</tr>
                   </thead>
                   <tbody>
                     {copy.table.rows.map(([label, ...cells]) => (
-                      <tr key={label}><th scope="row">{label}</th>{cells.map((cell, index) => <td key={index}>{cell}</td>)}</tr>
+                      <tr key={label} className={label === 'TypeAloud' ? 'is-ours' : undefined}><th scope="row">{label}</th>{cells.map((cell, index) => <td key={index} className={index + 1 === columnIndex ? 'is-ours' : undefined}>{cell}</td>)}</tr>
                     ))}
                   </tbody>
                 </table>
@@ -80,22 +92,30 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
             <section className="landing-related" aria-labelledby="landing-related-title">
               <h2 id="landing-related-title">{zh ? '逐个详细对比' : 'Detailed comparisons'}</h2>
               <ul>
-                {copy.related.map((id) => <li key={id}><a href={localizedPath(id, locale)}>{entries.find((candidate) => candidate.id === id)![locale].nav}</a></li>)}
+                {copy.related.map((id) => <li key={id}><a href={localizedPath(id, locale)}>{navName(id)}</a></li>)}
               </ul>
             </section>
           )}
           {copy.sections.map((section) => (
             <section className="landing-section" key={section.heading}>
               <h2>{section.heading}</h2>
-              {section.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {section.body.map((paragraph) => <p key={paragraph}><RichText value={paragraph} locale={locale} /></p>)}
             </section>
           ))}
           <section className="landing-faq" aria-labelledby="landing-faq-title">
             <h2 id="landing-faq-title">{zh ? '常见问题' : 'Common questions'}</h2>
             <dl>
-              {copy.faq.map(({ q, a }) => <div key={q}><dt>{q}</dt><dd>{a}</dd></div>)}
+              {copy.faq.map(({ q, a }) => <div key={q}><dt>{q}</dt><dd><RichText value={a} locale={locale} /></dd></div>)}
             </dl>
           </section>
+          {entry.related && (
+            <section className="landing-related" aria-labelledby="landing-more-title">
+              <h2 id="landing-more-title">{zh ? '相关对比' : 'Related comparisons'}</h2>
+              <ul>
+                {entry.related.map((id) => <li key={id}><a href={localizedPath(id, locale)}>{navName(id)}</a></li>)}
+              </ul>
+            </section>
+          )}
           <section className="landing-cta" aria-labelledby="landing-cta-title">
             <h2 id="landing-cta-title">{zh ? '本地转写，无需账号，无需订阅。' : 'Local transcription. No account. No subscription.'}</h2>
             <DownloadButton locale={locale} />

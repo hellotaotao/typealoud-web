@@ -45,11 +45,19 @@ export function pageMetadata(page, locale = 'en') {
 export const sitePages = ['en','zh'].flatMap(locale => pageIds.map(page => ({page,locale,...pageMetadata(page,locale)})));
 
 const escape = value => value.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
-// Structured data mirrors visible page content: the app on the home page, the FAQ on landing pages.
+const plainText = value => value.replace(/\[([^\]]+)\]\([a-z0-9-]+(?:#[a-z0-9-]+)?\)/g, '$1');
+// Structured data mirrors visible page content: the app on the home page; the FAQ and breadcrumb trail on landing pages.
 export function structuredData(page, locale = 'en') {
   const meta = pageMetadata(page,locale);
   const landing = landingPages.find(({id}) => id === page);
-  if (landing) return {'@context':'https://schema.org','@type':'FAQPage',inLanguage:meta.lang,mainEntity:landing[locale].faq.map(({q,a}) => ({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))};
+  if (landing) {
+    const hub = landingPages[0];
+    const trail = [{name:'TypeAloud', url:pageMetadata('home',locale).url}, ...(landing === hub ? [] : [{name:hub[locale].nav, url:pageMetadata(hub.id,locale).url}]), {name:landing[locale].nav, url:meta.url}];
+    return {'@context':'https://schema.org','@graph':[
+      {'@type':'FAQPage',inLanguage:meta.lang,mainEntity:landing[locale].faq.map(({q,a}) => ({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:plainText(a)}}))},
+      {'@type':'BreadcrumbList',itemListElement:trail.map(({name,url},index) => ({'@type':'ListItem',position:index + 1,name,item:url}))},
+    ]};
+  }
   if (page === 'home') return {'@context':'https://schema.org','@type':'SoftwareApplication',name:'TypeAloud',url:meta.url,description:meta.description,inLanguage:meta.lang,applicationCategory:'UtilitiesApplication',operatingSystem:'macOS, Windows, Linux',offers:{'@type':'Offer',price:'0',priceCurrency:'USD'}};
   return null;
 }

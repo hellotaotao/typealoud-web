@@ -57,8 +57,12 @@ test('landing pages have unique localized metadata and FAQ structured data that 
       const meta = pageMetadata(id,locale);
       assert.equal(meta.url, `https://typealoud.app${locale === 'zh' ? '/zh' : ''}/${id}`);
       const data = structuredData(id,locale);
-      assert.equal(data['@type'],'FAQPage');
-      assert.ok(data.mainEntity.length >= 3);
+      const [faq, breadcrumbs] = data['@graph'];
+      assert.equal(faq['@type'],'FAQPage');
+      assert.ok(faq.mainEntity.length >= 3);
+      for (const {acceptedAnswer} of faq.mainEntity) assert.ok(!/\]\(/.test(acceptedAnswer.text), 'FAQ answers must not leak link markup');
+      assert.equal(breadcrumbs['@type'],'BreadcrumbList');
+      assert.equal(breadcrumbs.itemListElement.at(-1).item, meta.url);
       const html = renderDocument(template,'<main>Landing</main>',id,locale);
       const embedded = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1];
       assert.deepEqual(JSON.parse(embedded),data);
