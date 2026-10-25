@@ -1,5 +1,23 @@
 export type Locale = 'en' | 'zh'
-export const landingPageIds = ['wispr-flow-alternative', 'typeless-alternative', 'superwhisper-alternative', 'voiceink-alternative', 'spokenly-alternative', 'offline-dictation-mac', 'chinese-english-dictation'] as const
+export const landingPageIds = [
+  'best-dictation-apps-mac',
+  'wispr-flow-alternative',
+  'typeless-alternative',
+  'superwhisper-alternative',
+  'voiceink-alternative',
+  'spokenly-alternative',
+  'macwhisper-alternative',
+  'aqua-voice-alternative',
+  'willow-voice-alternative',
+  'apple-dictation-alternative',
+  'dragon-mac-alternative',
+  'shandianshuo-alternative',
+  'doubao-input-alternative',
+  'wechat-input-alternative',
+  'iflytek-input-alternative',
+  'offline-dictation-mac',
+  'chinese-english-dictation',
+] as const
 export type LandingPageId = (typeof landingPageIds)[number]
 export type Page = 'home' | 'updates' | 'changelog' | LandingPageId
 const pages: readonly Page[] = ['home', 'updates', 'changelog', ...landingPageIds]

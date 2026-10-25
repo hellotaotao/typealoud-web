@@ -11,6 +11,7 @@ interface LandingCopy {
   heading: string[]
   intro: string
   table?: { caption: string; columns: string[]; rows: string[][] }
+  related?: LandingPageId[]
   sections: { heading: string; body: string[] }[]
   faq: { q: string; a: string }[]
 }
@@ -18,8 +19,8 @@ interface LandingEntry {
   id: string
   checked?: string
   sources?: { label: string; url: string }[]
-  en: LandingCopy
-  zh: LandingCopy
+  en: LandingCopy & { nav: string }
+  zh: LandingCopy & { nav: string }
 }
 
 function checkedLabel(value: string, locale: Locale) {
@@ -30,7 +31,8 @@ function checkedLabel(value: string, locale: Locale) {
 }
 
 export default function LandingPage({ page, locale = 'en' }: { page: LandingPageId; locale?: Locale }) {
-  const entry = (landingPages.pages as LandingEntry[]).find(({ id }) => id === page)!
+  const entries = landingPages.pages as LandingEntry[]
+  const entry = entries.find(({ id }) => id === page)!
   const copy = entry[locale]
   const zh = locale === 'zh'
   const home = localizedPath('home', locale)
@@ -54,7 +56,7 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
             <section className="landing-compare" aria-labelledby="landing-compare-title">
               <h2 id="landing-compare-title">{copy.table.caption}</h2>
               <div className="landing-table-scroll" tabIndex={0} role="group" aria-labelledby="landing-compare-title">
-                <table>
+                <table className={copy.table.columns[1] === 'TypeAloud' ? 'landing-table-versus' : 'landing-table-roundup'}>
                   <thead>
                     <tr>{copy.table.columns.map((column, index) => index === 0 ? <td key="corner" /> : <th key={column} scope="col">{column}</th>)}</tr>
                   </thead>
@@ -72,6 +74,14 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
                   {zh ? '。价格和额度可能变动，请以官方页面为准。' : '. Prices and limits change; the official pages are authoritative.'}
                 </p>
               )}
+            </section>
+          )}
+          {copy.related && (
+            <section className="landing-related" aria-labelledby="landing-related-title">
+              <h2 id="landing-related-title">{zh ? '逐个详细对比' : 'Detailed comparisons'}</h2>
+              <ul>
+                {copy.related.map((id) => <li key={id}><a href={localizedPath(id, locale)}>{entries.find((candidate) => candidate.id === id)![locale].nav}</a></li>)}
+              </ul>
             </section>
           )}
           {copy.sections.map((section) => (

@@ -21,6 +21,12 @@ describe('locale routes', () => {
   })
   it('routes every landing page in both languages and keeps the route list in sync with its content', () => {
     expect(landingPages.pages.map(({ id }) => id)).toEqual([...landingPageIds])
+    for (const page of landingPages.pages) {
+      for (const locale of ['en', 'zh'] as const) {
+        const related = (page[locale] as { related?: string[] }).related ?? []
+        for (const id of related) expect(landingPageIds as readonly string[]).toContain(id)
+      }
+    }
     for (const id of landingPageIds) {
       expect(parseRoute(`/${id}`)).toEqual({ page: id, locale: 'en' })
       expect(parseRoute(`/zh/${id}/`)).toEqual({ page: id, locale: 'zh' })
