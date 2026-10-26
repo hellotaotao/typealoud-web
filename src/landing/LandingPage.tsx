@@ -45,12 +45,14 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
   // Reviews and guides are articles: they lead with the reader's question and say plainly who wrote them.
   const isArticle = entry.kind === 'review' || entry.kind === 'guide'
   const underHub = entry !== hub && (entry.kind === 'compare' || entry.kind === 'review')
-  const columnIndex = copy.table?.columns.indexOf('TypeAloud') ?? -1
+  // Articles present TypeAloud as one option among others, so only product pages highlight it.
+  const columnIndex = isArticle ? -1 : copy.table?.columns.indexOf('TypeAloud') ?? -1
+  const aboutCompetitors = Boolean(copy.table) && (entry.kind === 'compare' || entry.kind === 'review')
   const sources = entry.checked && entry.sources && (
     <p className="landing-sources">
-      {zh ? `${copy.table ? '竞品信息' : '内容'}核对于 ${checkedLabel(entry.checked, locale)}，来源：` : `${copy.table ? 'Competitor details' : 'Details'} checked on ${checkedLabel(entry.checked, locale)} against `}
+      {zh ? `${aboutCompetitors ? '竞品信息' : '内容'}核对于 ${checkedLabel(entry.checked, locale)}，来源：` : `${aboutCompetitors ? 'Competitor details' : 'Details'} checked on ${checkedLabel(entry.checked, locale)} against `}
       {entry.sources.map((source, index) => <span key={source.url}>{index > 0 && (zh ? '、' : ', ')}<a href={source.url} rel="nofollow noopener">{source.label}</a></span>)}
-      {copy.table ? (zh ? '。价格和额度可能变动，请以官方页面为准。' : '. Prices and limits change; the official pages are authoritative.') : (zh ? '。' : '.')}
+      {aboutCompetitors ? (zh ? '。价格和额度可能变动，请以官方页面为准。' : '. Prices and limits change; the official pages are authoritative.') : (zh ? '。' : '.')}
     </p>
   )
 
@@ -71,7 +73,7 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
           <h1 id="landing-title">{copy.heading[0]}<br /><span>{copy.heading[1]}</span></h1>
           <p>{copy.intro}</p>
           {isArticle ? (
-            <p className="landing-disclosure">{zh ? '本文由 TypeAloud 团队撰写。TypeAloud 是一款免费、开源的 Mac 语音输入应用，文中提到它的地方，介绍的都是我们自己的产品。' : 'Written by the TypeAloud team. TypeAloud is a free, open-source dictation app for Mac; wherever this page mentions it, we are describing our own product.'}</p>
+            <p className="landing-byline">{zh ? 'TypeAloud 团队' : 'By the TypeAloud team'}{entry.checked && <> · {zh ? '更新于 ' : 'Updated '}{checkedLabel(entry.checked, locale)}</>}</p>
           ) : (
             <div className="landing-actions">
               <DownloadButton locale={locale} />
@@ -90,20 +92,12 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
                   </thead>
                   <tbody>
                     {copy.table.rows.map(([label, ...cells]) => (
-                      <tr key={label} className={label === 'TypeAloud' ? 'is-ours' : undefined}><th scope="row">{label}</th>{cells.map((cell, index) => <td key={index} className={index + 1 === columnIndex ? 'is-ours' : undefined}>{cell}</td>)}</tr>
+                      <tr key={label} className={!isArticle && label === 'TypeAloud' ? 'is-ours' : undefined}><th scope="row">{label}</th>{cells.map((cell, index) => <td key={index} className={index + 1 === columnIndex ? 'is-ours' : undefined}>{cell}</td>)}</tr>
                     ))}
                   </tbody>
                 </table>
               </div>
               {sources}
-            </section>
-          )}
-          {copy.related && (
-            <section className="landing-related" aria-labelledby="landing-related-title">
-              <h2 id="landing-related-title">{zh ? '逐个详细对比' : 'Detailed comparisons'}</h2>
-              <ul>
-                {copy.related.map((id) => <li key={id}><a href={localizedPath(id, locale)}>{navName(id)}</a></li>)}
-              </ul>
             </section>
           )}
           {copy.sections.map((section) => (
@@ -113,6 +107,14 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
             </section>
           ))}
           {!copy.table && sources}
+          {copy.related && (
+            <section className="landing-related" aria-labelledby="landing-related-title">
+              <h2 id="landing-related-title">{zh ? '逐个详细对比' : 'Detailed comparisons'}</h2>
+              <ul>
+                {copy.related.map((id) => <li key={id}><a href={localizedPath(id, locale)}>{navName(id)}</a></li>)}
+              </ul>
+            </section>
+          )}
           <section className="landing-faq" aria-labelledby="landing-faq-title">
             <h2 id="landing-faq-title">{zh ? '常见问题' : 'Common questions'}</h2>
             <dl>
@@ -130,7 +132,7 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
           <section className="landing-cta" aria-labelledby="landing-cta-title">
             {isArticle && <p className="landing-cta-label">{zh ? '关于 TypeAloud' : 'About TypeAloud'}</p>}
             <h2 id="landing-cta-title">{zh ? 'TypeAloud：免费的 Mac 语音输入，在本机转写。' : 'TypeAloud: free dictation for Mac, transcribed on your Mac.'}</h2>
-            <p>{zh ? '按住 Ctrl+Shift 说话，松开后文字出现在光标处。不限字数，无需账号，开源。' : 'Hold Ctrl+Shift, speak, release, and the text appears at your cursor. No word limit, no account, open source.'}</p>
+            <p>{isArticle ? (zh ? '这篇文章由 TypeAloud 团队撰写。TypeAloud 是我们做的开源应用：按住 Ctrl+Shift 说话，松开后文字出现在光标处，不限字数，无需账号。' : 'This page was written by the team behind TypeAloud, our open-source dictation app: hold Ctrl+Shift, speak, release, and the text appears at your cursor. No word limit, no account.') : (zh ? '按住 Ctrl+Shift 说话，松开后文字出现在光标处。不限字数，无需账号，开源。' : 'Hold Ctrl+Shift, speak, release, and the text appears at your cursor. No word limit, no account, open source.')}</p>
             <DownloadButton locale={locale} />
           </section>
         </div>

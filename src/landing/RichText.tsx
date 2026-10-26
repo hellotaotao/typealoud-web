@@ -6,7 +6,7 @@ export default function RichText({ value, locale }: { value: string; locale: Loc
     <>
       {parseRichText(value).map((segment, index) => segment.target
         ? <a key={index} href={`${localizedPath(segment.target.page as Page, locale)}${segment.target.hash}`}>{segment.text}</a>
-        : segment.text)}
+        : segment.code ? <code key={index}>{segment.text}</code> : segment.text)}
     </>
   )
 }

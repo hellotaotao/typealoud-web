@@ -45,7 +45,7 @@ export function pageMetadata(page, locale = 'en') {
 export const sitePages = ['en','zh'].flatMap(locale => pageIds.map(page => ({page,locale,...pageMetadata(page,locale)})));
 
 const escape = value => value.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
-const plainText = value => value.replace(/\[([^\]]+)\]\([a-z0-9-]+(?:#[a-z0-9-]+)?\)/g, '$1');
+const plainText = value => value.replace(/\[([^\]]+)\]\([a-z0-9-]+(?:#[a-z0-9-]+)?\)|`([^`]+)`/g, (_, label, code) => code ?? label);
 // Structured data mirrors visible page content: the app on the home page; the FAQ and breadcrumb trail on landing pages.
 export function structuredData(page, locale = 'en') {
   const meta = pageMetadata(page,locale);

@@ -13,6 +13,8 @@ describe('landing link markup', () => {
       { text: '.' },
     ])
     expect(plainText('Try [MacWhisper](macwhisper-alternative).')).toBe('Try MacWhisper.')
+    expect(parseRichText('Run `pip install x` now')).toEqual([{ text: 'Run ' }, { text: 'pip install x', code: true }, { text: ' now' }])
+    expect(plainText('Run `pip install x`, see [docs](qwen3-asr-mac).')).toBe('Run pip install x, see docs.')
   })
 
   it('leaves external and script URLs as plain text', () => {
@@ -28,6 +30,7 @@ describe('landing link markup', () => {
       const texts = [...copy.sections.flatMap((section) => section.body), ...copy.faq.map((item) => item.a)]
       for (const text of texts) {
         expect(text).not.toMatch(/\]\((?![a-z0-9-]+(?:#[a-z0-9-]+)?\))/)
+        expect((text.match(/`/g) ?? []).length % 2).toBe(0)
         for (const segment of parseRichText(text)) if (segment.target) expect(valid).toContain(segment.target.page)
       }
     }
