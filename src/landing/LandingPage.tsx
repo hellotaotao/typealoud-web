@@ -16,8 +16,10 @@ interface LandingCopy {
   sections: { heading: string; body: string[] }[]
   faq: { q: string; a: string }[]
 }
+type LandingKind = 'compare' | 'product' | 'review' | 'guide'
 interface LandingEntry {
   id: string
+  kind: LandingKind
   related?: LandingPageId[]
   checked?: string
   sources?: { label: string; url: string }[]
@@ -40,6 +42,9 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
   const home = localizedPath('home', locale)
   const hub = entries[0]
   const navName = (id: string) => entries.find((candidate) => candidate.id === id)![locale].nav
+  // Reviews and guides are articles: they lead with the reader's question and say plainly who wrote them.
+  const isArticle = entry.kind === 'review' || entry.kind === 'guide'
+  const underHub = entry !== hub && (entry.kind === 'compare' || entry.kind === 'review')
   const columnIndex = copy.table?.columns.indexOf('TypeAloud') ?? -1
   const sources = entry.checked && entry.sources && (
     <p className="landing-sources">
@@ -58,17 +63,21 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
           <nav className="landing-breadcrumbs" aria-label={zh ? '页面路径' : 'Breadcrumb'}>
             <ol>
               <li><a href={home}>TypeAloud</a></li>
-              {entry !== hub && <li><a href={localizedPath(hub.id as LandingPageId, locale)}>{hub[locale].nav}</a></li>}
+              {underHub && <li><a href={localizedPath(hub.id as LandingPageId, locale)}>{hub[locale].nav}</a></li>}
               <li aria-current="page">{copy.nav}</li>
             </ol>
           </nav>
           <p className="updates-eyebrow">{copy.eyebrow}</p>
           <h1 id="landing-title">{copy.heading[0]}<br /><span>{copy.heading[1]}</span></h1>
           <p>{copy.intro}</p>
-          <div className="landing-actions">
-            <DownloadButton locale={locale} />
-            <a href={`${home}#workflow`}>{zh ? '看看它怎么工作' : 'See how it works'}</a>
-          </div>
+          {isArticle ? (
+            <p className="landing-disclosure">{zh ? '本文由 TypeAloud 团队撰写。TypeAloud 是一款免费、开源的 Mac 语音输入应用，文中提到它的地方，介绍的都是我们自己的产品。' : 'Written by the TypeAloud team. TypeAloud is a free, open-source dictation app for Mac; wherever this page mentions it, we are describing our own product.'}</p>
+          ) : (
+            <div className="landing-actions">
+              <DownloadButton locale={locale} />
+              <a href={`${home}#workflow`}>{zh ? '看看 TypeAloud 怎么用' : 'See how TypeAloud works'}</a>
+            </div>
+          )}
         </section>
         <div className="landing-body">
           {copy.table && (
@@ -112,14 +121,16 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
           </section>
           {entry.related && (
             <section className="landing-related" aria-labelledby="landing-more-title">
-              <h2 id="landing-more-title">{zh ? '相关对比' : 'Related comparisons'}</h2>
+              <h2 id="landing-more-title">{entry.kind === 'compare' || entry.kind === 'review' ? (zh ? '相关对比' : 'Related comparisons') : (zh ? '相关阅读' : 'Related reading')}</h2>
               <ul>
                 {entry.related.map((id) => <li key={id}><a href={localizedPath(id, locale)}>{navName(id)}</a></li>)}
               </ul>
             </section>
           )}
           <section className="landing-cta" aria-labelledby="landing-cta-title">
-            <h2 id="landing-cta-title">{zh ? '本地转写，无需账号，无需订阅。' : 'Local transcription. No account. No subscription.'}</h2>
+            {isArticle && <p className="landing-cta-label">{zh ? '关于 TypeAloud' : 'About TypeAloud'}</p>}
+            <h2 id="landing-cta-title">{zh ? 'TypeAloud：免费的 Mac 语音输入，在本机转写。' : 'TypeAloud: free dictation for Mac, transcribed on your Mac.'}</h2>
+            <p>{zh ? '按住 Ctrl+Shift 说话，松开后文字出现在光标处。不限字数，无需账号，开源。' : 'Hold Ctrl+Shift, speak, release, and the text appears at your cursor. No word limit, no account, open source.'}</p>
             <DownloadButton locale={locale} />
           </section>
         </div>
