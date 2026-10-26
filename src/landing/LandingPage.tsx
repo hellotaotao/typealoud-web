@@ -41,6 +41,13 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
   const hub = entries[0]
   const navName = (id: string) => entries.find((candidate) => candidate.id === id)![locale].nav
   const columnIndex = copy.table?.columns.indexOf('TypeAloud') ?? -1
+  const sources = entry.checked && entry.sources && (
+    <p className="landing-sources">
+      {zh ? `${copy.table ? '竞品信息' : '内容'}核对于 ${checkedLabel(entry.checked, locale)}，来源：` : `${copy.table ? 'Competitor details' : 'Details'} checked on ${checkedLabel(entry.checked, locale)} against `}
+      {entry.sources.map((source, index) => <span key={source.url}>{index > 0 && (zh ? '、' : ', ')}<a href={source.url} rel="nofollow noopener">{source.label}</a></span>)}
+      {copy.table ? (zh ? '。价格和额度可能变动，请以官方页面为准。' : '. Prices and limits change; the official pages are authoritative.') : (zh ? '。' : '.')}
+    </p>
+  )
 
   return (
     <div className="updates-shell landing-shell" lang={zh ? 'zh-CN' : 'en'}>
@@ -79,13 +86,7 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
                   </tbody>
                 </table>
               </div>
-              {entry.checked && entry.sources && (
-                <p className="landing-sources">
-                  {zh ? `竞品信息核对于 ${checkedLabel(entry.checked, locale)}，来源：` : `Competitor details checked on ${checkedLabel(entry.checked, locale)} against `}
-                  {entry.sources.map((source, index) => <span key={source.url}>{index > 0 && (zh ? '、' : ', ')}<a href={source.url} rel="nofollow noopener">{source.label}</a></span>)}
-                  {zh ? '。价格和额度可能变动，请以官方页面为准。' : '. Prices and limits change; the official pages are authoritative.'}
-                </p>
-              )}
+              {sources}
             </section>
           )}
           {copy.related && (
@@ -102,6 +103,7 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
               {section.body.map((paragraph) => <p key={paragraph}><RichText value={paragraph} locale={locale} /></p>)}
             </section>
           ))}
+          {!copy.table && sources}
           <section className="landing-faq" aria-labelledby="landing-faq-title">
             <h2 id="landing-faq-title">{zh ? '常见问题' : 'Common questions'}</h2>
             <dl>

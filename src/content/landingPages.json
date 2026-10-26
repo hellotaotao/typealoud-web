@@ -50,7 +50,7 @@
           {
             "heading": "By use case",
             "body": [
-              "Looking for something specific: [free dictation with no word limit](free-dictation-mac), [open-source dictation](open-source-dictation-mac), [voice input for Claude Code and Cursor](voice-coding), or [an answer to Whisper's trouble with mixed Chinese and English](whisper-chinese-english)."
+              "Looking for something specific: [free dictation with no word limit](free-dictation-mac), [open-source dictation](open-source-dictation-mac), [voice input for Claude Code and Cursor](voice-coding), [an answer to Whisper's trouble with mixed Chinese and English](whisper-chinese-english), [private dictation that never uploads audio](private-dictation), or help [writing long documents by voice](dictate-long-form). New to this? Start with [how to voice type on a Mac](how-to-voice-type-mac)."
             ]
           },
           {
@@ -63,7 +63,7 @@
         "faq": [
           {
             "q": "What is the best free dictation app for Mac?",
-            "a": "If you want unlimited dictation with no account, pick an app that runs locally. TypeAloud is free and open source; Superwhisper and Spokenly have free local tiers; Apple Dictation is built in but stops after a pause."
+            "a": "If you want unlimited dictation with no account, pick an app that runs locally. TypeAloud is free and open source; Superwhisper and Spokenly have free local tiers; Apple Dictation is built in, but listens in one language at a time and keeps no history."
           },
           {
             "q": "Which Mac dictation apps work offline?",
@@ -127,7 +127,7 @@
           {
             "heading": "按用途找",
             "body": [
-              "如果你在找特定的东西：[免费不限字数的语音输入](free-dictation-mac)、[开源语音输入](open-source-dictation-mac)、[给 Claude Code 和 Cursor 用的语音输入](voice-coding)，或者 [Whisper 中英混合识别不准怎么办](whisper-chinese-english)。"
+              "如果你在找特定的东西：[免费不限字数的语音输入](free-dictation-mac)、[开源语音输入](open-source-dictation-mac)、[给 Claude Code 和 Cursor 用的语音输入](voice-coding)，[Whisper 中英混合识别不准怎么办](whisper-chinese-english)、[不上传录音的语音输入](private-dictation)，或者[用语音写长文](dictate-long-form)。刚开始接触的话，先看 [Mac 怎么语音输入](how-to-voice-type-mac)。"
             ]
           },
           {
@@ -146,7 +146,7 @@
         "faq": [
           {
             "q": "Mac 上最好用的免费语音输入软件是哪个？",
-            "a": "想要不限量、不注册，就选本地运行的。TypeAloud 免费开源；Superwhisper 和 Spokenly 有免费的本地版；苹果自带听写不用安装，但停顿一会儿就会自动停止。"
+            "a": "想要不限量、不注册，就选本地运行的。TypeAloud 免费开源；Superwhisper 和 Spokenly 有免费的本地版；苹果自带听写不用安装，但一次只听一种语言，也不保留记录。"
           },
           {
             "q": "哪些 Mac 语音输入软件可以离线用？",
@@ -1562,7 +1562,7 @@
         { "label": "macwhisper.com", "url": "https://macwhisper.com/" },
         { "label": "docs.macwhisper.com", "url": "https://docs.macwhisper.com/article/16-global" }
       ],
-      "related": ["superwhisper-vs-macwhisper", "superwhisper-alternative", "voiceink-alternative", "apple-dictation-alternative"],
+      "related": ["superwhisper-vs-macwhisper", "superwhisper-alternative", "voiceink-alternative", "apple-dictation-alternative", "mac-speech-to-text"],
       "en": {
         "title": "MacWhisper alternative for dictation into any app — TypeAloud",
         "description": "MacWhisper is built for transcribing files. TypeAloud is a free, open-source Mac dictation app: hold a key, speak, and the text lands at your cursor in any app.",
@@ -1601,7 +1601,7 @@
             "heading": "Where MacWhisper is the better choice",
             "body": [
               "For recordings, MacWhisper wins clearly. It batch-transcribes audio and video, labels speakers, records Zoom and Teams calls, and exports SRT, VTT, DOCX and more. TypeAloud does none of that.",
-              "Plenty of people use both: MacWhisper for files, and a dictation app for everyday writing."
+              "Plenty of people use both: MacWhisper for files, and a dictation app for everyday writing. More on the difference in [speech to text on Mac](mac-speech-to-text)."
             ]
           }
         ],
@@ -1666,7 +1666,7 @@
             "heading": "哪些情况下 MacWhisper 更合适",
             "body": [
               "处理录音，MacWhisper 明显更强。它能批量转写音视频、区分说话人、录 Zoom 和 Teams 会议，并导出 SRT、VTT、DOCX 等格式。这些 TypeAloud 都不做。",
-              "很多人两个一起用：MacWhisper 处理文件，听写应用负责日常写字。"
+              "很多人两个一起用：MacWhisper 处理文件，听写应用负责日常写字。两者的区别见 [Mac 语音转文字](mac-speech-to-text)。"
             ]
           }
         ],
@@ -1958,10 +1958,10 @@
     },
     {
       "id": "apple-dictation-alternative",
-      "related": ["offline-dictation-mac", "dragon-mac-alternative", "chinese-english-dictation", "macwhisper-alternative"],
+      "related": ["offline-dictation-mac", "dragon-mac-alternative", "chinese-english-dictation", "macwhisper-alternative", "mac-dictation-not-working"],
       "en": {
-        "title": "Apple Dictation alternative for Mac: no time-outs, mixed languages — TypeAloud",
-        "description": "macOS Dictation stops after a pause and listens in one language. TypeAloud is a free, open-source alternative: hold a key for as long as you talk, and mix Chinese and English freely.",
+        "title": "Apple Dictation alternative for Mac: mixed languages, history, your own words — TypeAloud",
+        "description": "macOS Dictation listens in one language at a time, ends after 30 seconds of silence and keeps no history. TypeAloud is a free, open-source alternative that mixes Chinese and English freely.",
         "nav": "Apple Dictation alternative",
         "eyebrow": "TypeAloud vs macOS Dictation",
         "heading": ["When Mac's built-in dictation", "isn't quite enough."],
@@ -1971,7 +1971,7 @@
           "columns": ["", "TypeAloud", "macOS Dictation"],
           "rows": [
             ["Price", "Free, open source", "Built in"],
-            ["How you start and stop", "Hold Ctrl+Shift and release, or double-tap for hands-free", "Press the Dictation key or shortcut; stops on its own after a pause"],
+            ["How you start and stop", "Hold Ctrl+Shift and release, or double-tap for hands-free", "Press the Dictation key or shortcut; ends on its own after 30 seconds without speech"],
             ["Languages in one sentence", "Detected automatically, including Chinese–English mixing", "One selected dictation language at a time"],
             ["Speech model", "Qwen3-ASR, on your Mac", "Apple's, on-device on Apple Silicon"],
             ["History of what you said", "Kept on your Mac, with retry if a transcription fails", "No"],
@@ -1980,9 +1980,9 @@
         },
         "sections": [
           {
-            "heading": "Long dictation without the cut-off",
+            "heading": "You decide when it stops",
             "body": [
-              "macOS Dictation listens until it hears a gap, then stops. Pause to think and you have to start again. In TypeAloud you hold the shortcut for as long as you want to talk, or double-tap it to record hands-free until you press again."
+              "macOS Dictation has no length limit, but it ends a session after 30 seconds without speech. Stop to reread a paragraph or look something up, and you start again. TypeAloud records for exactly as long as you hold the shortcut, or, after a double-tap, until you press it again, however long you stay quiet in between."
             ]
           },
           {
@@ -2000,14 +2000,14 @@
           {
             "heading": "When built-in Dictation is enough",
             "body": [
-              "For a quick reply or a search query, macOS Dictation is fine and needs no install. It also works with Apple's voice editing commands. TypeAloud makes sense once you dictate whole paragraphs."
+              "For a quick reply or a search query, macOS Dictation is fine and needs no install; here is [how to set it up](how-to-voice-type-mac), and [what to check when it misbehaves](mac-dictation-not-working). It also works with Apple's voice editing commands. TypeAloud makes sense once you dictate whole paragraphs."
             ]
           }
         ],
         "faq": [
           {
             "q": "Why does Mac dictation keep stopping?",
-            "a": "macOS Dictation ends a session when it stops hearing speech for a while. TypeAloud records for as long as you hold the shortcut, or until you press it again in hands-free mode."
+            "a": "macOS Dictation ends a session when it hears no speech for 30 seconds. If it stops sooner, check the microphone source in Keyboard > Dictation, and make sure Voice Control is off, since it replaces Dictation. TypeAloud records for as long as you hold the shortcut, or until you press it again in hands-free mode."
           },
           {
             "q": "Is TypeAloud offline like Apple Dictation on Apple Silicon?",
@@ -2028,8 +2028,8 @@
         ]
       },
       "zh": {
-        "title": "Mac 自带听写不好用？免费替代：不会中途停，中英混说 — TypeAloud",
-        "description": "macOS 自带听写停顿一下就自动结束，而且一次只听一种语言。TypeAloud 是免费开源的替代品：按住多久说多久，中英文随便混着说。",
+        "title": "Mac 自带听写不好用？免费替代：中英混说、有历史记录、认识你的词 — TypeAloud",
+        "description": "macOS 自带听写一次只听一种语言，30 秒没声音就自动结束，也不保留记录。TypeAloud 是免费开源的替代品，中英文随便混着说。",
         "nav": "Mac 自带听写替代",
         "eyebrow": "TypeAloud 对比 macOS 听写",
         "heading": ["Mac 自带的听写", "不够用的时候。"],
@@ -2039,7 +2039,7 @@
           "columns": ["", "TypeAloud", "macOS 听写"],
           "rows": [
             ["价格", "免费、开源", "系统自带"],
-            ["怎么开始和结束", "按住 Ctrl+Shift，松开结束；双击可免按住", "按听写键或快捷键；停顿一会儿自动结束"],
+            ["怎么开始和结束", "按住 Ctrl+Shift，松开结束；双击可免按住", "按听写键或快捷键；30 秒没检测到语音自动结束"],
             ["一句话里的语言", "自动识别，支持中英混说", "一次一种选定的听写语言"],
             ["语音模型", "Qwen3-ASR，在你的 Mac 上", "苹果的模型，Apple Silicon 上在本机"],
             ["说过的话有没有记录", "保存在本机，转写失败可重试", "没有"],
@@ -2048,9 +2048,9 @@
         },
         "sections": [
           {
-            "heading": "长段听写，不会被打断",
+            "heading": "什么时候停由你决定",
             "body": [
-              "macOS 听写一听到空档就停。停下来想一想，就得重新开始。TypeAloud 想说多久就按住多久，或者双击快捷键免按住录音，直到你再按一次。"
+              "macOS 听写没有总时长限制，但 30 秒没检测到语音就会结束。停下来重读一段、查个资料，就得重新开始。TypeAloud 按住快捷键多久就录多久；双击进入免按住模式后，一直录到你再按一次，中间安静多久都不会断。"
             ]
           },
           {
@@ -2068,14 +2068,14 @@
           {
             "heading": "什么时候系统听写就够了",
             "body": [
-              "回一句消息、搜个东西，macOS 听写完全够用，也不用安装，还能配合苹果的语音编辑命令。要整段整段地说，TypeAloud 才更有意义。"
+              "回一句消息、搜个东西，macOS 听写完全够用，也不用安装（[设置方法](how-to-voice-type-mac)、[出问题怎么查](mac-dictation-not-working)），还能配合苹果的语音编辑命令。要整段整段地说，TypeAloud 才更有意义。"
             ]
           }
         ],
         "faq": [
           {
             "q": "Mac 听写为什么总是自动停？",
-            "a": "macOS 听写在一段时间听不到声音后就结束这次听写。TypeAloud 按住快捷键多久就录多久，免按住模式下则一直录到你再按一次。"
+            "a": "macOS 听写在 30 秒没检测到语音后就结束这次听写。如果停得更早，检查“键盘 > 听写”里的麦克风来源，并确认“语音控制”已关闭，它开着时会替代听写。TypeAloud 按住快捷键多久就录多久，免按住模式下则一直录到你再按一次。"
           },
           {
             "q": "TypeAloud 也能像 Apple Silicon 上的系统听写一样离线吗？",
@@ -2755,7 +2755,7 @@
         { "label": "aquavoice.com/pricing", "url": "https://aquavoice.com/pricing" },
         { "label": "willowvoice.com/pricing", "url": "https://willowvoice.com/pricing" }
       ],
-      "related": ["wispr-flow-pricing", "typeless-pricing", "offline-dictation-mac", "open-source-dictation-mac"],
+      "related": ["wispr-flow-pricing", "typeless-pricing", "offline-dictation-mac", "open-source-dictation-mac", "private-dictation"],
       "en": {
         "title": "Free dictation app for Mac with no word limit — TypeAloud",
         "description": "Most AI dictation apps cap their free plans: 2,000 words a week, 1,000 words in total. TypeAloud is free with no word limit because it transcribes on your Mac.",
@@ -2773,7 +2773,7 @@
             ["Aqua Voice", "1,000 words to start", "Cloud"],
             ["Willow Voice", "A lighter model, some weekly limits", "Cloud"],
             ["Superwhisper", "Unlimited with local Whisper; Pro features locked", "On your Mac"],
-            ["macOS Dictation", "Built in; stops after a pause", "On-device on Apple Silicon"]
+            ["macOS Dictation", "Built in; one language at a time, no history", "On-device on Apple Silicon"]
           ]
         },
         "sections": [
@@ -2807,7 +2807,7 @@
           },
           {
             "q": "Is macOS Dictation not free and unlimited?",
-            "a": "It is free, but it stops after a pause and listens in one language at a time. See [TypeAloud vs macOS Dictation](apple-dictation-alternative)."
+            "a": "It is free, but it listens in one language at a time, ends after 30 seconds of silence and keeps no history. See [TypeAloud vs macOS Dictation](apple-dictation-alternative)."
           },
           {
             "q": "Which Macs can run it?",
@@ -2832,7 +2832,7 @@
             ["Aqua Voice", "一开始送 1,000 词", "云端"],
             ["Willow Voice", "轻量模型，部分功能每周限次", "云端"],
             ["Superwhisper", "本地 Whisper 不限量；Pro 功能锁定", "在你的 Mac 上"],
-            ["macOS 听写", "系统自带；停顿后自动结束", "Apple Silicon 上在本机"]
+            ["macOS 听写", "系统自带；一次一种语言，无历史记录", "Apple Silicon 上在本机"]
           ]
         },
         "sections": [
@@ -2866,7 +2866,7 @@
           },
           {
             "q": "macOS 自带听写不也是免费不限量吗？",
-            "a": "它免费，但停顿一会儿就自动结束，而且一次只听一种语言。详见 [TypeAloud 对比 macOS 听写](apple-dictation-alternative)。"
+            "a": "它免费，但一次只听一种语言，30 秒没声音就结束，也不保留记录。详见 [TypeAloud 对比 macOS 听写](apple-dictation-alternative)。"
           },
           {
             "q": "哪些 Mac 可以运行？",
@@ -2877,7 +2877,7 @@
     },
     {
       "id": "voice-coding",
-      "related": ["wispr-flow-vs-superwhisper", "chinese-english-dictation", "qwen3-asr-mac", "superwhisper-alternative"],
+      "related": ["wispr-flow-vs-superwhisper", "chinese-english-dictation", "qwen3-asr-mac", "superwhisper-alternative", "dictate-into-apps"],
       "en": {
         "title": "Voice dictation for coding: talk to Claude Code, Cursor and Codex — TypeAloud",
         "description": "Dictate prompts to Claude Code, Cursor, Codex and any terminal or editor on your Mac. TypeAloud is free, local and knows terms like TypeScript and Kubernetes.",
@@ -2896,7 +2896,7 @@
           {
             "heading": "Works wherever the cursor is",
             "body": [
-              "Claude Code has its own voice mode, but it lives inside Claude Code. Your day also includes Cursor's chat, Codex in another terminal, commit messages, code review comments and the message to your team. TypeAloud inserts text into whichever app has focus, so the same shortcut works in all of them."
+              "Claude Code has its own voice mode, but it lives inside Claude Code. Your day also includes Cursor's chat, Codex in another terminal, commit messages, code review comments and the message to your team. TypeAloud inserts text into whichever app has focus, so the same shortcut [works in all of them](dictate-into-apps)."
             ]
           },
           {
@@ -2951,7 +2951,7 @@
           {
             "heading": "光标在哪儿就能用",
             "body": [
-              "Claude Code 有自带的语音模式，但只能在 Claude Code 里用。你一天里还要在 Cursor 里聊、在另一个终端开 Codex、写提交信息、写代码评审意见、给同事发消息。TypeAloud 把文字插入当前获得焦点的应用，同一个快捷键在这些地方都能用。"
+              "Claude Code 有自带的语音模式，但只能在 Claude Code 里用。你一天里还要在 Cursor 里聊、在另一个终端开 Codex、写提交信息、写代码评审意见、给同事发消息。TypeAloud 把文字插入当前获得焦点的应用，同一个快捷键[在这些地方都能用](dictate-into-apps)。"
             ]
           },
           {
@@ -2991,7 +2991,7 @@
     },
     {
       "id": "open-source-dictation-mac",
-      "related": ["qwen3-asr-mac", "voiceink-alternative", "superwhisper-alternative", "free-dictation-mac"],
+      "related": ["qwen3-asr-mac", "voiceink-alternative", "superwhisper-alternative", "free-dictation-mac", "private-dictation"],
       "en": {
         "title": "Open-source dictation app for Mac: free, local, GPL-3.0 — TypeAloud",
         "description": "TypeAloud is an open-source (GPL-3.0) dictation app for Mac: local Qwen3-ASR transcription, text at your cursor in any app, free signed builds and no account.",
@@ -3320,8 +3320,700 @@
       }
     },
     {
+      "id": "how-to-voice-type-mac",
+      "checked": "2026-10-26",
+      "sources": [
+        { "label": "Apple: Use Dictation on Mac", "url": "https://support.apple.com/guide/mac-help/use-dictation-mh40584/mac" }
+      ],
+      "related": ["mac-dictation-not-working", "apple-dictation-alternative", "dictate-into-apps", "chinese-english-dictation"],
+      "en": {
+        "title": "How to voice type on a Mac: three ways, step by step — TypeAloud",
+        "description": "Turn on macOS Dictation, use Voice Control, or install a dictation app. Step-by-step instructions for each, with what each one is good at.",
+        "nav": "How to voice type on a Mac",
+        "eyebrow": "Voice typing on Mac",
+        "heading": ["How to voice type on a Mac,", "three ways."],
+        "intro": "You can type with your voice on any recent Mac without installing anything. Built-in Dictation covers short text, Voice Control covers controlling the Mac by voice, and a dictation app covers long, mixed-language or private writing. Here is how to set up each.",
+        "sections": [
+          {
+            "heading": "1. Built-in Dictation",
+            "body": [
+              "Open System Settings, click Keyboard, go to Dictation and turn it on. Pick a shortcut from the Shortcut menu, or press the Microphone key if your keyboard has one. Under Languages, click Edit to add the languages you speak, and under Microphone source choose your microphone instead of Automatic if Dictation picks the wrong one.",
+              "To dictate, put the cursor in a text field, press the shortcut and speak. Press it again, or Escape, to stop. Dictation also ends by itself after 30 seconds without speech. Auto-punctuation works in supported languages."
+            ]
+          },
+          {
+            "heading": "2. Voice Control",
+            "body": [
+              "Voice Control, under System Settings > Accessibility, lets you click, scroll and edit text by spoken commands. It is built for people who cannot use a keyboard or mouse. While it is on, standard Dictation is unavailable, so turn it off if you only want to type by voice."
+            ]
+          },
+          {
+            "heading": "3. A dictation app",
+            "body": [
+              "A dictation app is worth it when you write paragraphs rather than sentences, mix languages, or want a record of what you said. With TypeAloud: download it, choose the local Qwen3-ASR model (about 1 GB, downloaded once), grant microphone and Accessibility permission, then hold Ctrl+Shift in any app, speak and release.",
+              "It transcribes on your Mac, handles [Chinese and English in the same sentence](chinese-english-dictation), keeps every transcript in History and is free. For a wider choice, see the [roundup of Mac dictation apps](best-dictation-apps-mac)."
+            ]
+          },
+          {
+            "heading": "Which to use",
+            "body": [
+              "Replying to a message or searching: built-in Dictation. Controlling the Mac without your hands: Voice Control. Writing documents, prompts or notes by voice: a dictation app. If built-in Dictation misbehaves, see [Mac dictation not working](mac-dictation-not-working)."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "What is the shortcut for dictation on a Mac?",
+            "a": "You choose it in System Settings > Keyboard > Dictation > Shortcut, or press the Microphone key if your keyboard has one. TypeAloud uses Ctrl+Shift, held while you speak."
+          },
+          {
+            "q": "Can I dictate in Chinese on a Mac?",
+            "a": "Yes. Add Mandarin under Keyboard > Dictation > Languages. Built-in Dictation uses one language at a time; TypeAloud detects the language as you speak."
+          },
+          {
+            "q": "Does Mac dictation work offline?",
+            "a": "Keyboard settings show whether general dictation is processed on your device. TypeAloud's local mode always works offline after the model download."
+          },
+          {
+            "q": "Is TypeAloud free?",
+            "a": "Yes. Local transcription needs no account, subscription or API key, and has no word limit."
+          }
+        ]
+      },
+      "zh": {
+        "title": "Mac 怎么语音输入？三种方法，一步一步设置 — TypeAloud",
+        "description": "打开 macOS 自带听写、使用语音控制，或者装一个语音输入应用。每种方法的设置步骤，以及各自适合做什么。",
+        "nav": "Mac 怎么语音输入",
+        "eyebrow": "Mac 语音输入教程",
+        "heading": ["Mac 怎么语音输入，", "三种方法。"],
+        "intro": "在较新的 Mac 上，不装任何东西也能用语音打字。系统自带的听写适合短句，语音控制适合用声音操作整台 Mac，语音输入应用适合长段、中英混说或者注重隐私的写作。下面是每种方法的设置步骤。",
+        "sections": [
+          {
+            "heading": "1. 系统自带的听写",
+            "body": [
+              "打开“系统设置”，点“键盘”，找到“听写”并打开。在“快捷键”菜单里选一个快捷键；键盘上有麦克风键的话也可以直接按它。在“语言”旁边点“编辑”，加上普通话等你要说的语言；如果听写选错了麦克风，在“麦克风来源”里手动选，不要用“自动”。",
+              "听写时把光标放进输入框，按快捷键说话，再按一次或按 Esc 结束。30 秒没检测到语音时听写也会自动结束。支持的语言会自动加标点。"
+            ]
+          },
+          {
+            "heading": "2. 语音控制",
+            "body": [
+              "“系统设置 > 辅助功能”里的“语音控制”可以用口令点击、滚动和编辑文字，是为不方便用键盘鼠标的人设计的。它开着的时候，普通听写不可用，所以如果你只是想用语音打字，记得把它关掉。"
+            ]
+          },
+          {
+            "heading": "3. 语音输入应用",
+            "body": [
+              "如果你要说的是一段段话而不是一两句、经常中英混说，或者想保留说过的内容，就值得装一个语音输入应用。以 TypeAloud 为例：下载安装，选本地 Qwen3-ASR 模型（约 1 GB，只下载一次），授予麦克风和辅助功能权限，然后在任意应用里按住 Ctrl+Shift，说话，松开。",
+              "它在你的 Mac 上转写，[一句话里中英混说](chinese-english-dictation)也能准确识别，每次转写都保存在历史记录里，而且免费。更多选择见 [Mac 语音输入软件推荐](best-dictation-apps-mac)。"
+            ]
+          },
+          {
+            "heading": "该用哪个",
+            "body": [
+              "回消息、搜东西：系统听写。不用手操作 Mac：语音控制。用语音写文档、提示词、笔记：语音输入应用。系统听写出问题时，看 [Mac 听写不工作怎么办](mac-dictation-not-working)。"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Mac 听写的快捷键是什么？",
+            "a": "在“系统设置 > 键盘 > 听写 > 快捷键”里自己选，键盘有麦克风键的话也可以直接按。TypeAloud 用的是 Ctrl+Shift，说话时按住。"
+          },
+          {
+            "q": "Mac 能用中文语音输入吗？",
+            "a": "能。在“键盘 > 听写 > 语言”里加上普通话。系统听写一次只用一种语言；TypeAloud 会边说边识别语言。"
+          },
+          {
+            "q": "Mac 听写能离线用吗？",
+            "a": "“键盘”设置里会显示一般听写是否在设备上处理。TypeAloud 的本地模式在下载模型后始终可以离线使用。"
+          },
+          {
+            "q": "TypeAloud 免费吗？",
+            "a": "免费。本地转写不需要账号、订阅或 API key，也没有字数限制。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mac-dictation-not-working",
+      "checked": "2026-10-26",
+      "sources": [
+        { "label": "Apple: Use Dictation on Mac", "url": "https://support.apple.com/guide/mac-help/use-dictation-mh40584/mac" }
+      ],
+      "related": ["how-to-voice-type-mac", "apple-dictation-alternative", "offline-dictation-mac", "chinese-english-dictation"],
+      "en": {
+        "title": "Mac dictation not working or stopping? Fixes that actually help — TypeAloud",
+        "description": "Mac Dictation won't start, stops on its own or mishears you? Check the shortcut, microphone source, Voice Control and language, based on Apple's own documentation.",
+        "nav": "Mac dictation not working",
+        "eyebrow": "Fix Mac dictation",
+        "heading": ["Mac dictation not working?", "Check these, in this order."],
+        "intro": "Most dictation problems on a Mac come from four settings: Dictation itself, the microphone it listens to, Voice Control and the language. Work through them in order. If Dictation works but does not fit how you write, the last section covers alternatives.",
+        "sections": [
+          {
+            "heading": "It does not start",
+            "body": [
+              "Check System Settings > Keyboard > Dictation is on, and note which shortcut is set; pressing a different key does nothing.",
+              "Check System Settings > Accessibility > Voice Control is off. While Voice Control is on, standard Dictation is unavailable."
+            ]
+          },
+          {
+            "heading": "It starts but hears nothing",
+            "body": [
+              "In Keyboard > Dictation, set Microphone source to the microphone you are actually using. Automatic picks the device it thinks is most likely, which may be a monitor or headset you are not speaking into.",
+              "In System Settings > Sound > Input, select the same microphone and speak: the input level should move. If you use an external microphone, raise its input volume."
+            ]
+          },
+          {
+            "heading": "It stops on its own",
+            "body": [
+              "Dictation has no length limit, but it ends after 30 seconds without speech. That is by design and cannot be changed. If you often stop to think or read, use a tool where you control when recording ends; TypeAloud records for as long as you hold the shortcut, or until you press it again in hands-free mode."
+            ]
+          },
+          {
+            "heading": "It mishears you",
+            "body": [
+              "Make sure the dictation language matches what you speak: add it under Keyboard > Dictation > Languages, and switch with the language indicator next to the cursor. Dictation works in one language at a time, so sentences that mix Chinese and English often go wrong. A model that detects language on the fly handles that better; see [mixed Chinese–English dictation](chinese-english-dictation)."
+            ]
+          },
+          {
+            "heading": "If Dictation works but is not enough",
+            "body": [
+              "For long writing, mixed languages or text you need to keep, a dictation app is the better tool. [TypeAloud](apple-dictation-alternative) is free, runs on your Mac and keeps every transcript in History."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Why does Mac dictation stop after a while?",
+            "a": "It ends automatically when no speech is detected for 30 seconds. There is no setting to change this."
+          },
+          {
+            "q": "Why is the Dictation option missing or greyed out?",
+            "a": "Voice Control may be on, since it replaces Dictation, or the language and region may not support Dictation."
+          },
+          {
+            "q": "Dictation works in some apps but not others. Why?",
+            "a": "Dictation types into the focused text field. Password fields and some secure inputs do not accept it."
+          },
+          {
+            "q": "Is there a dictation app without these limits?",
+            "a": "TypeAloud has no silence time-out, detects the language as you speak and is free. See [how to voice type on a Mac](how-to-voice-type-mac)."
+          }
+        ]
+      },
+      "zh": {
+        "title": "Mac 听写不工作、自动停止？按这个顺序排查 — TypeAloud",
+        "description": "Mac 听写打不开、自己停掉或者听不准？依据 Apple 官方说明，逐项检查快捷键、麦克风来源、语音控制和语言设置。",
+        "nav": "Mac 听写不工作",
+        "eyebrow": "修复 Mac 听写",
+        "heading": ["Mac 听写不工作？", "按这个顺序检查。"],
+        "intro": "Mac 上的听写问题大多出在四个设置：听写本身、它用的麦克风、语音控制，以及语言。按顺序一项项查。如果听写能用但不适合你的写作方式，最后一节讲替代方案。",
+        "sections": [
+          {
+            "heading": "按了没反应",
+            "body": [
+              "确认“系统设置 > 键盘 > 听写”已打开，并看清设置的是哪个快捷键，按错了键不会有任何反应。",
+              "确认“系统设置 > 辅助功能 > 语音控制”是关着的。语音控制开着时，普通听写不可用。"
+            ]
+          },
+          {
+            "heading": "能启动，但听不到声音",
+            "body": [
+              "在“键盘 > 听写”里，把“麦克风来源”设成你实际在用的麦克风。“自动”会选它认为最可能的设备，可能是你没在用的显示器或耳机。",
+              "在“系统设置 > 声音 > 输入”里选同一个麦克风并说话，输入电平应该会跳动。用外接麦克风的话，把输入音量调高。"
+            ]
+          },
+          {
+            "heading": "说着说着自己停了",
+            "body": [
+              "听写没有总时长限制，但 30 秒没检测到语音就会结束。这是设计如此，没有设置可以改。如果你经常停下来想或者看资料，换一个由你决定何时结束的工具：TypeAloud 按住快捷键多久就录多久，免按住模式下一直录到你再按一次。"
+            ]
+          },
+          {
+            "heading": "识别不准",
+            "body": [
+              "确认听写语言和你说的语言一致：在“键盘 > 听写 > 语言”里添加，听写时用光标旁的语言标识切换。听写一次只用一种语言，所以中英混说的句子经常出错。能边说边判断语言的模型处理得更好，见[中英混合语音输入](chinese-english-dictation)。"
+            ]
+          },
+          {
+            "heading": "听写能用，但不够用",
+            "body": [
+              "写长内容、中英混说，或者需要保留说过的话，语音输入应用更合适。[TypeAloud](apple-dictation-alternative) 免费，在你的 Mac 上运行，每次转写都保存在历史记录里。"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Mac 听写为什么过一会儿就停？",
+            "a": "30 秒没检测到语音时会自动结束，没有设置可以修改。"
+          },
+          {
+            "q": "为什么听写选项不见了或是灰的？",
+            "a": "可能是开着语音控制，它会替代听写；也可能是当前语言和地区不支持听写。"
+          },
+          {
+            "q": "为什么有的应用能听写，有的不行？",
+            "a": "听写输入到当前获得焦点的输入框。密码框和一些安全输入框不接受听写。"
+          },
+          {
+            "q": "有没有没这些限制的语音输入应用？",
+            "a": "TypeAloud 没有静音超时，边说边识别语言，而且免费。详见 [Mac 怎么语音输入](how-to-voice-type-mac)。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "private-dictation",
+      "related": ["offline-dictation-mac", "open-source-dictation-mac", "free-dictation-mac", "wispr-flow-alternative"],
+      "en": {
+        "title": "Private dictation on Mac: voice typing that never uploads your audio — TypeAloud",
+        "description": "\"Zero data retention\" still means your voice goes to a server. How to tell local dictation from cloud dictation, how to check it yourself, and a free local option.",
+        "nav": "Private dictation",
+        "eyebrow": "Private dictation",
+        "heading": ["Dictation that keeps", "your voice on your Mac."],
+        "intro": "Cloud dictation apps often promise zero data retention. That means your recording is deleted after it is processed, not that it never left your Mac. If you dictate client details, health information or unreleased work, the difference matters. Here is how to tell, and how to check.",
+        "sections": [
+          {
+            "heading": "Zero retention is not local",
+            "body": [
+              "With a cloud app, every dictation is uploaded, transcribed on a server and usually passed through a language model for cleanup. A retention policy decides what happens afterwards. It cannot change the fact that the audio was sent, and you are trusting the provider and its subprocessors to follow it."
+            ]
+          },
+          {
+            "heading": "Three ways to check an app",
+            "body": [
+              "Turn off Wi-Fi and dictate. If it still works, transcription is on your Mac. Cloud apps such as [Wispr Flow](wispr-flow-alternative) and [Typeless](typeless-alternative) stop working.",
+              "Read the source if there is one. TypeAloud is [open source](open-source-dictation-mac); the code that records, transcribes and saves is public.",
+              "For macOS Dictation, System Settings > Keyboard shows whether general dictation is processed on your device."
+            ]
+          },
+          {
+            "heading": "How TypeAloud handles it",
+            "body": [
+              "In local mode the speech model runs on your Mac. Audio is processed there, transcripts are saved there, and there is no account, so nothing ties your dictation to a profile on a server. The network is used for the model download and app updates.",
+              "Cloud transcription exists only if you add your own Groq or OpenAI API key; then audio goes to that provider. If you never add a key, it never happens."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Does TypeAloud send my audio anywhere?",
+            "a": "Not in local mode. Audio and transcripts stay on your Mac. Only a cloud engine you set up with your own API key uploads audio."
+          },
+          {
+            "q": "Where are my transcripts stored?",
+            "a": "In History on your Mac. Failed transcriptions keep their audio locally so you can retry them."
+          },
+          {
+            "q": "Is local dictation as accurate as cloud?",
+            "a": "For everyday dictation, a modern local model like Qwen3-ASR is accurate, especially for Chinese and mixed speech. Cloud apps add AI rewriting on top, which TypeAloud does not do."
+          },
+          {
+            "q": "Is TypeAloud free?",
+            "a": "Yes. Local transcription needs no account, subscription or API key, and has no word limit."
+          }
+        ]
+      },
+      "zh": {
+        "title": "不上传录音的语音输入：Mac 上真正私密的听写 — TypeAloud",
+        "description": "“零数据留存”仍然意味着你的声音传到了服务器。怎么分辨本地听写和云端听写、怎么自己验证，以及一个免费的本地选择。",
+        "nav": "不上传录音的语音输入",
+        "eyebrow": "私密听写",
+        "heading": ["声音留在你的 Mac 上的", "语音输入。"],
+        "intro": "云端语音输入应用常常承诺“零数据留存”。这指的是录音处理完就删除，不是录音从没离开过你的 Mac。如果你口述的是客户资料、健康信息或未发布的工作，这个区别很要紧。下面讲怎么分辨，以及怎么验证。",
+        "sections": [
+          {
+            "heading": "零留存不等于本地",
+            "body": [
+              "用云端应用时，每次听写都会上传，在服务器上转写，通常还要经过大模型整理。留存政策决定的是之后怎么处理，改变不了录音已经发出去的事实，你也只能相信服务商和它的下游供应商会照章执行。"
+            ]
+          },
+          {
+            "heading": "三种验证方法",
+            "body": [
+              "关掉 Wi-Fi 再听写。还能用，说明转写在你的 Mac 上完成。[Wispr Flow](wispr-flow-alternative)、[Typeless](typeless-alternative) 这类云端应用会直接用不了。",
+              "有源代码就去看。TypeAloud [开源](open-source-dictation-mac)，录音、转写、保存的代码都是公开的。",
+              "macOS 自带听写的话，“系统设置 > 键盘”里会显示一般听写是否在设备上处理。"
+            ]
+          },
+          {
+            "heading": "TypeAloud 怎么做",
+            "body": [
+              "本地模式下语音模型在你的 Mac 上运行。音频在本机处理，转写结果也存在本机，而且没有账号，服务器上不存在和你听写内容挂钩的档案。只有下载模型和应用更新会用到网络。",
+              "只有你填入自己的 Groq 或 OpenAI API key，才会启用云端转写，音频发往对应服务商。不填 key，这件事就不会发生。"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "TypeAloud 会把录音发到别处吗？",
+            "a": "本地模式下不会，音频和转写结果都留在你的 Mac 上。只有你用自己的 API key 配置的云端引擎会上传音频。"
+          },
+          {
+            "q": "转写记录存在哪里？",
+            "a": "存在你 Mac 上的历史记录里。转写失败时录音也保存在本机，可以重试。"
+          },
+          {
+            "q": "本地听写和云端一样准吗？",
+            "a": "日常听写中，Qwen3-ASR 这样的现代本地模型很准，中文和中英混说尤其好。云端应用多出来的是 AI 改写，这一点 TypeAloud 不做。"
+          },
+          {
+            "q": "TypeAloud 免费吗？",
+            "a": "免费。本地转写不需要账号、订阅或 API key，也没有字数限制。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dictate-long-form",
+      "related": ["voice-coding", "chinese-english-dictation", "free-dictation-mac", "mac-dictation-not-working"],
+      "en": {
+        "title": "How to write long documents by voice on a Mac — TypeAloud",
+        "description": "Dictate first drafts, reports and long emails on a Mac: how to structure what you say, record hands-free, avoid losing text, and edit afterwards.",
+        "nav": "Write long documents by voice",
+        "eyebrow": "Long-form dictation",
+        "heading": ["Write the first draft", "by talking."],
+        "intro": "Speaking is roughly three times faster than typing, and most of the time saved is in long text: drafts, reports, long emails, design docs. Dictating long text well is a skill of its own. These are the habits that make it work, and how TypeAloud supports them.",
+        "sections": [
+          {
+            "heading": "Talk from an outline",
+            "body": [
+              "Type five or six headings first. Then dictate one section at a time, looking at the heading, as if explaining it to a colleague. Rambling comes from not knowing what comes next; an outline removes that."
+            ]
+          },
+          {
+            "heading": "Record hands-free for long passages",
+            "body": [
+              "For a sentence, hold Ctrl+Shift. For a section, double-tap Ctrl+Shift and talk with your hands free; press it once more to finish. Pause as long as you like to think; recording continues until you end it."
+            ]
+          },
+          {
+            "heading": "Never lose a paragraph",
+            "body": [
+              "Long recordings are where other tools hurt: one error and five minutes of speech is gone. TypeAloud cuts long dictation into pieces at natural pauses and transcribes them while you speak. Every finished transcript goes into History. If transcription fails and the audio was saved, you can retry it with the current engine."
+            ]
+          },
+          {
+            "heading": "Dictate now, edit later",
+            "body": [
+              "Do not correct as you go. Get the whole draft out, then edit with the keyboard. TypeAloud writes what you said, without rewriting, so the draft sounds like you. Add names and terms to the dictionary so they come out right the first time."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Is there a limit on how long I can dictate?",
+            "a": "No. TypeAloud has no word limit and no silence time-out in local mode."
+          },
+          {
+            "q": "What happens if transcription or insertion fails?",
+            "a": "Whatever was captured is kept. If transcription fails and the audio was saved, it waits in History for a retry; if insertion fails, the text stays in History with a Copy button."
+          },
+          {
+            "q": "Can I dictate in Chinese and English together?",
+            "a": "Yes. The local Qwen3-ASR model [detects the language as you speak](chinese-english-dictation)."
+          },
+          {
+            "q": "Which Macs can run TypeAloud?",
+            "a": "Apple Silicon is recommended for local dictation. The recommended model is a one-time download of about 1 GB."
+          }
+        ]
+      },
+      "zh": {
+        "title": "在 Mac 上用语音写长文：口述初稿的方法 — TypeAloud",
+        "description": "在 Mac 上口述初稿、报告和长邮件：怎么组织要说的话、免按住录音、不丢内容，以及之后怎么修改。",
+        "nav": "用语音写长文",
+        "eyebrow": "长文听写",
+        "heading": ["初稿，", "用说的写出来。"],
+        "intro": "说话大约比打字快三倍，省下的时间主要在长文本上：初稿、报告、长邮件、设计文档。把长内容说好本身是一门技巧。下面是让它行得通的几个习惯，以及 TypeAloud 怎么配合。",
+        "sections": [
+          {
+            "heading": "照着提纲说",
+            "body": [
+              "先打五六个小标题，然后看着标题一节一节地说，像在给同事讲解。说得啰嗦，往往是因为不知道下一句该说什么，有了提纲就不会。"
+            ]
+          },
+          {
+            "heading": "长段内容用免按住录音",
+            "body": [
+              "说一句话就按住 Ctrl+Shift。说一整节就双击 Ctrl+Shift，放开手说，结束时再按一次。中间停下来想多久都行，录音会一直持续到你结束。"
+            ]
+          },
+          {
+            "heading": "一段话都不会丢",
+            "body": [
+              "其他工具最怕长录音：一次出错，五分钟的话就没了。TypeAloud 在你说话的自然停顿处把长听写切成小段，边说边转写。每次完成的转写都进入历史记录；转写失败而录音已保存的话，可以用当前引擎重试。"
+            ]
+          },
+          {
+            "heading": "先说完，再修改",
+            "body": [
+              "别边说边改。先把整篇初稿说出来，再用键盘修改。TypeAloud 写下你的原话，不做改写，所以初稿读起来就是你的口吻。把人名和术语加进词典，第一遍就能写对。"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "一次能说多久？",
+            "a": "没有限制。本地模式下 TypeAloud 不限字数，也没有静音超时。"
+          },
+          {
+            "q": "转写或插入失败怎么办？",
+            "a": "录到的内容都会保留。转写失败而录音已保存的话，它在历史记录里等你重试；插入失败的话，文字留在历史记录里，旁边有复制按钮。"
+          },
+          {
+            "q": "能中英文一起说吗？",
+            "a": "能。本地的 Qwen3-ASR 模型[边说边识别语言](chinese-english-dictation)。"
+          },
+          {
+            "q": "哪些 Mac 可以运行 TypeAloud？",
+            "a": "本地听写推荐使用 Apple Silicon 芯片的 Mac。推荐模型只需下载一次，约 1 GB。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dictate-into-apps",
+      "related": ["voice-coding", "how-to-voice-type-mac", "dictate-long-form", "doubao-input-alternative"],
+      "en": {
+        "title": "Voice typing in Notion, Obsidian, Word, Slack and any Mac app — TypeAloud",
+        "description": "Dictate into Notion, Obsidian, Word, Google Docs, Slack, Mail, VS Code and the terminal on a Mac with one shortcut. How it works and what to do when an app blocks it.",
+        "nav": "Dictate into any app",
+        "eyebrow": "Dictation in every app",
+        "heading": ["One shortcut,", "every app on your Mac."],
+        "intro": "Notion, Obsidian, Word, Google Docs, Slack, Mail, VS Code, the terminal: each has its own idea of voice input, or none. A system-wide dictation app replaces all of them with one habit. Hold Ctrl+Shift where the cursor is, speak, release.",
+        "sections": [
+          {
+            "heading": "How it works",
+            "body": [
+              "TypeAloud listens for the shortcut anywhere on macOS. When you release, it inserts the transcript into the app and text field that has focus, the same way typing would. That is why it needs macOS Accessibility permission."
+            ]
+          },
+          {
+            "heading": "Notes and documents",
+            "body": [
+              "In Notion, Obsidian, Bear, Word, Pages or Google Docs, dictate straight into the page. For long sections, double-tap the shortcut to record hands-free; see [writing long documents by voice](dictate-long-form)."
+            ]
+          },
+          {
+            "heading": "Chat and email",
+            "body": [
+              "Slack, Teams, WeChat, Lark and Mail all take dictated text in the message box. You review it before sending, so nothing goes out by accident."
+            ]
+          },
+          {
+            "heading": "Editors and terminals",
+            "body": [
+              "VS Code, Cursor, Xcode, Terminal and iTerm accept dictated text too, which makes it practical to talk to coding agents. More in [voice dictation for coding](voice-coding)."
+            ]
+          },
+          {
+            "heading": "When an app blocks insertion",
+            "body": [
+              "Password fields and some secure inputs refuse inserted text by design. If insertion fails, the finished transcript is still in History; copy it from there. TypeAloud works alongside any keyboard layout or input method, so there is nothing to switch."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Does it work in browser apps like Google Docs?",
+            "a": "Yes. Browser text fields receive the text like any other app."
+          },
+          {
+            "q": "Do I need to switch input methods?",
+            "a": "No. TypeAloud is not an input method; it works alongside whichever keyboard you type with."
+          },
+          {
+            "q": "What if the wrong app has focus?",
+            "a": "The transcript is saved in History, so you can copy it into the right place."
+          },
+          {
+            "q": "Is TypeAloud free?",
+            "a": "Yes. Local transcription needs no account, subscription or API key, and has no word limit."
+          }
+        ]
+      },
+      "zh": {
+        "title": "在 Notion、Obsidian、Word、微信、飞书等任意 Mac 应用里语音输入 — TypeAloud",
+        "description": "在 Mac 上用一个快捷键往 Notion、Obsidian、Word、Google Docs、微信、飞书、Slack、邮件、VS Code 和终端里语音输入。原理，以及应用拦截时怎么办。",
+        "nav": "在任意应用里语音输入",
+        "eyebrow": "每个应用里都能语音输入",
+        "heading": ["一个快捷键，", "Mac 上每个应用都能用。"],
+        "intro": "Notion、Obsidian、Word、Google Docs、微信、飞书、Slack、邮件、VS Code、终端，各有各的语音输入，或者干脆没有。系统级的语音输入应用用一个习惯替代它们：在光标处按住 Ctrl+Shift，说话，松开。",
+        "sections": [
+          {
+            "heading": "原理",
+            "body": [
+              "TypeAloud 在 macOS 任何地方都能响应快捷键。松开时，它把转写结果插入当前获得焦点的应用和输入框，效果和打字一样。这也是它需要 macOS 辅助功能权限的原因。"
+            ]
+          },
+          {
+            "heading": "笔记和文档",
+            "body": [
+              "在 Notion、Obsidian、Bear、Word、Pages 或 Google Docs 里直接对着页面说。长段内容双击快捷键免按住录音，见[用语音写长文](dictate-long-form)。"
+            ]
+          },
+          {
+            "heading": "聊天和邮件",
+            "body": [
+              "微信、飞书、Slack、Teams 和邮件的输入框都能接收听写的文字。发送前你会先看到内容，不会误发。"
+            ]
+          },
+          {
+            "heading": "编辑器和终端",
+            "body": [
+              "VS Code、Cursor、Xcode、Terminal 和 iTerm 也能接收听写的文字，用说话和编程助手沟通因此变得可行。详见[语音写代码](voice-coding)。"
+            ]
+          },
+          {
+            "heading": "应用拦截插入时",
+            "body": [
+              "密码框和一些安全输入框按设计会拒绝插入的文字。插入失败时，完成的转写仍在历史记录里，可以从那里复制。TypeAloud 和任何键盘布局、输入法都能一起用，不需要切换。"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Google Docs 这类网页应用能用吗？",
+            "a": "能。浏览器里的输入框和其他应用一样接收文字。"
+          },
+          {
+            "q": "需要切换输入法吗？",
+            "a": "不需要。TypeAloud 不是输入法，和你打字用的任何输入法一起工作。"
+          },
+          {
+            "q": "焦点在错误的应用上怎么办？",
+            "a": "转写结果保存在历史记录里，复制到正确的位置就行。"
+          },
+          {
+            "q": "TypeAloud 免费吗？",
+            "a": "免费。本地转写不需要账号、订阅或 API key，也没有字数限制。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mac-speech-to-text",
+      "related": ["how-to-voice-type-mac", "macwhisper-alternative", "superwhisper-vs-macwhisper", "offline-dictation-mac"],
+      "en": {
+        "title": "Speech to text on Mac: live dictation vs transcribing recordings — TypeAloud",
+        "description": "Two different jobs share the name speech to text: typing by voice as you go, and transcribing audio files. Which Mac tools do which, and what is free.",
+        "nav": "Speech to text on Mac",
+        "eyebrow": "Speech to text on Mac",
+        "heading": ["Speech to text on a Mac:", "two different jobs."],
+        "intro": "\"Speech to text\" covers two jobs. One is live dictation: you speak and text appears where you are typing. The other is transcription: you have a recording and want a transcript. Tools are usually good at one of them. Picking the right kind saves most of the frustration.",
+        "table": {
+          "caption": "Speech to text tools on Mac by job",
+          "columns": ["", "Live dictation", "Transcribing files"],
+          "rows": [
+            ["TypeAloud", "Yes, into any app; free, local", "No"],
+            ["macOS Dictation", "Yes, built in", "No"],
+            ["MacWhisper", "Pro, through a floating window", "Yes: batch, speaker labels, subtitles"],
+            ["Superwhisper", "Yes, into any app", "Pro"],
+            ["Wispr Flow", "Yes, cloud", "Meeting notes, not files"]
+          ]
+        },
+        "sections": [
+          {
+            "heading": "Live dictation",
+            "body": [
+              "For writing by voice, you want a shortcut that works in every app and text that lands at the cursor. macOS Dictation does this for short text; see [how to voice type on a Mac](how-to-voice-type-mac). TypeAloud does it with a local Qwen3-ASR model, mixed Chinese and English, and a History of every transcript, for free."
+            ]
+          },
+          {
+            "heading": "Transcribing recordings",
+            "body": [
+              "For interviews, lectures and meetings you want batch import, speaker labels and export to subtitles or documents. MacWhisper is the specialist here; see [Superwhisper vs MacWhisper](superwhisper-vs-macwhisper) for how it compares."
+            ]
+          },
+          {
+            "heading": "Offline either way",
+            "body": [
+              "Both jobs can run on an Apple Silicon Mac without uploading audio. If privacy matters, choose local models; see [offline dictation for Mac](offline-dictation-mac)."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "What is the best free speech to text on Mac?",
+            "a": "For live dictation, TypeAloud is free with no word limit. For files, MacWhisper's free version handles basic transcription."
+          },
+          {
+            "q": "Can TypeAloud transcribe an audio file?",
+            "a": "No. It is built for live dictation."
+          },
+          {
+            "q": "Does speech to text on Mac work in Chinese?",
+            "a": "Yes. TypeAloud's Qwen3-ASR is strong in Chinese and mixed Chinese–English; macOS Dictation supports Mandarin as a dictation language."
+          },
+          {
+            "q": "Which Macs can run TypeAloud?",
+            "a": "Apple Silicon is recommended for local dictation. The recommended model is a one-time download of about 1 GB."
+          }
+        ]
+      },
+      "zh": {
+        "title": "Mac 语音转文字：实时听写和录音转写，分清再选 — TypeAloud",
+        "description": "“语音转文字”其实是两件事：边说边打字，以及把录音文件转成文字。Mac 上哪些工具做哪件事，哪些免费。",
+        "nav": "Mac 语音转文字",
+        "eyebrow": "Mac 语音转文字",
+        "heading": ["Mac 上的语音转文字，", "其实是两件事。"],
+        "intro": "“语音转文字”包含两件事。一是实时听写：你说话，文字出现在正在输入的地方。二是录音转写：你有一段录音，想要文字稿。工具通常只擅长其中一件，选对类型就能省掉大部分麻烦。",
+        "table": {
+          "caption": "Mac 语音转文字工具，按用途分",
+          "columns": ["", "实时听写", "转写录音文件"],
+          "rows": [
+            ["TypeAloud", "可以，任意应用；免费、本地", "不支持"],
+            ["macOS 听写", "可以，系统自带", "不支持"],
+            ["MacWhisper", "Pro 功能，通过浮窗", "可以：批量、区分说话人、导出字幕"],
+            ["Superwhisper", "可以，任意应用", "Pro"],
+            ["Wispr Flow", "可以，云端", "会议记录，不处理文件"]
+          ]
+        },
+        "sections": [
+          {
+            "heading": "实时听写",
+            "body": [
+              "用语音写字，要的是在每个应用里都能用的快捷键，文字直接落在光标处。macOS 听写能做到，适合短内容，见 [Mac 怎么语音输入](how-to-voice-type-mac)。TypeAloud 用本地 Qwen3-ASR 模型做同样的事，支持中英混说，保存每次转写的历史记录，而且免费。"
+            ]
+          },
+          {
+            "heading": "录音转写",
+            "body": [
+              "采访、讲座、会议录音，需要的是批量导入、区分说话人、导出字幕或文档。这方面 MacWhisper 最专业，和 Superwhisper 的区别见 [Superwhisper 对比 MacWhisper](superwhisper-vs-macwhisper)。"
+            ]
+          },
+          {
+            "heading": "两件事都能离线",
+            "body": [
+              "在 Apple Silicon Mac 上，这两件事都可以不上传音频完成。在意隐私就选本地模型，见 [Mac 离线语音输入](offline-dictation-mac)。"
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Mac 上最好用的免费语音转文字是什么？",
+            "a": "实时听写选 TypeAloud，免费不限字数。转写文件的话，MacWhisper 免费版能做基础转写。"
+          },
+          {
+            "q": "TypeAloud 能转写音频文件吗？",
+            "a": "不能，它专做实时听写。"
+          },
+          {
+            "q": "Mac 语音转文字支持中文吗？",
+            "a": "支持。TypeAloud 的 Qwen3-ASR 中文和中英混说都很强；macOS 听写也支持普通话。"
+          },
+          {
+            "q": "哪些 Mac 可以运行 TypeAloud？",
+            "a": "本地听写推荐使用 Apple Silicon 芯片的 Mac。推荐模型只需下载一次，约 1 GB。"
+          }
+        ]
+      }
+    },
+    {
       "id": "offline-dictation-mac",
-      "related": ["apple-dictation-alternative", "voiceink-alternative", "superwhisper-alternative", "chinese-english-dictation", "qwen3-asr-mac"],
+      "related": ["apple-dictation-alternative", "voiceink-alternative", "superwhisper-alternative", "chinese-english-dictation", "qwen3-asr-mac", "private-dictation"],
       "en": {
         "title": "Offline dictation for Mac — free, no account — TypeAloud",
         "description": "TypeAloud is free offline dictation for Mac. A speech model runs on your device, so you can dictate into any app without internet, an account or a word limit.",
@@ -3340,7 +4032,7 @@
           {
             "heading": "What stays on your Mac",
             "body": [
-              "In local mode the audio is processed on your device and transcripts are saved there. Neither is uploaded for transcription. There is no account, so there is no profile on a server tied to what you dictate."
+              "In local mode the audio is processed on your device and transcripts are saved there. Neither is uploaded for transcription. There is no account, so there is no profile on a server tied to what you dictate. More on [private dictation](private-dictation)."
             ]
           },
           {
@@ -3397,7 +4089,7 @@
           {
             "heading": "哪些内容留在 Mac 上",
             "body": [
-              "本地模式下，音频在你的设备上处理，转写结果也保存在本机，两者都不会为了转写而上传。TypeAloud 没有账号系统，服务器上也就没有和你听写内容关联的个人档案。"
+              "本地模式下，音频在你的设备上处理，转写结果也保存在本机，两者都不会为了转写而上传。TypeAloud 没有账号系统，服务器上也就没有和你听写内容关联的个人档案。详见[不上传录音的语音输入](private-dictation)。"
             ]
           },
           {

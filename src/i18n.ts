@@ -25,6 +25,12 @@ export const landingPageIds = [
   'open-source-dictation-mac',
   'qwen3-asr-mac',
   'whisper-chinese-english',
+  'how-to-voice-type-mac',
+  'mac-dictation-not-working',
+  'private-dictation',
+  'dictate-long-form',
+  'dictate-into-apps',
+  'mac-speech-to-text',
   'offline-dictation-mac',
   'chinese-english-dictation',
 ] as const
