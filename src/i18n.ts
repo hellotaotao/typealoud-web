@@ -20,6 +20,11 @@ export const landingPageIds = [
   'doubao-input-alternative',
   'wechat-input-alternative',
   'iflytek-input-alternative',
+  'free-dictation-mac',
+  'voice-coding',
+  'open-source-dictation-mac',
+  'qwen3-asr-mac',
+  'whisper-chinese-english',
   'offline-dictation-mac',
   'chinese-english-dictation',
 ] as const
