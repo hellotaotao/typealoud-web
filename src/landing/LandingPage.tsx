@@ -138,7 +138,7 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
         </div>
       </main>
       <GuideLinks locale={locale} current={page} />
-      <footer className="updates-footer"><a href={home} className="updates-brand">TypeAloud</a><p>{zh ? '你的声音，留在你的设备上。' : 'Your voice. On your device.'}</p><a href={`${home}#download`}>{zh ? '下载 TypeAloud' : 'Get TypeAloud'} <span aria-hidden="true">↗</span></a></footer>
+      <footer className="updates-footer"><a href={home} className="updates-brand">TypeAloud</a><p>{zh ? '你的声音，留在你的设备上。' : 'Your voice. On your device.'}</p><a href={localizedPath('privacy', locale)}>{zh ? '隐私政策' : 'Privacy policy'}</a><a href={`${home}#download`}>{zh ? '下载 TypeAloud' : 'Get TypeAloud'} <span aria-hidden="true">↗</span></a></footer>
     </div>
   )
 }

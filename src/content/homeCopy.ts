@@ -35,6 +35,7 @@ const chinese = {
   'How it works': '使用方法',
   'Product': '产品',
   'Privacy': '隐私',
+  'Privacy policy': '隐私政策',
   'Updates': '产品更新',
   'Download for Mac': '下载 Mac 版',
   'Download for Windows': '下载 Windows 版',

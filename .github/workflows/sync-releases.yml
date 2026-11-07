@@ -29,10 +29,12 @@ jobs:
         run: |
           cp src/content/releases.json "$RUNNER_TEMP/previous-releases.json"
           npm run releases:sync
+      - name: Sync the privacy page from PRIVACY.md
+        run: npm run privacy:sync
       - name: Detect content changes
         id: changes
         run: |
-          if git diff --quiet -- src/content/releases.json; then
+          if git diff --quiet -- src/content/releases.json src/content/privacy.md; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -62,8 +64,8 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add src/content/releases.json
+          git add src/content/releases.json src/content/privacy.md
           if [ -f content-drafts/updates.json ]; then git add content-drafts/updates.json; fi
           git diff --cached --quiet && exit 0
-          git commit -m "content: sync published TypeAloud release notes"
+          git commit -m "content: sync TypeAloud release notes and privacy policy"
           git push origin HEAD:main

@@ -16,6 +16,10 @@ const metadata = {
       title: 'TypeAloud changelog — Complete version history and release notes',
       description: 'Browse every published TypeAloud release by version and date, with original release notes, fixes, improvements and links to the source.',
     },
+    privacy: {
+      title: 'TypeAloud privacy policy — Every connection the app makes',
+      description: 'What TypeAloud keeps on your computer, every network connection the app makes, and exactly what its anonymous usage statistics contain.',
+    },
   },
   zh: {
     home: {
@@ -30,12 +34,16 @@ const metadata = {
       title: 'TypeAloud 更新日志 — 完整版本历史与发布说明',
       description: '按版本与日期查看 TypeAloud 的完整发布记录，了解新增功能、改进与修复，并追溯原始发布说明。',
     },
+    privacy: {
+      title: 'TypeAloud 隐私说明 — App 发起的每一种连接',
+      description: 'TypeAloud 哪些内容只留在你的电脑上，App 会发起哪些网络连接，以及匿名使用统计具体包含什么。',
+    },
   },
 };
 for (const landing of landingPages) {
   for (const locale of ['en','zh']) metadata[locale][landing.id] = {title:landing[locale].title, description:landing[locale].description};
 }
-const pageIds = ['home','updates','changelog',...landingPages.map(({id}) => id)];
+const pageIds = ['home','updates','changelog','privacy',...landingPages.map(({id}) => id)];
 
 export function pageMetadata(page, locale = 'en') {
   if (!Object.hasOwn(metadata, locale) || !Object.hasOwn(metadata[locale], page)) throw new Error(`Unknown page or locale: ${page}/${locale}`);

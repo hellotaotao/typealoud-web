@@ -27,7 +27,7 @@ test('sitemap exposes homepage and both independent views without artificial dat
 });
 
 test('serves six language-specific metadata documents with reciprocal alternatives', () => {
-  for (const page of ['home','updates','changelog']) {
+  for (const page of ['home','updates','changelog','privacy']) {
     for (const locale of ['en','zh']) {
       const meta = pageMetadata(page,locale);
       const path = `${locale === 'zh' ? '/zh' : ''}${page === 'home' ? '' : `/${page}`}` || '/';
@@ -46,8 +46,8 @@ test('serves six language-specific metadata documents with reciprocal alternativ
 });
 test('sitemap includes both languages for every page', () => {
   const sitemap = renderSitemap();
-  assert.equal((sitemap.match(/<loc>/g)||[]).length,6 + landingPages.length * 2);
-  for (const path of ['/zh','/zh/updates','/zh/changelog']) assert.ok(sitemap.includes(`<loc>https://typealoud.app${path}</loc>`));
+  assert.equal((sitemap.match(/<loc>/g)||[]).length,8 + landingPages.length * 2);
+  for (const path of ['/zh','/zh/updates','/zh/changelog','/privacy','/zh/privacy']) assert.ok(sitemap.includes(`<loc>https://typealoud.app${path}</loc>`));
 });
 test('landing pages have unique localized metadata and FAQ structured data that survives embedding', () => {
   assert.equal(new Set(sitePages.map(({title}) => title)).size, sitePages.length);

@@ -35,8 +35,8 @@ export const landingPageIds = [
   'chinese-english-dictation',
 ] as const
 export type LandingPageId = (typeof landingPageIds)[number]
-export type Page = 'home' | 'updates' | 'changelog' | LandingPageId
-const pages: readonly Page[] = ['home', 'updates', 'changelog', ...landingPageIds]
+export type Page = 'home' | 'updates' | 'changelog' | 'privacy' | LandingPageId
+const pages: readonly Page[] = ['home', 'updates', 'changelog', 'privacy', ...landingPageIds]
 
 export function isLandingPage(page: Page): page is LandingPageId {
   return (landingPageIds as readonly string[]).includes(page)

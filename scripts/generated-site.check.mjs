@@ -32,6 +32,10 @@ test('built pages contain localized HTML, reciprocal metadata and working local 
     } else if(page === 'updates') {
       for(const milestone of milestones) assert.ok(html.includes(`id="${milestone.id}"`),milestone.id);
       assert.ok(html.includes(locale === 'zh' ? '首次' : 'First introduced'));
+    } else if(page === 'privacy') {
+      for(const text of ['PostHog','daily_usage','<table','<pre>']) assert.ok(html.includes(text),`${path}: ${text}`);
+      assert.ok(html.includes(locale === 'zh' ? '绝不发送' : 'What is never sent'));
+      assert.ok(!html.includes(locale === 'zh' ? 'What is never sent' : '绝不发送'),`${path} shows only its own language`);
     } else if(landingPages.some(({id}) => id === page)) {
       const copy = landingPages.find(({id}) => id === page)[locale];
       assert.ok(html.includes('application/ld+json'));

@@ -122,7 +122,7 @@ export default function UpdatesPage({ page, locale = 'en' }: { page: 'updates' |
         {page === 'updates' ? <Milestones locale={locale} /> : <Changelog locale={locale} />}
       </main>
       <GuideLinks locale={locale} />
-      <footer className="updates-footer"><a href={localizedPath('home', locale)} className="updates-brand">TypeAloud</a><p>{locale === 'zh' ? '你的声音，留在你的设备上。' : 'Your voice. On your device.'}</p><a href={`${localizedPath('home', locale)}#download`}>{locale === 'zh' ? '下载 TypeAloud' : 'Get TypeAloud'} <span aria-hidden="true">↗</span></a></footer>
+      <footer className="updates-footer"><a href={localizedPath('home', locale)} className="updates-brand">TypeAloud</a><p>{locale === 'zh' ? '你的声音，留在你的设备上。' : 'Your voice. On your device.'}</p><a href={localizedPath('privacy', locale)}>{locale === 'zh' ? '隐私政策' : 'Privacy policy'}</a><a href={`${localizedPath('home', locale)}#download`}>{locale === 'zh' ? '下载 TypeAloud' : 'Get TypeAloud'} <span aria-hidden="true">↗</span></a></footer>
     </div>
   )
 }

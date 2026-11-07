@@ -306,6 +306,7 @@ function SiteFooter({ locale }: { locale: Locale }) {
       </a>
       <p>{t('Voice to text. On your device.')}</p>
       <a href={localizedPath('updates', locale)}>{t('Updates')}</a>
+      <a href={localizedPath('privacy', locale)}>{t('Privacy policy')}</a>
       <a href={releasePageUrl}>{t('GitHub releases ↗')}</a>
       <a href={sourceRepoUrl}>{t('Open source on GitHub ↗')}</a>
     </footer>
