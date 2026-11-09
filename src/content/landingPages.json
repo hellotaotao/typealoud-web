@@ -3558,23 +3558,27 @@
     {
       "id": "mac-dictation-not-working",
       "kind": "guide",
-      "checked": "2026-10-26",
+      "checked": "2026-11-10",
       "sources": [
-        { "label": "Apple: Use Dictation on Mac", "url": "https://support.apple.com/guide/mac-help/use-dictation-mh40584/mac" }
+        { "label": "Apple: Use Dictation on Mac", "url": "https://support.apple.com/guide/mac-help/use-dictation-mh40584/mac" },
+        { "label": "Apple: If Dictation on Mac doesn't work as expected", "url": "https://support.apple.com/guide/mac-help/if-dictation-on-mac-doesnt-work-as-expected-mchlc480652b/mac" },
+        { "label": "Apple: Switch your AirPods to another device", "url": "https://support.apple.com/en-us/104988" },
+        { "label": "MacRumors: Nuance discontinues Dragon for Mac", "url": "https://www.macrumors.com/2018/10/24/nuance-discontinues-dragon-mac/" }
       ],
-      "related": ["how-to-voice-type-mac", "apple-dictation-alternative", "offline-dictation-mac", "chinese-english-dictation"],
+      "related": ["how-to-voice-type-mac", "apple-dictation-alternative", "dragon-mac-alternative", "offline-dictation-mac", "chinese-english-dictation"],
       "en": {
-        "title": "macOS Dictation not working or stopping? Fixes in order — TypeAloud",
-        "description": "Apple's built-in Dictation won't start, stops on its own or mishears you? Check the shortcut, microphone source, Voice Control and language, based on Apple's documentation.",
+        "title": "Mac Dictation not working or cutting out? Fixes in order — TypeAloud",
+        "description": "Built-in Dictation on your Mac or MacBook won't start, cuts out mid-sentence, stops after 30 seconds or mishears you? Fixes for each, based on Apple's documentation.",
         "nav": "macOS Dictation not working",
         "eyebrow": "Fixing macOS Dictation",
-        "heading": ["macOS Dictation not working?", "Check these, in this order."],
-        "intro": "This guide is about Dictation, the voice typing built into macOS (System Settings > Keyboard > Dictation). Most problems with it come from four settings: Dictation itself, the microphone it listens to, Voice Control and the language. Work through them in order; the last section covers what to do if Dictation works but does not fit how you write.",
+        "heading": ["Mac Dictation not working?", "Find your symptom, then check in order."],
+        "intro": "This guide is about Dictation, the voice typing built into macOS on every Mac and MacBook (System Settings > Keyboard > Dictation). Find the symptom you see below; each section lists the checks in the order worth trying. Most problems come down to four things: Dictation itself, the microphone it listens to, Voice Control and the language. The last two sections cover the old Dragon Dictate for Mac, and what to do if Dictation works but does not fit how you write.",
         "sections": [
           {
             "heading": "It does not start",
             "body": [
               "Check System Settings > Keyboard > Dictation is on, and note which shortcut is set; pressing a different key does nothing.",
+              "If your keyboard has a Microphone key, press and release it. Holding it down starts Siri instead of Dictation.",
               "Check System Settings > Accessibility > Voice Control is off. While Voice Control is on, standard Dictation is unavailable."
             ]
           },
@@ -3582,19 +3586,37 @@
             "heading": "It starts but hears nothing",
             "body": [
               "In Keyboard > Dictation, set Microphone source to the microphone you are actually using. Automatic picks the device it thinks is most likely, which may be a monitor or headset you are not speaking into.",
-              "In System Settings > Sound > Input, select the same microphone and speak: the input level should move. If you use an external microphone, raise its input volume."
+              "In System Settings > Sound > Input, select the same microphone and speak: the input level should move. If you use an external microphone, raise its input volume, and make sure nothing such as a hand or clothing covers the microphone."
             ]
           },
           {
-            "heading": "It stops on its own",
+            "heading": "It stops after 30 seconds",
             "body": [
-              "Dictation has no length limit, but it ends after 30 seconds without speech. That is by design and cannot be changed. If you often stop for longer than that to think or read, see the last section."
+              "Dictation has no length limit, but it ends when no speech is detected for 30 seconds. That is by design, and there is no setting to change it.",
+              "If it stops while you are still talking, the Mac is not hearing you as speech, so the silence timer runs out anyway. Check the input level as in the section above, move closer to the microphone and speak at a normal volume.",
+              "If you often pause for longer than 30 seconds to think or read, see the last section."
+            ]
+          },
+          {
+            "heading": "It keeps cutting out mid-sentence",
+            "body": [
+              "When Dictation drops words or stops in the middle of a sentence, look for something that changes while you speak.",
+              "The microphone may switch. With Microphone source set to Automatic, the Mac chooses the input itself. Bluetooth headsets can disconnect, and AirPods can switch automatically to your iPhone or iPad when you start playing something there. Set Microphone source to one fixed microphone. To keep AirPods on the Mac, open System Settings > Bluetooth, click the Info button next to your AirPods and set Connect to This Mac to When Last Connected to This Mac.",
+              "The connection may drop. Some dictation is processed on Apple's servers rather than on your Mac, and Keyboard > Dictation shows which applies to you. If yours needs an internet connection, an unstable network interrupts it.",
+              "Noise or echo can also cut it short. Background noise and an echoing room make your speech harder to pick out. Apple suggests a headset microphone in those conditions."
             ]
           },
           {
             "heading": "It mishears you",
             "body": [
               "Make sure the dictation language matches what you speak: add it under Keyboard > Dictation > Languages, and switch with the language indicator next to the cursor. Dictation works in one language at a time, so sentences that mix Chinese and English often go wrong. A model that detects language on the fly handles that better; see [mixed Chinese–English dictation](chinese-english-dictation)."
+            ]
+          },
+          {
+            "heading": "Dragon Dictate for Mac and the microphone",
+            "body": [
+              "If Dragon Dictate or Dragon Professional Individual for Mac no longer finds your microphone, there is no official fix to look for. Nuance discontinued Dragon for Mac in October 2018 and has released no updates since, so it was never adapted to the macOS versions that came after.",
+              "Built-in Dictation and Voice Control cover part of what Dragon did. For the rest, see [Dragon for Mac alternatives](dragon-mac-alternative)."
             ]
           },
           {
@@ -3606,8 +3628,16 @@
         ],
         "faq": [
           {
-            "q": "Why does Mac dictation stop after a while?",
-            "a": "It ends automatically when no speech is detected for 30 seconds. There is no setting to change this."
+            "q": "Why does Mac dictation stop after 30 seconds?",
+            "a": "It ends automatically when no speech is detected for 30 seconds, and there is no setting to change this. If it stops while you are speaking, the microphone is not picking you up well; check the input level in Sound settings."
+          },
+          {
+            "q": "Why does Mac dictation keep cutting out?",
+            "a": "Usually the microphone changes during dictation (a Bluetooth headset or AirPods disconnecting or switching devices), the network drops while your dictation is processed on Apple's servers, or the Mac hears too little speech. Set a fixed microphone source first."
+          },
+          {
+            "q": "Does Mac dictation need an internet connection?",
+            "a": "Sometimes. System Settings > Keyboard > Dictation shows whether your dictation is processed on your Mac or needs a connection."
           },
           {
             "q": "Why is the Dictation option missing or greyed out?",
@@ -3624,17 +3654,18 @@
         ]
       },
       "zh": {
-        "title": "Mac 自带听写不工作、自动停止？按这个顺序排查 — TypeAloud",
-        "description": "macOS 自带的听写打不开、自己停掉或者听不准？依据 Apple 官方说明，逐项检查快捷键、麦克风来源、语音控制和语言设置。",
+        "title": "Mac 自带听写不工作、断断续续？按这个顺序排查 — TypeAloud",
+        "description": "Mac 或 MacBook 自带的听写打不开、说到一半断掉、30 秒就停、听不准？依据 Apple 官方说明，按症状逐项排查。",
         "nav": "Mac 自带听写不工作",
         "eyebrow": "修复 macOS 自带听写",
-        "heading": ["Mac 自带的听写不工作？", "按这个顺序检查。"],
-        "intro": "这篇讲的是 macOS 系统自带的听写功能（系统设置 > 键盘 > 听写）。它的问题大多出在四个设置：听写开关本身、它用的麦克风、语音控制，以及语言。按顺序一项项查；如果听写能用但不适合你的写作方式，最后一节讲别的选择。",
+        "heading": ["Mac 自带的听写不工作？", "先找症状，再按顺序检查。"],
+        "intro": "这篇讲的是 macOS 系统自带的听写功能，所有 Mac 和 MacBook 都有（系统设置 > 键盘 > 听写）。先在下面找到你遇到的症状，每一节按值得尝试的顺序列出检查项。问题大多出在四处：听写开关本身、它用的麦克风、语音控制，以及语言。最后两节分别讲老的 Dragon Dictate for Mac，以及听写能用但不适合你的写作方式时还有什么选择。",
         "sections": [
           {
             "heading": "按了没反应",
             "body": [
               "确认“系统设置 > 键盘 > 听写”已打开，并看清设置的是哪个快捷键，按错了键不会有任何反应。",
+              "键盘上有麦克风键的话，按一下就松开。按住不放启动的是 Siri，不是听写。",
               "确认“系统设置 > 辅助功能 > 语音控制”是关着的。语音控制开着时，普通听写不可用。"
             ]
           },
@@ -3642,19 +3673,37 @@
             "heading": "能启动，但听不到声音",
             "body": [
               "在“键盘 > 听写”里，把“麦克风来源”设成你实际在用的麦克风。“自动”会选它认为最可能的设备，可能是你没在用的显示器或耳机。",
-              "在“系统设置 > 声音 > 输入”里选同一个麦克风并说话，输入电平应该会跳动。用外接麦克风的话，把输入音量调高。"
+              "在“系统设置 > 声音 > 输入”里选同一个麦克风并说话，输入电平应该会跳动。用外接麦克风的话，把输入音量调高，并确认麦克风没有被手或衣服挡住。"
             ]
           },
           {
-            "heading": "说着说着自己停了",
+            "heading": "30 秒就自己停了",
             "body": [
-              "听写没有总时长限制，但 30 秒没检测到语音就会结束。这是设计如此，没有设置可以改。如果你经常要停下来想很久或者看资料，见最后一节。"
+              "听写没有总时长限制，但 30 秒没检测到语音就会结束。这是设计如此，没有设置可以改。",
+              "如果你明明还在说它也停了，说明 Mac 没把你的声音当成语音，静音计时照样走完。按上一节检查输入电平，靠近麦克风一点，用正常音量说话。",
+              "如果你经常要停下来想超过 30 秒，或者边看资料边说，见最后一节。"
+            ]
+          },
+          {
+            "heading": "说到一半老是断",
+            "body": [
+              "听写漏字、或者一句话没说完就停，通常是说话过程中有什么东西变了。",
+              "一是麦克风换了。“麦克风来源”设成“自动”时，由 Mac 自己挑输入设备。蓝牙耳机可能断开；AirPods 在你用 iPhone 或 iPad 播放内容时，会自动切到那台设备上。把“麦克风来源”固定成一个麦克风。想让 AirPods 留在 Mac 上，在“系统设置 > 蓝牙”里点 AirPods 旁边的信息按钮，把“连接到此 Mac”设成“上次连接到此 Mac 时”。",
+              "二是网络断了。有些听写在 Apple 的服务器上处理，不在你的 Mac 上，“键盘 > 听写”里会显示你属于哪种。如果需要联网，网络不稳就会打断听写。",
+              "三是噪音或回声。背景噪音和回声大的房间会让你的话更难分辨。Apple 建议这种环境下用耳机麦克风。"
             ]
           },
           {
             "heading": "识别不准",
             "body": [
               "确认听写语言和你说的语言一致：在“键盘 > 听写 > 语言”里添加，听写时用光标旁的语言标识切换。听写一次只用一种语言，所以中英混说的句子经常出错。能边说边判断语言的模型处理得更好，见[中英混合语音输入](chinese-english-dictation)。"
+            ]
+          },
+          {
+            "heading": "Dragon Dictate for Mac 找不到麦克风",
+            "body": [
+              "如果是 Dragon Dictate 或 Dragon Professional Individual for Mac 认不到麦克风，不用再找官方修复了。Nuance 在 2018 年 10 月停掉了 Mac 版 Dragon，之后再没发过更新，所以它从没适配过后来的 macOS 版本。",
+              "系统自带的听写和语音控制能覆盖 Dragon 的一部分功能，其余的见 [Dragon for Mac 替代品](dragon-mac-alternative)。"
             ]
           },
           {
@@ -3666,8 +3715,16 @@
         ],
         "faq": [
           {
-            "q": "Mac 听写为什么过一会儿就停？",
-            "a": "30 秒没检测到语音时会自动结束，没有设置可以修改。"
+            "q": "Mac 听写为什么 30 秒就停？",
+            "a": "30 秒没检测到语音时会自动结束，没有设置可以修改。如果你还在说它就停了，说明麦克风没收好你的声音，去声音设置里看输入电平。"
+          },
+          {
+            "q": "Mac 听写为什么老是断？",
+            "a": "常见原因是听写过程中麦克风换了（蓝牙耳机或 AirPods 断开、切到别的设备），听写在 Apple 服务器处理时网络断了，或者 Mac 听到的语音太少。先把麦克风来源固定下来。"
+          },
+          {
+            "q": "Mac 听写需要联网吗？",
+            "a": "有时需要。“系统设置 > 键盘 > 听写”会显示你的听写是在本机处理还是需要联网。"
           },
           {
             "q": "为什么听写选项不见了或是灰的？",
