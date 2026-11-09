@@ -1,5 +1,13 @@
 [
   {
+    "version": "v1.20.1",
+    "publishedAt": "2026-11-09T15:13:00Z",
+    "updatedAt": "2026-11-09T15:13:00Z",
+    "url": "https://github.com/hellotaotao/typealoud/releases/tag/v1.20.1",
+    "body": "## What's new\n- **Windows: \"Start with system\" now works.** Toggling autostart in Settings previously did nothing on Windows — it now actually registers the app to launch at login (via the Store's startup task, or the per-user Run key for direct installs).\n- Windows builds now show a clear dialog with a download link when the required WebView2 runtime is missing, instead of failing to start silently.\n\n## Improvements\n- macOS: fixed text insertion into apps that draw their own text (which Accessibility can't see into) — previously every dictation into such apps stopped at the \"Copy\" failure card. Tapping the hotkey on a failure card now always re-inserts the text, even into apps the built-in allowlist doesn't recognize.\n- Added Zed to the list of apps verified to accept inserted text correctly (including Chinese and emoji).\n- Windows: the packaged (Store) app now uses a proper unplated taskbar icon instead of one drawn on a colored plate.\n\n## Fixes\n- macOS: an unreadable focus state is no longer treated as a reason to block text insertion.\n\n## 中文\n\n## 新增\n- **Windows「开机自启」现在真的生效了。** 之前在设置里打开这个开关在 Windows 上毫无作用，现在会实际注册开机启动（商店版通过系统启动任务，直接下载版写入每用户 Run 注册表项）。\n- Windows 版启动时若检测到缺少必需的 WebView2 运行时，会弹出提示对话框并提供下载链接，而不是静默启动失败。\n\n## 改进\n- macOS：修复了向自行绘制文字（Accessibility 读取不到）的应用插入文本的问题——此前这类应用的每次听写都会停在「复制」失败卡片上。现在在失败卡片上再按一次热键，总能把文字插入进去，即使目标应用不在内置白名单里。\n- 新增 Zed 到已验证可正确接收插入文本（含中文、emoji）的应用列表。\n- Windows：打包（商店）版的任务栏图标现在使用正确的无底板图标，而不是画在彩色底板上的图标。\n\n## 修复\n- macOS：无法读取焦点状态时不再被当作阻止插入文本的理由。\n\n## Download / 下载\n\nPick the one installer for your platform:\n- **macOS** — the `.dmg`\n- **Windows** — the `_x64-setup.exe` (or `.msi`)\n- **Linux** — the `.AppImage` (portable), `.deb` (Debian/Ubuntu), or `.rpm` (Fedora/RHEL)\n\nThe remaining files (`*.sig`, `latest.json`, `*.app.tar.gz`) are used by the built-in auto-updater — you don't need to download them.\n\n（各平台任选一个安装：macOS 下 `.dmg`，Windows 下 `_x64-setup.exe` 或 `.msi`，Linux 下 `.AppImage`/`.deb`/`.rpm`。带 `.sig`、`latest.json`、`*.app.tar.gz` 的是自动更新用的，无需下载。）\n",
+    "notesStatus": "available"
+  },
+  {
     "version": "v1.20.0",
     "publishedAt": "2026-10-19T23:34:56Z",
     "updatedAt": "2026-10-19T23:34:56Z",
