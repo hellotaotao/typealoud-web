@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { createPolishHandler } from '../relay/handler.js';
-import { INSTALL_DAILY_CHARS, IP_REQUESTS_PER_MINUTE, MAX_TEXT_CHARS, costMicroUsd } from '../relay/limits.js';
-import { polishRequestBody } from '../relay/openai.js';
+import { BudgetExhausted, polishRequestBody, polishWithGateway } from '../relay/gateway.js';
+import { INSTALL_DAILY_CHARS, IP_REQUESTS_PER_MINUTE, MAX_TEXT_CHARS } from '../relay/limits.js';
 import { memoryStore } from '../relay/store.js';
 
 const INSTALL = 'a1b2c3d4-e5f6-7890-abcd-ef0123456789';
@@ -10,16 +10,14 @@ const USAGE = { prompt_tokens: 700, prompt_tokens_details: { cached_tokens: 0 },
 
 function setup(overrides = {}) {
   const store = memoryStore();
-  const calls = [], logs = [], alerts = [];
+  const calls = [], logs = [];
   const handle = createPolishHandler({
     store,
     polish: async (text) => {
       calls.push(text);
       return { text: `polished:${text}`, usage: USAGE };
     },
-    budgetMicroUsd: 50e6,
     ipSalt: 'salt',
-    alert: async (message) => alerts.push(message),
     log: (line) => logs.push(line),
     now: () => new Date('2026-10-13T03:04:05Z'),
     ...overrides,
@@ -29,17 +27,17 @@ function setup(overrides = {}) {
     headers: { 'Content-Type': 'application/json', 'x-forwarded-for': ip },
     body: typeof body === 'string' ? body : JSON.stringify(body),
   }));
-  return { store, calls, logs, alerts, handle, post };
+  return { store, calls, logs, handle, post };
 }
 
-test('polishes the text and charges the install, the address and the budget', async () => {
+test('polishes the text and charges the install and the address', async () => {
   const { store, post, calls } = setup();
   const response = await post({ text: '我们明天三点，不对，四点开会。', installId: INSTALL, appVersion: '1.20.0' });
   assert.equal(response.status, 200);
   assert.deepEqual(await response.json(), { text: 'polished:我们明天三点，不对，四点开会。' });
   assert.equal(calls.length, 1);
   assert.equal(store.values.get(`chars:install:${INSTALL}:2026-10-13`), 15);
-  assert.equal(store.values.get('spend:2026-10'), costMicroUsd(USAGE));
+  assert.equal([...store.values.keys()].filter((key) => key.startsWith('chars:ip:')).length, 1);
 });
 
 test('rejects malformed requests before spending anything', async () => {
@@ -72,13 +70,12 @@ test('one address is limited per minute across install ids', async () => {
   assert.deepEqual(await last.json(), { error: 'rate' });
 });
 
-test('a spent budget stops the service until next month', async () => {
-  const { store, post, calls } = setup();
-  store.values.set('spend:2026-10', 50e6);
+test('a used-up gateway budget answers 503 budget and costs the user no allowance', async () => {
+  const { store, post } = setup({ polish: async () => { throw new BudgetExhausted(); } });
   const response = await post({ text: '你好', installId: INSTALL });
   assert.equal(response.status, 503);
   assert.deepEqual(await response.json(), { error: 'budget' });
-  assert.equal(calls.length, 0);
+  assert.equal(store.values.has(`chars:install:${INSTALL}:2026-10-13`), false);
 });
 
 test('an upstream failure costs the user no allowance', async () => {
@@ -95,16 +92,6 @@ test('a store outage fails closed', async () => {
   assert.equal(calls.length, 0);
 });
 
-test('each budget threshold alerts once', async () => {
-  const { store, post, alerts } = setup();
-  store.values.set('spend:2026-10', 25e6 - 1);
-  await post({ text: '你好', installId: INSTALL });
-  await post({ text: '你好', installId: INSTALL });
-  assert.equal(alerts.length, 1);
-  assert.equal(alerts[0].percent, 50);
-  assert.equal(alerts[0].month, '2026-10');
-});
-
 test('neither logs nor stored keys contain the text or the address', async () => {
   const { store, post, logs } = setup();
   await post({ text: '绝密内容不能落盘', installId: INSTALL }, '198.51.100.23');
@@ -115,10 +102,28 @@ test('neither logs nor stored keys contain the text or the address', async () =>
   assert.equal(logs.at(-1).chars, 8);
 });
 
-test('the model request keeps reasoning off and bounds the output', () => {
+test('the model request keeps reasoning off, bounds the output and requires zero retention', () => {
   const body = polishRequestBody('好的，收到。');
+  assert.equal(body.model, 'openai/gpt-6-luna');
   assert.equal(body.reasoning_effort, 'none');
-  assert.equal(body.service_tier, 'fast');
   assert.equal(body.max_completion_tokens, 6 * 2 + 64);
   assert.equal(body.messages[1].content, '<转写>\n好的，收到。\n</转写>');
+  assert.deepEqual(body.providerOptions.gateway, { zeroDataRetention: true, only: ['openai'], serviceTier: 'fast' });
+});
+
+test('the gateway call sends the token and maps 402 to a used-up budget', async () => {
+  const seen = [];
+  const answer = (status, body) => async (url, init) => {
+    seen.push({ url, init });
+    return new Response(JSON.stringify(body), { status });
+  };
+  const ok = await polishWithGateway('你好', {
+    token: 'tok',
+    fetchImpl: answer(200, { choices: [{ message: { content: ' 你好。 ' } }], usage: USAGE }),
+  });
+  assert.deepEqual(ok, { text: '你好。', usage: USAGE });
+  assert.equal(seen[0].url, 'https://ai-gateway.vercel.sh/v1/chat/completions');
+  assert.equal(seen[0].init.headers.Authorization, 'Bearer tok');
+  await assert.rejects(polishWithGateway('你好', { token: 'tok', fetchImpl: answer(402, {}) }), BudgetExhausted);
+  await assert.rejects(polishWithGateway('你好', { token: 'tok', fetchImpl: answer(500, {}) }), /upstream 500/);
 });

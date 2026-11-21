@@ -2,8 +2,11 @@
 // Runs the relay's polish prompt (relay/prompt.js) over a set of dictation cases and prints each result with two
 // fidelity numbers, so a prompt or model change can be compared against the last one.
 //
-//   OPENAI_API_KEY=... node scripts/polish-eval/run.mjs [--cases file] [--prompt file]
-//                                                       [--model id] [--tier default|fast] [--runs n]
+//   AI_GATEWAY_API_KEY=... node scripts/polish-eval/run.mjs [--cases file] [--prompt file]
+//                                                           [--model id] [--tier default|fast] [--runs n]
+//
+// It calls AI Gateway the way the relay does (zero data retention, OpenAI only). Instead of an API key,
+// VERCEL_OIDC_TOKEN from `vercel env pull` works too; it lasts 12 hours.
 //
 // novelty: share of the output's letters and digits that are not in the input (rewording).
 // kept:    share of the input's letters and digits that survive (how much was deleted).
@@ -17,12 +20,12 @@ import { POLISH_PROMPT, wrapTranscript } from '../../relay/prompt.js';
 const here = dirname(fileURLToPath(import.meta.url));
 const args = Object.fromEntries(process.argv.slice(2).join(' ').split('--').filter(Boolean)
   .map((pair) => pair.trim().split(/\s+/)).map(([name, value]) => [name, value]));
-const key = process.env.OPENAI_API_KEY;
+const key = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
 if (!key) {
-  console.error('Set OPENAI_API_KEY.');
+  console.error('Set AI_GATEWAY_API_KEY or VERCEL_OIDC_TOKEN.');
   process.exit(1);
 }
-const model = args.model ?? 'gpt-6-luna';
+const model = args.model ?? 'openai/gpt-6-luna';
 const tier = args.tier ?? 'default';
 const runs = Number(args.runs ?? 1);
 const system = args.prompt ? readFileSync(args.prompt, 'utf8').trim() : POLISH_PROMPT;
@@ -44,13 +47,16 @@ function commonLength(a, b) {
 
 async function polish(text) {
   const started = Date.now();
-  const response = await fetch('https://api.openai.com/v1/chat/completions', {
+  const response = await fetch('https://ai-gateway.vercel.sh/v1/chat/completions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` },
     // Reasoning stays off: it adds seconds and its tokens are billed as output.
     body: JSON.stringify({
-      model, reasoning_effort: 'none', service_tier: tier,
+      model, reasoning_effort: 'none',
       messages: [{ role: 'system', content: system }, { role: 'user', content: wrapTranscript(text) }],
+      providerOptions: {
+        gateway: { zeroDataRetention: true, only: ['openai'], ...(tier === 'default' ? {} : { serviceTier: tier }) },
+      },
     }),
   });
   const body = await response.json();
