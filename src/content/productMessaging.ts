@@ -178,7 +178,7 @@ export const productMessaging: ProductMessaging = {
     },
     {
       label: '02',
-      title: 'Hold Ctrl+Shift',
+      title: 'Hold your dictation key',
       description: 'Press and hold the global recording shortcut from any app, with shortcut options available in settings.',
     },
     {
@@ -207,7 +207,7 @@ export const productMessaging: ProductMessaging = {
     {
       id: 'global-hotkey',
       title: 'Global hold-to-record hotkey',
-      description: 'Hold Ctrl+Shift to record, release to stop, and keep your hands near the keyboard.',
+      description: 'Hold one key to record (Right Command by default on a Mac), release to stop, and keep your hands on the keyboard.',
     },
     {
       id: 'active-app-insertion',

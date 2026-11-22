@@ -15,7 +15,7 @@ const workflowSteps = [
   {
     number: '01',
     title: 'Hold',
-    detail: 'Press Ctrl+Shift in the app where you want to write.',
+    detail: 'Hold your dictation key in the app where you want to write: Right Command by default on a Mac, Ctrl+Win on Windows.',
   },
   {
     number: '02',
@@ -30,7 +30,7 @@ const workflowSteps = [
 ] as const
 
 const featuredCapabilities = [
-  { id: 'global-hotkey', title: 'Global hold-to-record hotkey', description: 'Hold Ctrl+Shift to record, release to stop, and keep your hands near the keyboard.' },
+  { id: 'global-hotkey', title: 'Global hold-to-record hotkey', description: 'Hold one key to record (Right Command by default on a Mac), release to stop, and keep your hands on the keyboard.' },
   { id: 'active-app-insertion', title: 'Active-app text insertion', description: 'Transcribed text is sent back to the app and text field that already has your cursor.' },
 ] as const
 

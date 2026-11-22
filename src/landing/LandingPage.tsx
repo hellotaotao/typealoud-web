@@ -132,7 +132,7 @@ export default function LandingPage({ page, locale = 'en' }: { page: LandingPage
           <section className="landing-cta" aria-labelledby="landing-cta-title">
             {isArticle && <p className="landing-cta-label">{zh ? '关于 TypeAloud' : 'About TypeAloud'}</p>}
             <h2 id="landing-cta-title">{zh ? 'TypeAloud：免费的 Mac 语音输入，在本机转写。' : 'TypeAloud: free dictation for Mac, transcribed on your Mac.'}</h2>
-            <p>{isArticle ? (zh ? '这篇文章由 TypeAloud 团队撰写。TypeAloud 是我们做的开源应用：按住 Ctrl+Shift 说话，松开后文字出现在光标处，不限字数，无需账号。' : 'This page was written by the team behind TypeAloud, our open-source dictation app: hold Ctrl+Shift, speak, release, and the text appears at your cursor. No word limit, no account.') : (zh ? '按住 Ctrl+Shift 说话，松开后文字出现在光标处。不限字数，无需账号，开源。' : 'Hold Ctrl+Shift, speak, release, and the text appears at your cursor. No word limit, no account, open source.')}</p>
+            <p>{isArticle ? (zh ? '这篇文章由 TypeAloud 团队撰写。TypeAloud 是我们做的开源应用：按住一个键说话，松开后文字出现在光标处，不限字数，无需账号。' : 'This page was written by the team behind TypeAloud, our open-source dictation app: hold one key, speak, release, and the text appears at your cursor. No word limit, no account.') : (zh ? '按住一个键说话，松开后文字出现在光标处。不限字数，无需账号，开源。' : 'Hold one key, speak, release, and the text appears at your cursor. No word limit, no account, open source.')}</p>
             <DownloadButton locale={locale} />
           </section>
         </div>

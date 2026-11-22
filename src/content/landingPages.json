@@ -867,7 +867,7 @@
           {
             "heading": "The same hold, speak, release habit",
             "body": [
-              "Hold Ctrl+Shift in whatever app you are writing in, speak, and release. The text lands at your cursor: in your editor, your terminal, Slack, a browser field. Escape cancels a recording.",
+              "Hold your dictation key (Right Command by default on a Mac) in whatever app you are writing in, speak, and release. The text lands at your cursor: in your editor, your terminal, Slack, a browser field. Escape cancels a recording.",
               "Finished transcripts are kept in History on your device. If a transcription fails and the audio was saved, you can retry it."
             ]
           },
@@ -941,7 +941,7 @@
           {
             "heading": "一样是按住、说话、松开",
             "body": [
-              "在正在写字的应用里按住 Ctrl+Shift，说话，松开，文字就出现在光标处：编辑器、终端、微信、飞书、浏览器输入框都一样。按 Esc 可以取消录音。",
+              "在正在写字的应用里按住听写键（Mac 上默认是右 Command），说话，松开，文字就出现在光标处：编辑器、终端、微信、飞书、浏览器输入框都一样。按 Esc 可以取消录音。",
               "完成的转写会保存在本机的历史记录里。如果转写失败而录音已保存，可以重新转写。"
             ]
           },
@@ -1022,7 +1022,7 @@
           {
             "heading": "What you keep, what you give up",
             "body": [
-              "The core habit is the same in both apps: hold a shortcut, talk, and the text appears in the app you were already using. In TypeAloud the shortcut is Ctrl+Shift and the text is inserted at your cursor.",
+              "The core habit is the same in both apps: hold a shortcut, talk, and the text appears in the app you were already using. In TypeAloud the default shortcut is Right Command on a Mac (Ctrl+Win on Windows), and the text is inserted at your cursor.",
               "What Typeless adds is editing. It removes filler words, tidies repetition and formats lists for you. TypeAloud does not rewrite your speech, so what you get is a transcript of what you actually said."
             ]
           },
@@ -1095,7 +1095,7 @@
           {
             "heading": "哪些一样，哪些没有",
             "body": [
-              "两个应用最核心的用法是一样的：按住快捷键说话，文字出现在你正在用的应用里。TypeAloud 的快捷键是 Ctrl+Shift，文字直接插入光标处。",
+              "两个应用最核心的用法是一样的：按住快捷键说话，文字出现在你正在用的应用里。TypeAloud 在 Mac 上默认用右 Command（Windows 上是 Ctrl+Win），文字直接插入光标处。",
               "Typeless 多出来的是编辑：它会去掉口头禅，整理重复，自动排成列表。TypeAloud 不改写你说的话，得到的就是你实际说出的内容。"
             ]
           },
@@ -1329,7 +1329,7 @@
           {
             "heading": "Same idea, different speech model",
             "body": [
-              "Both apps keep your voice on your Mac: hold a shortcut, speak, and the text lands at your cursor. In TypeAloud the shortcut is Ctrl+Shift, and a double tap records hands-free until the next press.",
+              "Both apps keep your voice on your Mac: hold a shortcut, speak, and the text lands at your cursor. In TypeAloud the default shortcut is Right Command, and a double tap records hands-free until the next press.",
               "The difference is the model underneath. VoiceInk lets you choose from many local models, including Parakeet, [Whisper](whisper-chinese-english), Nemotron and SenseVoice, and check each one's languages. TypeAloud ships a single default tuned for Chinese, English and both mixed: Qwen3-ASR, which detects the language from the audio and handles a sentence that moves between Chinese and English without a setting change."
             ]
           },
@@ -1390,7 +1390,7 @@
           {
             "heading": "思路一样，语音模型不同",
             "body": [
-              "两个应用都让你的声音留在 Mac 上：按住快捷键，说话，文字出现在光标处。TypeAloud 的快捷键是 Ctrl+Shift，双击则进入免按住录音，再按一下结束。",
+              "两个应用都让你的声音留在 Mac 上：按住快捷键，说话，文字出现在光标处。TypeAloud 默认用右 Command，双击则进入免按住录音，再按一下结束。",
               "区别在底层模型。VoiceInk 让你从很多本地模型里选，包括 Parakeet、[Whisper](whisper-chinese-english)、Nemotron 和 SenseVoice，每个模型支持的语言要自己对照。TypeAloud 只带一个为中文、英文和中英混说调好的默认模型：千问 Qwen3-ASR，它直接从声音里判断语言，一句话在中英文之间来回切换也不用改设置。"
             ]
           },
@@ -1584,7 +1584,7 @@
           "rows": [
             ["Built for", "Dictating into the app you are using", "Transcribing audio and video files, and meetings"],
             ["Price", "Free", "Free version; Pro €64 one-time"],
-            ["System-wide dictation", "Included: hold Ctrl+Shift, release, text at your cursor", "Dictation types into the focused text field from a shortcut (version sold on macwhisper.com, not the App Store one); Pro adds Global, a floating window"],
+            ["System-wide dictation", "Included: hold one key, release, text at your cursor", "Dictation types into the focused text field from a shortcut (version sold on macwhisper.com, not the App Store one); Pro adds Global, a floating window"],
             ["Local speech model", "Qwen3-ASR 0.6B, or 1.7B as an option", "Whisper, Parakeet and other models"],
             ["Source code", "Open source (GPL-3.0)", "Closed source"],
             ["Subtitles and speaker labels", "No", "Yes"],
@@ -1596,7 +1596,7 @@
             "heading": "A transcription tool first",
             "body": [
               "MacWhisper's home screen is a drop zone for files, and that is where its strengths are. It also has dictation: a Dictation shortcut that types into the focused text field, available in the version sold on its website but not the App Store version, and, on Pro, Global, a floating window that transcribes over your apps.",
-              "TypeAloud has no window to manage while you dictate. Hold Ctrl+Shift where you are writing, speak, release, and the text is inserted at the cursor. A small prompt with a waveform shows it is listening. Double-tap the shortcut to record hands-free."
+              "TypeAloud has no window to manage while you dictate. Hold your dictation key (Right Command by default on a Mac) where you are writing, speak, release, and the text is inserted at the cursor. A small prompt with a waveform shows it is listening. Double-tap the shortcut to record hands-free."
             ]
           },
           {
@@ -1649,7 +1649,7 @@
           "rows": [
             ["定位", "在当前应用里听写输入", "转写音视频文件和会议"],
             ["价格", "免费", "有免费版；Pro 一次性 64 欧元"],
-            ["系统级听写", "包含：按住 Ctrl+Shift，松开，文字出现在光标处", "Dictation 用快捷键直接输入到当前输入框（官网销售的版本才有，App Store 版没有）；Pro 另有 Global 浮窗"],
+            ["系统级听写", "包含：按住一个键，松开，文字出现在光标处", "Dictation 用快捷键直接输入到当前输入框（官网销售的版本才有，App Store 版没有）；Pro 另有 Global 浮窗"],
             ["本地语音模型", "Qwen3-ASR 0.6B，可选 1.7B", "Whisper、Parakeet 等模型"],
             ["源代码", "开源（GPL-3.0）", "闭源"],
             ["字幕与说话人区分", "没有", "有"],
@@ -1661,7 +1661,7 @@
             "heading": "首先是转写工具",
             "body": [
               "MacWhisper 打开就是一个拖放文件的界面，它的长处也在这里。它也有听写：一个是 Dictation，用快捷键直接输入到当前输入框，官网销售的版本才有，App Store 版没有；另一个是 Pro 的 Global，在其他应用上方的浮窗里转写。",
-              "TypeAloud 听写时没有窗口要管。在正在写字的地方按住 Ctrl+Shift，说话，松开，文字就插入光标处，只有一个带波形的小提示告诉你它在听。双击快捷键可以免按住连续录音。"
+              "TypeAloud 听写时没有窗口要管。在正在写字的地方按住听写键（Mac 上默认是右 Command），说话，松开，文字就插入光标处，只有一个带波形的小提示告诉你它在听。双击快捷键可以免按住连续录音。"
             ]
           },
           {
@@ -1877,7 +1877,7 @@
           {
             "heading": "Same habit, no upload",
             "body": [
-              "Hold Ctrl+Shift in any app, speak and release; the text is inserted at your cursor. In local mode the audio is processed on your Mac and never uploaded, so there is no server-side copy to worry about."
+              "Hold your dictation key (Right Command by default on a Mac) in any app, speak and release; the text is inserted at your cursor. In local mode the audio is processed on your Mac and never uploaded, so there is no server-side copy to worry about."
             ]
           },
           {
@@ -1898,7 +1898,7 @@
           },
           {
             "q": "Do I have to replace my input method?",
-            "a": "No. TypeAloud is not an input method. It inserts the finished text at your cursor, so you keep typing with whatever keyboard or IME you use and hold Ctrl+Shift when you want to speak."
+            "a": "No. TypeAloud is not an input method. It inserts the finished text at your cursor, so you keep typing with whatever keyboard or IME you use and hold your dictation key (Right Command by default on a Mac) when you want to speak."
           },
           {
             "q": "Which Macs can run TypeAloud?",
@@ -1936,7 +1936,7 @@
           {
             "heading": "一样的用法，不用上传",
             "body": [
-              "在任意应用里按住 Ctrl+Shift，说话，松开，文字插入光标处。本地模式下音频在你的 Mac 上处理，从不上传，服务器上也就没有副本可担心。"
+              "在任意应用里按住听写键（Mac 上默认是右 Command），说话，松开，文字插入光标处。本地模式下音频在你的 Mac 上处理，从不上传，服务器上也就没有副本可担心。"
             ]
           },
           {
@@ -1957,7 +1957,7 @@
           },
           {
             "q": "用 TypeAloud 要换掉现在的输入法吗？",
-            "a": "不用。TypeAloud 不是输入法，它把转写好的文字直接插入光标处。你照样用搜狗、系统拼音、Rime 或任何输入法打字，想说话时按住 Ctrl+Shift 就行。"
+            "a": "不用。TypeAloud 不是输入法，它把转写好的文字直接插入光标处。你照样用搜狗、系统拼音、Rime 或任何输入法打字，想说话时按住听写键（Mac 上默认是右 Command） 就行。"
           },
           {
             "q": "哪些 Mac 可以运行 TypeAloud？",
@@ -1982,7 +1982,7 @@
           "columns": ["", "TypeAloud", "macOS Dictation"],
           "rows": [
             ["Price", "Free, open source", "Built in"],
-            ["How you start and stop", "Hold Ctrl+Shift and release, or double-tap for hands-free", "Press the Dictation key or shortcut; ends on its own after 30 seconds without speech"],
+            ["How you start and stop", "Hold Right Command (or a key you pick) and release, or double-tap for hands-free", "Press the Dictation key or shortcut; ends on its own after 30 seconds without speech"],
             ["Languages in one sentence", "Detected automatically, including Chinese–English mixing", "One selected dictation language at a time"],
             ["Speech model", "Qwen3-ASR, on your Mac", "Apple's, on-device on Apple Silicon"],
             ["History of what you said", "Kept on your Mac, with retry if a transcription fails", "No"],
@@ -2050,7 +2050,7 @@
           "columns": ["", "TypeAloud", "macOS 听写"],
           "rows": [
             ["价格", "免费、开源", "系统自带"],
-            ["怎么开始和结束", "按住 Ctrl+Shift，松开结束；双击可免按住", "按听写键或快捷键；30 秒没检测到语音自动结束"],
+            ["怎么开始和结束", "按住右 Command（也可以换键），松开结束；双击可免按住", "按听写键或快捷键；30 秒没检测到语音自动结束"],
             ["一句话里的语言", "自动识别，支持中英混说", "一次一种选定的听写语言"],
             ["语音模型", "Qwen3-ASR，在你的 Mac 上", "苹果的模型，Apple Silicon 上在本机"],
             ["说过的话有没有记录", "保存在本机，转写失败可重试", "没有"],
@@ -2128,7 +2128,7 @@
           {
             "heading": "Dictate into any app",
             "body": [
-              "Hold Ctrl+Shift where you are writing, speak, and release. The text is inserted at the cursor in Mail, Word, a browser or a terminal. Double-tap the shortcut to dictate hands-free until you press it again."
+              "Hold your dictation key (Right Command by default on a Mac) where you are writing, speak, and release. The text is inserted at the cursor in Mail, Word, a browser or a terminal. Double-tap the shortcut to dictate hands-free until you press it again."
             ]
           },
           {
@@ -2184,7 +2184,7 @@
           {
             "heading": "在任意应用里听写",
             "body": [
-              "在正在写字的地方按住 Ctrl+Shift，说话，松开，文字就插入光标处，邮件、Word、浏览器、终端都一样。双击快捷键可以免按住听写，直到你再按一次。"
+              "在正在写字的地方按住听写键（Mac 上默认是右 Command），说话，松开，文字就插入光标处，邮件、Word、浏览器、终端都一样。双击快捷键可以免按住听写，直到你再按一次。"
             ]
           },
           {
@@ -2283,7 +2283,7 @@
           },
           {
             "q": "Do I have to replace my input method?",
-            "a": "No. TypeAloud is not an input method. It inserts the finished text at your cursor, so you keep typing with whatever keyboard or IME you use and hold Ctrl+Shift when you want to speak."
+            "a": "No. TypeAloud is not an input method. It inserts the finished text at your cursor, so you keep typing with whatever keyboard or IME you use and hold your dictation key (Right Command by default on a Mac) when you want to speak."
           },
           {
             "q": "Which Macs can run TypeAloud?",
@@ -2346,7 +2346,7 @@
           },
           {
             "q": "用 TypeAloud 要换掉现在的输入法吗？",
-            "a": "不用。TypeAloud 不是输入法，它把转写好的文字直接插入光标处。你照样用搜狗、系统拼音、Rime 或任何输入法打字，想说话时按住 Ctrl+Shift 就行。"
+            "a": "不用。TypeAloud 不是输入法，它把转写好的文字直接插入光标处。你照样用搜狗、系统拼音、Rime 或任何输入法打字，想说话时按住听写键（Mac 上默认是右 Command） 就行。"
           },
           {
             "q": "哪些 Mac 可以运行 TypeAloud？",
@@ -2375,7 +2375,7 @@
           "columns": ["", "TypeAloud", "Doubao Input"],
           "rows": [
             ["What it is", "A dictation app that works alongside any input method", "A full pinyin input method with voice input built in"],
-            ["How you dictate", "Hold Ctrl+Shift in any app, release to insert", "Hold or double-tap Option"],
+            ["How you dictate", "Hold one key (Right Command by default) in any app, release to insert", "Hold or double-tap Option"],
             ["Need to switch input method", "No", "Yes, Doubao Input has to be the active input method"],
             ["Where speech is transcribed", "On your Mac, in local mode", "On ByteDance's servers"],
             ["Source code", "Open source (GPL-3.0)", "Closed source"],
@@ -2386,7 +2386,7 @@
           {
             "heading": "Keep the input method you like",
             "body": [
-              "Many people have a pinyin setup they are used to, whether that is the system keyboard, Sogou or Rime. TypeAloud is not an input method, so it never asks you to switch. Hold Ctrl+Shift, speak, release, and the text is inserted at the cursor."
+              "Many people have a pinyin setup they are used to, whether that is the system keyboard, Sogou or Rime. TypeAloud is not an input method, so it never asks you to switch. Hold your dictation key (Right Command by default on a Mac), speak, release, and the text is inserted at the cursor."
             ]
           },
           {
@@ -2405,7 +2405,7 @@
         "faq": [
           {
             "q": "Do I have to replace my input method?",
-            "a": "No. TypeAloud is not an input method. It inserts the finished text at your cursor, so you keep typing with whatever keyboard or IME you use and hold Ctrl+Shift when you want to speak."
+            "a": "No. TypeAloud is not an input method. It inserts the finished text at your cursor, so you keep typing with whatever keyboard or IME you use and hold your dictation key (Right Command by default on a Mac) when you want to speak."
           },
           {
             "q": "Does my audio leave my Mac?",
@@ -2441,7 +2441,7 @@
           "columns": ["", "TypeAloud", "豆包输入法"],
           "rows": [
             ["是什么", "可以和任何输入法一起用的听写应用", "完整的拼音输入法，内置语音输入"],
-            ["怎么语音输入", "在任意应用里按住 Ctrl+Shift，松开即插入", "长按或双击 Option"],
+            ["怎么语音输入", "在任意应用里按住一个键（默认右 Command），松开即插入", "长按或双击 Option"],
             ["要不要切换输入法", "不用", "要，豆包输入法必须是当前输入法"],
             ["语音在哪里转写", "本地模式下在你的 Mac 上", "在字节跳动的服务器上"],
             ["源代码", "开源（GPL-3.0）", "闭源"],
@@ -2452,7 +2452,7 @@
           {
             "heading": "继续用你习惯的输入法",
             "body": [
-              "很多人有用惯了的拼音输入法，系统自带、搜狗或者 Rime。TypeAloud 不是输入法，从来不要求你切换。按住 Ctrl+Shift，说话，松开，文字就插入光标处。"
+              "很多人有用惯了的拼音输入法，系统自带、搜狗或者 Rime。TypeAloud 不是输入法，从来不要求你切换。按住听写键（Mac 上默认是右 Command），说话，松开，文字就插入光标处。"
             ]
           },
           {
@@ -2471,7 +2471,7 @@
         "faq": [
           {
             "q": "用 TypeAloud 要换掉现在的输入法吗？",
-            "a": "不用。TypeAloud 不是输入法，它把转写好的文字直接插入光标处。你照样用搜狗、系统拼音、Rime 或任何输入法打字，想说话时按住 Ctrl+Shift 就行。"
+            "a": "不用。TypeAloud 不是输入法，它把转写好的文字直接插入光标处。你照样用搜狗、系统拼音、Rime 或任何输入法打字，想说话时按住听写键（Mac 上默认是右 Command） 就行。"
           },
           {
             "q": "我的录音会离开 Mac 吗？",
@@ -2512,7 +2512,7 @@
           "columns": ["", "TypeAloud", "WeChat Input"],
           "rows": [
             ["What it is", "A dictation app that works alongside any input method", "A full pinyin input method with voice input built in"],
-            ["How you dictate", "Hold Ctrl+Shift in any app, release to insert", "Hold fn and release, or fn+Space for hands-free"],
+            ["How you dictate", "Hold one key (Right Command by default) in any app, release to insert", "Hold fn and release, or fn+Space for hands-free"],
             ["Need to switch input method", "No", "Yes, WeChat Input has to be the active input method"],
             ["Where speech is transcribed", "On your Mac, in local mode", "On Tencent's servers"],
             ["Source code", "Open source (GPL-3.0)", "Closed source"],
@@ -2523,13 +2523,13 @@
           {
             "heading": "The same gesture, without the upload",
             "body": [
-              "Both apps use hold to talk, release to finish. With TypeAloud the shortcut is Ctrl+Shift, and in local mode the audio is processed on your Mac by Qwen3-ASR. Nothing goes to a server, and it works offline."
+              "Both apps use hold to talk, release to finish. With TypeAloud the default shortcut is Right Command, and in local mode the audio is processed on your Mac by Qwen3-ASR. Nothing goes to a server, and it works offline."
             ]
           },
           {
             "heading": "Works next to any input method",
             "body": [
-              "WeChat Input's voice typing belongs to WeChat Input, so it has to be your active keyboard. TypeAloud is not an input method. Keep typing with the system pinyin, Sogou or Rime, and hold Ctrl+Shift when you want to speak."
+              "WeChat Input's voice typing belongs to WeChat Input, so it has to be your active keyboard. TypeAloud is not an input method. Keep typing with the system pinyin, Sogou or Rime, and hold your dictation key (Right Command by default on a Mac) when you want to speak."
             ]
           },
           {
@@ -2542,7 +2542,7 @@
         "faq": [
           {
             "q": "Do I have to replace my input method?",
-            "a": "No. TypeAloud is not an input method. It inserts the finished text at your cursor, so you keep typing with whatever keyboard or IME you use and hold Ctrl+Shift when you want to speak."
+            "a": "No. TypeAloud is not an input method. It inserts the finished text at your cursor, so you keep typing with whatever keyboard or IME you use and hold your dictation key (Right Command by default on a Mac) when you want to speak."
           },
           {
             "q": "Does my audio leave my Mac?",
@@ -2578,7 +2578,7 @@
           "columns": ["", "TypeAloud", "微信输入法"],
           "rows": [
             ["是什么", "可以和任何输入法一起用的听写应用", "完整的拼音输入法，内置语音输入"],
-            ["怎么语音输入", "在任意应用里按住 Ctrl+Shift，松开即插入", "按住 fn 说话松开结束，或 fn+空格免提"],
+            ["怎么语音输入", "在任意应用里按住一个键（默认右 Command），松开即插入", "按住 fn 说话松开结束，或 fn+空格免提"],
             ["要不要切换输入法", "不用", "要，微信输入法必须是当前输入法"],
             ["语音在哪里转写", "本地模式下在你的 Mac 上", "在腾讯的服务器上"],
             ["源代码", "开源（GPL-3.0）", "闭源"],
@@ -2589,13 +2589,13 @@
           {
             "heading": "一样的手势，不用上传",
             "body": [
-              "两个应用都是按住说话、松开结束。TypeAloud 的快捷键是 Ctrl+Shift，本地模式下音频由你 Mac 上的 Qwen3-ASR 处理，不发往任何服务器，断网也能用。"
+              "两个应用都是按住说话、松开结束。TypeAloud 默认用右 Command，本地模式下音频由你 Mac 上的 Qwen3-ASR 处理，不发往任何服务器，断网也能用。"
             ]
           },
           {
             "heading": "和任何输入法一起用",
             "body": [
-              "微信输入法的语音功能属于微信输入法，用的时候它得是当前输入法。TypeAloud 不是输入法，你照样用系统拼音、搜狗或 Rime 打字，想说话时按住 Ctrl+Shift。"
+              "微信输入法的语音功能属于微信输入法，用的时候它得是当前输入法。TypeAloud 不是输入法，你照样用系统拼音、搜狗或 Rime 打字，想说话时按住听写键（Mac 上默认是右 Command）。"
             ]
           },
           {
@@ -2608,7 +2608,7 @@
         "faq": [
           {
             "q": "用 TypeAloud 要换掉现在的输入法吗？",
-            "a": "不用。TypeAloud 不是输入法，它把转写好的文字直接插入光标处。你照样用搜狗、系统拼音、Rime 或任何输入法打字，想说话时按住 Ctrl+Shift 就行。"
+            "a": "不用。TypeAloud 不是输入法，它把转写好的文字直接插入光标处。你照样用搜狗、系统拼音、Rime 或任何输入法打字，想说话时按住听写键（Mac 上默认是右 Command） 就行。"
           },
           {
             "q": "我的录音会离开 Mac 吗？",
@@ -2649,7 +2649,7 @@
           "columns": ["", "TypeAloud", "iFlytek Input"],
           "rows": [
             ["What it is", "A dictation app that works alongside any input method", "A full pinyin input method with voice input built in"],
-            ["How you dictate", "Hold Ctrl+Shift in any app, release to insert", "Voice input inside the iFlytek keyboard"],
+            ["How you dictate", "Hold one key (Right Command by default) in any app, release to insert", "Voice input inside the iFlytek keyboard"],
             ["Need to switch input method", "No", "Yes, iFlytek Input has to be the active input method"],
             ["Where speech is transcribed", "On your Mac, in local mode", "iFlytek's cloud; an offline voice pack is available"],
             ["Source code", "Open source (GPL-3.0)", "Closed source"],
@@ -2660,7 +2660,7 @@
           {
             "heading": "Dictation that is not tied to a keyboard",
             "body": [
-              "To use iFlytek's voice input you switch to iFlytek Input. TypeAloud runs beside whatever you type with. Hold Ctrl+Shift, speak, release, and the text is inserted at the cursor, in any app."
+              "To use iFlytek's voice input you switch to iFlytek Input. TypeAloud runs beside whatever you type with. Hold your dictation key (Right Command by default on a Mac), speak, release, and the text is inserted at the cursor, in any app."
             ]
           },
           {
@@ -2679,7 +2679,7 @@
         "faq": [
           {
             "q": "Do I have to replace my input method?",
-            "a": "No. TypeAloud is not an input method. It inserts the finished text at your cursor, so you keep typing with whatever keyboard or IME you use and hold Ctrl+Shift when you want to speak."
+            "a": "No. TypeAloud is not an input method. It inserts the finished text at your cursor, so you keep typing with whatever keyboard or IME you use and hold your dictation key (Right Command by default on a Mac) when you want to speak."
           },
           {
             "q": "Does my audio leave my Mac?",
@@ -2711,7 +2711,7 @@
           "columns": ["", "TypeAloud", "讯飞输入法"],
           "rows": [
             ["是什么", "可以和任何输入法一起用的听写应用", "完整的拼音输入法，内置语音输入"],
-            ["怎么语音输入", "在任意应用里按住 Ctrl+Shift，松开即插入", "在讯飞输入法里使用语音输入"],
+            ["怎么语音输入", "在任意应用里按住一个键（默认右 Command），松开即插入", "在讯飞输入法里使用语音输入"],
             ["要不要切换输入法", "不用", "要，讯飞输入法必须是当前输入法"],
             ["语音在哪里转写", "本地模式下在你的 Mac 上", "讯飞云端；可下载离线语音包"],
             ["源代码", "开源（GPL-3.0）", "闭源"],
@@ -2722,7 +2722,7 @@
           {
             "heading": "听写不和某个输入法绑在一起",
             "body": [
-              "要用讯飞的语音输入，得先切换到讯飞输入法。TypeAloud 在你用的任何输入法旁边运行。按住 Ctrl+Shift，说话，松开，文字插入光标处，任意应用都行。"
+              "要用讯飞的语音输入，得先切换到讯飞输入法。TypeAloud 在你用的任何输入法旁边运行。按住听写键（Mac 上默认是右 Command），说话，松开，文字插入光标处，任意应用都行。"
             ]
           },
           {
@@ -2741,7 +2741,7 @@
         "faq": [
           {
             "q": "用 TypeAloud 要换掉现在的输入法吗？",
-            "a": "不用。TypeAloud 不是输入法，它把转写好的文字直接插入光标处。你照样用搜狗、系统拼音、Rime 或任何输入法打字，想说话时按住 Ctrl+Shift 就行。"
+            "a": "不用。TypeAloud 不是输入法，它把转写好的文字直接插入光标处。你照样用搜狗、系统拼音、Rime 或任何输入法打字，想说话时按住听写键（Mac 上默认是右 Command） 就行。"
           },
           {
             "q": "我的录音会离开 Mac 吗？",
