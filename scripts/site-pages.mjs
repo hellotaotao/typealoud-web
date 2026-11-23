@@ -9,7 +9,7 @@ const metadata = {
       description: 'Offline transcription on your Mac: local transcription needs no account, API key or subscription. Cloud transcription is optional with your own API key.',
     },
     updates: {
-      title: 'TypeAloud product updates — Milestones in local transcription',
+      title: 'TypeAloud product highlights — Milestones in local transcription',
       description: 'Explore the important changes in TypeAloud: local transcription, live dictation, recording recovery and model choice, with the versions that introduced them.',
     },
     changelog: {

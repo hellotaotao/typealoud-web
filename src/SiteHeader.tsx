@@ -17,7 +17,7 @@ export default function SiteHeader({ locale, page }: { locale: Locale; page: Pag
         <a href={`${home}#privacy`}>{t('Privacy')}</a>
         <a href={`${home}#workflow`}>{t('How it works')}</a>
         <a href={`${home}#product`}>{t('Product')}</a>
-        <a href={localizedPath('updates', locale)} aria-current={page === 'updates' ? 'page' : page === 'changelog' ? 'true' : undefined}>{t('Updates')}</a>
+        <a href={localizedPath('updates', locale)} aria-current={page === 'updates' ? 'page' : page === 'changelog' ? 'true' : undefined}>{t('Changelog')}</a>
       </nav>
       <LanguageSwitcher locale={locale} page={page} />
       <DownloadButton locale={locale} />
