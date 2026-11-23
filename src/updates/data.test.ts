@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { releases, milestones, getMilestones, getReleaseTranslation, releaseAnchor, releaseHref } from './data'
+import { releases, milestones, getMilestones, getReleaseTranslation, releaseAnchor, releaseHeadlines, releaseHref, type Release } from './data'
 
 describe('release evidence and milestone history', () => {
   it('has ordered, unique published versions with explicit gaps', () => {
@@ -54,5 +54,11 @@ describe('localized release data', () => {
     expect(getReleaseTranslation('1.0.66')).toContain('Whisper-1')
     expect(getReleaseTranslation('1.0.67')).toContain('gpt-4o-mini-transcribe')
     expect(getReleaseTranslation('v999.0.0')).toBeUndefined()
+  })
+  it('takes release headlines from bold leads in the reader\'s language and skips platform labels', () => {
+    const release: Release = { version: 'v9.0.0', publishedAt: '2026-01-01T00:00:00Z', updatedAt: '2026-01-01T00:00:00Z', url: '', notesStatus: 'available', body: '## What\'s new\n- **Faster setup.** Details.\n- **Windows**: a fix.\n- Plain bullet.\n## 中文\n- **更快的设置。** 细节。\n## Download / 下载\n- **macOS dmg**' }
+    expect(releaseHeadlines(release)).toEqual(['Faster setup'])
+    expect(releaseHeadlines(release, 'zh')).toEqual(['更快的设置'])
+    expect(releaseHeadlines({ ...release, notesStatus: 'missing' })).toEqual([])
   })
 })

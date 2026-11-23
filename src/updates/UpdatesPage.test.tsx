@@ -9,6 +9,7 @@ vi.mock('./data', () => ({
   milestones: [{ id: 'capture', title: 'Capture that keeps up', category: 'Dictation', summary: 'A better recording path.', introducedVersion: '1.2.0', details: ['Capture on your device.'], scope: 'macOS', evolution: [{ version: '1.2.1', description: 'Improved recovery.' }] }],
   getMilestones: (locale: string) => [{ id: 'capture', title: locale === 'zh' ? '跟得上你的录音' : 'Capture that keeps up', category: locale === 'zh' ? '听写' : 'Dictation', summary: 'A better recording path.', introducedVersion: '1.2.0', details: ['Capture on your device.'], scope: 'macOS', evolution: [{ version: '1.2.1', description: 'Improved recovery.' }] }],
   getReleaseTranslation: () => undefined,
+  releaseHeadlines: (release: { version: string }, locale: string) => release.version === '1.2.1' ? [locale === 'zh' ? '更好的录音' : 'Better capture'] : [],
   releaseAnchor: (version: string) => `v${version}`,
   releaseHref: (version: string, locale: string) => `${locale === 'zh' ? '/zh' : ''}/changelog#v${version}`,
 }))
@@ -26,6 +27,10 @@ describe('UpdatesPage', () => {
     expect(html).toContain('macOS')
     expect(html).toContain('href="/changelog"')
     expect(html).toContain('aria-current="page"')
+    expect(html).toContain('Latest release')
+    expect(html).toContain('Better capture')
+    expect(html).toContain('href="#capture"')
+    expect(html).toContain('1 later improvement')
   })
 
   it('renders every release body in HTML, grouped by year and minor, with explicit missing and legacy notices', () => {
@@ -51,6 +56,8 @@ describe('Chinese updates pages', () => {
     expect(html).toContain('src="/typealoud-icon.png"')
     expect(html).toContain('href="/updates"')
     expect(html).not.toContain('First introduced')
+    expect(html).toContain('最新版本')
+    expect(html).toContain('更好的录音')
   })
   it('localizes archive labels, missing notes and legacy notices while retaining sources', () => {
     const html = renderToStaticMarkup(<UpdatesPage page="changelog" locale="zh" />)
