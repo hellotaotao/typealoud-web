@@ -118,7 +118,7 @@ describe('localized launch page', () => {
 
   it('translates every section and navigation into Chinese', () => {
     const html = renderToStaticMarkup(<App locale="zh" />)
-    for (const text of ['跳到正文', '按住，说话，松开。', '随时待命，不打扰工作。', '你的话，留在你的设备上。', '适配你的桌面平台。', '主要测试平台', 'Windows', 'Linux', '本地转写，无需云端。', '产品更新', '本地模式无需注册或 API key', '重构这个函数，保留原来的 error handling。']) {
+    for (const text of ['跳到正文', '按住，说话，松开。', '随时待命，不打扰工作。', '你的话，留在你的设备上。', '适配你的桌面平台。', '主要测试平台', 'Windows', 'Linux', '本地转写，无需云端。', '更新日志', '本地模式无需注册或 API key', '重构这个函数，保留原来的 error handling。']) {
       expect(html).toContain(text)
     }
     expect(html).toContain('href="/zh/updates"')

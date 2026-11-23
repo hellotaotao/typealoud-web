@@ -27,7 +27,7 @@ const metadata = {
       description: 'TypeAloud 首推本地离线语音转写，无需账号、API key 或订阅，音频无需上传。也支持使用自己的 API key 选择云端转写。',
     },
     updates: {
-      title: 'TypeAloud 产品更新 — 本地语音转写的重要进展',
+      title: 'TypeAloud 重要更新 — 本地语音转写的主要进展',
       description: '了解 TypeAloud 的重要更新：本地转写、实时听写、录音恢复与模型选择，以及这些功能首次引入和后续完善的版本。',
     },
     changelog: {

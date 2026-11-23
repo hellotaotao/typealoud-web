@@ -36,7 +36,7 @@ const chinese = {
   'Product': '产品',
   'Privacy': '隐私',
   'Privacy policy': '隐私政策',
-  'Updates': '产品更新',
+  'Updates': '更新日志',
   'Download for Mac': '下载 Mac 版',
   'Download for Windows': '下载 Windows 版',
   'Download for Linux': '下载 Linux 版',
