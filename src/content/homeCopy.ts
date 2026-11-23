@@ -25,7 +25,7 @@ const chinese = {
   'Primary tested platform': '主要测试平台',
   'Experimental': '实验阶段',
   'Local transcription. No signup.': '本地转写，无需注册。',
-  'Download a model and transcribe locally without registering or configuring an API key. You can also use cloud transcription through Groq or OpenAI with your own API key.': '下载模型后即可在本地转写，无需注册或配置 API key。偏好云端？也可以使用自己的 API key，接入 Groq 或 OpenAI。',
+  'Download a model and transcribe locally without registering or configuring an API key. You can also use cloud transcription through OpenRouter or OpenAI with your own API key.': '下载模型后即可在本地转写，无需注册或配置 API key。偏好云端？也可以使用自己的 API key，接入 OpenRouter 或 OpenAI。',
   'Optional cloud features': '可选的云端功能',
 
   'Skip to content': '跳到正文',
@@ -111,7 +111,7 @@ const chinese = {
   'Local transcription needs no account or API key. No weekly allowance and no per-minute service fees.': '本地转写无需账号或 API key，没有每周额度，也没有按分钟收取的服务费。',
   'Transcribe first. Edit on your terms.': '先转成文字，再由你决定怎么改。',
   'Get your words as text. You decide whether to rewrite them, which tool to use, and what to share.': '先把你说的话转成文字。是否改写、使用什么工具、分享哪些内容，都由你决定。',
-  'Optional cloud transcription sends audio to Groq or OpenAI using your own API key. Provider charges may apply.': '可选的云端转写会使用你自己的 API key，将音频发送给 Groq 或 OpenAI。服务商可能收取费用。',
+  'Optional cloud transcription sends audio to OpenRouter or OpenAI using your own API key. Provider charges may apply.': '可选的云端转写会使用你自己的 API key，将音频发送给 OpenRouter 或 OpenAI。服务商可能收取费用。',
   'macOS is the primary tested path. Windows and Linux builds remain experimental.': 'macOS 是主要经过测试的平台。Windows 和 Linux 版本仍处于实验阶段。',
   'Offline dictation. No account. No subscription.': '离线听写，无需账号，无需订阅。',
   'Local transcription. No cloud needed.': '本地转写，无需云端。',

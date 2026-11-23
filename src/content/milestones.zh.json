@@ -37,7 +37,7 @@
     "summary": "重新设计的设置引导依次介绍隐私、引擎选择、麦克风权限、macOS 辅助功能权限和听写练习。中途离开后，下次可以从原来的步骤继续。",
     "details": ["模型下载和权限设置可以同时进行，引擎的选择状态与就绪状态分别显示。", "新安装默认使用 Qwen3-ASR 0.6B；检测为低配置的设备默认使用 OpenAI。已有安装会保留原来选择的引擎。"],
     "scope": "OpenAI 需要你自己的 API key，并会将音频发送给服务提供商。首次设置不再提供 1.7B 选项，较大模型可在之后选择。",
-    "evolution": [{"version": "v1.15.5", "description": "Windows 的麦克风状态改为依据实际录音尝试判断。设置引导、首页和设置页会显示就绪、权限被拒绝、无设备或错误状态。"}, {"version": "v1.17.0", "description": "首次设置简化为选择本地或云端，不再预先提供 1.7B；Groq 和 Nemotron 收进“更多”，当前使用的引擎仍保持可见。"}]
+    "evolution": [{"version": "v1.15.5", "description": "Windows 的麦克风状态改为依据实际录音尝试判断。设置引导、首页和设置页会显示就绪、权限被拒绝、无设备或错误状态。"}, {"version": "v1.17.0", "description": "首次设置简化为选择本地或云端，不再预先提供 1.7B；Groq 和 Nemotron 收进“更多”，当前使用的引擎仍保持可见。"}, {"version": "v1.22.0", "description": "OpenRouter 取代 Groq 成为主要的云端选项，默认千问 Qwen3-ASR 1.7B，更准的选项是微软 MAI-Transcribe-2；OpenAI 收进“更多”。"}]
   },
   {
     "id": "native-recording",
@@ -96,7 +96,7 @@
     "introducedVersion": "v1.4.0",
     "summary": "Qwen3-ASR 为 TypeAloud 带来了设备端语音识别。下载模型后，本地转写无需账号、API key 或网络连接即可运行。",
     "details": ["设置页新增模型下载、进度和移除功能，并支持在本地与云端转写之间选择。", "下一个版本在 Apple Silicon 上更突出本地设置，并提供首页和菜单栏的快捷引擎切换。"],
-    "scope": "最初面向 Mac 推出，推荐使用 Apple Silicon 进行本地转写。可选的 Groq/OpenAI 转写仍会将音频上传至所选服务提供商；翻译模式已移除。",
+    "scope": "最初面向 Mac 推出，推荐使用 Apple Silicon 进行本地转写。可选的 OpenRouter/OpenAI 转写仍会将音频上传至所选服务提供商；翻译模式已移除。",
     "evolution": [{"version": "v1.5.0", "description": "Apple Silicon 的首次设置开始优先引导使用本地模型，并在首页和托盘中增加切换引擎的入口。"}, {"version": "v1.6.0", "description": "本地解码新增录音结束后逐字显示的进度预览。这并不是后来由 Nemotron 提供的实时识别。"}, {"version": "v1.16.0", "description": "移除翻译模式，Shift+Alt 改为普通录音快捷键。"}]
   }
 ]

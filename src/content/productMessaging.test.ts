@@ -15,7 +15,7 @@ describe('productMessaging', () => {
     expect(productMessaging.productName).toBe('TypeAloud')
     expect(productMessaging.currentReality).toContain('Tauri')
     expect(productMessaging.currentReality).toContain('Qwen3')
-    expect(productMessaging.currentReality).toContain('Groq')
+    expect(productMessaging.currentReality).toContain('OpenRouter')
   })
 
   it('covers the intended target users', () => {
@@ -70,13 +70,13 @@ describe('productMessaging', () => {
 
   it('keeps provider and model details aligned with the app settings', () => {
     const local = productMessaging.providers.find((provider) => provider.name === 'Local Qwen3')
-    const groq = productMessaging.providers.find((provider) => provider.name === 'Groq')
+    const openrouter = productMessaging.providers.find((provider) => provider.name === 'OpenRouter')
     const openai = productMessaging.providers.find((provider) => provider.name === 'OpenAI')
 
     expect(local?.models).toEqual(['Qwen3-ASR 0.6B (recommended)', 'Qwen3-ASR 1.7B (experimental)'])
     expect(productMessaging.providers.find((provider) => provider.name === 'Local Nemotron')?.note).toContain('Experimental')
     expect(serializedMessaging).not.toContain('select a microphone from settings')
-    expect(groq?.models).toEqual(['whisper-large-v3', 'whisper-large-v3-turbo'])
+    expect(openrouter?.models).toEqual(['qwen/qwen3-asr-1.7b', 'microsoft/mai-transcribe-2'])
     expect(openai?.models).toEqual(['gpt-transcribe'])
   })
 

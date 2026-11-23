@@ -170,7 +170,7 @@ function ProductSection({ locale }: { locale: Locale }) {
       </div>
       <details className="model-details cloud-options">
         <summary>{t('Optional cloud features')}</summary>
-        <p className="cloud-disclosure">{t('Optional cloud transcription sends audio to Groq or OpenAI using your own API key. Provider charges may apply.')}</p>
+        <p className="cloud-disclosure">{t('Optional cloud transcription sends audio to OpenRouter or OpenAI using your own API key. Provider charges may apply.')}</p>
       </details>
       <div className="product-reassurance reveal-target">
         <div className="history-reassurance">

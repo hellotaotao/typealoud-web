@@ -79,7 +79,7 @@ describe('TypeAloud launch page', () => {
     const html = renderToStaticMarkup(<App />)
 
     expect(html).toContain(
-      'Optional cloud transcription sends audio to Groq or OpenAI using your own API key. Provider charges may apply.',
+      'Optional cloud transcription sends audio to OpenRouter or OpenAI using your own API key. Provider charges may apply.',
     )
   })
 
@@ -125,7 +125,7 @@ describe('localized launch page', () => {
     expect(html).toContain('href="#workflow"')
     expect(html).toContain('aria-label="主要导航"')
     expect(html).toContain('aria-label="下载 Mac 版 TypeAloud"')
-    expect(html).toContain('音频发送给 Groq 或 OpenAI')
+    expect(html).toContain('音频发送给 OpenRouter 或 OpenAI')
     expect(html).toContain('Qwen3-ASR 1.7B 和 Nemotron 实时转写属于实验性选项')
     expect(html).not.toContain('Your voice.')
     expect(html).not.toMatch(/(?:src|href)="\.\//)

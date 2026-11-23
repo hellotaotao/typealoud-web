@@ -41,7 +41,7 @@ export type PlatformDetail = {
 }
 
 export type ProviderDetail = {
-  name: 'Local Qwen3' | 'Local Nemotron' | 'Groq' | 'OpenAI'
+  name: 'Local Qwen3' | 'Local Nemotron' | 'OpenRouter' | 'OpenAI'
   models: string[]
   note: string
 }
@@ -80,7 +80,7 @@ export type ProductMessaging = {
 export const productMessaging: ProductMessaging = {
   productName: 'TypeAloud',
   currentReality:
-    'TypeAloud is a Tauri desktop voice input app. On Apple Silicon Macs it can run Qwen3 transcription locally after a one-time model download; Groq and OpenAI remain optional cloud engines using your own key.',
+    'TypeAloud is a Tauri desktop voice input app. On Apple Silicon Macs it can run Qwen3 transcription locally after a one-time model download; OpenRouter and OpenAI remain optional cloud engines using your own key.',
   hero: {
     eyebrow: 'Local transcription. No account. No subscription.',
     headline: 'Local transcription. Speak naturally. Mix languages.',
@@ -152,7 +152,7 @@ export const productMessaging: ProductMessaging = {
     {
       painPointId: 'native-dictation',
       featureId: 'engine-choice',
-      value: 'Choose private local transcription or your own Groq/OpenAI account without changing how you dictate.',
+      value: 'Choose private local transcription or your own OpenRouter/OpenAI account without changing how you dictate.',
     },
     {
       painPointId: 'fragmented-voice',
@@ -243,7 +243,7 @@ export const productMessaging: ProductMessaging = {
   permissions: [
     {
       title: 'Local mode or your own cloud key',
-      description: 'Local Qwen3 mode needs no account or API key. Cloud mode sends audio directly to the Groq or OpenAI account you configure.',
+      description: 'Local Qwen3 mode needs no account or API key. Cloud mode sends audio directly to the OpenRouter or OpenAI account you configure.',
     },
     {
       title: 'Microphone access',
@@ -289,9 +289,9 @@ export const productMessaging: ProductMessaging = {
       note: 'Experimental live transcription on macOS arm64 and Windows x64. Accuracy may be lower than Qwen; the dictionary is not applied.',
     },
     {
-      name: 'Groq',
-      models: ['whisper-large-v3', 'whisper-large-v3-turbo'],
-      note: 'Whisper models for fast speech-to-text.',
+      name: 'OpenRouter',
+      models: ['qwen/qwen3-asr-1.7b', 'microsoft/mai-transcribe-2'],
+      note: 'Qwen3-ASR 1.7B (the default, about US$0.03 per audio hour) or Microsoft MAI-Transcribe-2 (more accurate on mixed Chinese and English, about US$0.10 per hour) with one OpenRouter key.',
     },
     {
       name: 'OpenAI',

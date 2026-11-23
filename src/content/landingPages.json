@@ -882,7 +882,7 @@
         "faq": [
           {
             "q": "Is TypeAloud really free?",
-            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own Groq or OpenAI key, which those providers may charge for."
+            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own OpenRouter or OpenAI key, which those providers may charge for."
           },
           {
             "q": "Does my audio leave my Mac?",
@@ -956,7 +956,7 @@
         "faq": [
           {
             "q": "TypeAloud 真的免费吗？",
-            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 OpenRouter 或 OpenAI key，这些服务商可能会收费。"
           },
           {
             "q": "我的录音会离开 Mac 吗？",
@@ -1047,7 +1047,7 @@
           },
           {
             "q": "How much does TypeAloud cost?",
-            "a": "Nothing. Local transcription has no subscription and no word limit. An optional cloud mode uses your own Groq or OpenAI API key."
+            "a": "Nothing. Local transcription has no subscription and no word limit. An optional cloud mode uses your own OpenRouter or OpenAI API key."
           },
           {
             "q": "Do I need to sign up?",
@@ -1120,7 +1120,7 @@
           },
           {
             "q": "TypeAloud 怎么收费？",
-            "a": "不收费。本地转写没有订阅，也没有字数限制。可选的云端模式使用你自己的 Groq 或 OpenAI API key。"
+            "a": "不收费。本地转写没有订阅，也没有字数限制。可选的云端模式使用你自己的 OpenRouter 或 OpenAI API key。"
           },
           {
             "q": "需要注册吗？",
@@ -1185,7 +1185,7 @@
           {
             "heading": "Every feature is in the free app",
             "body": [
-              "There is no Pro plan to unlock. The larger Qwen3-ASR 1.7B model (about 2.52 GB), the dictionary and automatic replacements, History with retry for failed transcriptions, and the optional cloud mode with your own Groq or OpenAI key all come with the free app; the models download from inside it.",
+              "There is no Pro plan to unlock. The larger Qwen3-ASR 1.7B model (about 2.52 GB), the dictionary and automatic replacements, History with retry for failed transcriptions, and the optional cloud mode with your own OpenRouter or OpenAI key all come with the free app; the models download from inside it.",
               "The source is on GitHub under GPL-3.0, so you can check exactly what happens to your audio."
             ]
           },
@@ -1200,11 +1200,11 @@
         "faq": [
           {
             "q": "Is TypeAloud free in the same way as Superwhisper's free plan?",
-            "a": "TypeAloud has no paid plan at all. Local transcription, both Qwen3-ASR model sizes and every feature are free. Optional cloud transcription uses your own Groq or OpenAI key, which those providers may charge for."
+            "a": "TypeAloud has no paid plan at all. Local transcription, both Qwen3-ASR model sizes and every feature are free. Optional cloud transcription uses your own OpenRouter or OpenAI key, which those providers may charge for."
           },
           {
             "q": "Can I still use Whisper?",
-            "a": "Not as a local model. Locally TypeAloud runs Qwen3-ASR. Whisper is available through the optional cloud mode, with your own Groq or OpenAI API key."
+            "a": "Not as a local model. Locally TypeAloud runs Qwen3-ASR. The optional cloud mode uses your own key with OpenRouter (Qwen3-ASR or Microsoft MAI-Transcribe-2) or OpenAI (GPT Transcribe); TypeAloud no longer offers Whisper."
           },
           {
             "q": "Does my audio leave my Mac?",
@@ -1255,7 +1255,7 @@
           {
             "heading": "所有功能都在免费版里",
             "body": [
-              "没有 Pro 需要解锁。更大的 Qwen3-ASR 1.7B 模型（约 2.52 GB）、词典和自动替换、带失败重试的历史记录，以及填入自己 Groq 或 OpenAI key 的云端模式，都包含在免费应用里，模型在应用内下载。",
+              "没有 Pro 需要解锁。更大的 Qwen3-ASR 1.7B 模型（约 2.52 GB）、词典和自动替换、带失败重试的历史记录，以及填入自己 OpenRouter 或 OpenAI key 的云端模式，都包含在免费应用里，模型在应用内下载。",
               "源代码以 GPL-3.0 协议放在 GitHub 上，录音经过了哪些处理，你可以自己去看。"
             ]
           },
@@ -1270,11 +1270,11 @@
         "faq": [
           {
             "q": "TypeAloud 的免费和 Superwhisper 免费版一样吗？",
-            "a": "TypeAloud 根本没有付费版。本地转写、两种大小的 Qwen3-ASR 模型和所有功能都免费。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+            "a": "TypeAloud 根本没有付费版。本地转写、两种大小的 Qwen3-ASR 模型和所有功能都免费。云端转写是可选项，使用你自己的 OpenRouter 或 OpenAI key，这些服务商可能会收费。"
           },
           {
             "q": "还能用 Whisper 吗？",
-            "a": "本地不能。TypeAloud 本地跑的是 Qwen3-ASR。想用 Whisper，可以开启云端模式，填入你自己的 Groq 或 OpenAI API key。"
+            "a": "本地不能。TypeAloud 本地跑的是 Qwen3-ASR。可选的云端模式用你自己的 key 接 OpenRouter（千问 Qwen3-ASR 或微软 MAI-Transcribe-2）或 OpenAI（GPT Transcribe）；TypeAloud 已不再提供 Whisper。"
           },
           {
             "q": "我的录音会离开 Mac 吗？",
@@ -1350,7 +1350,7 @@
         "faq": [
           {
             "q": "Is TypeAloud really free?",
-            "a": "Yes. Local transcription needs no account, API key, licence or subscription, and there is no word limit. Cloud transcription is optional and uses your own Groq or OpenAI key, which those providers may charge for."
+            "a": "Yes. Local transcription needs no account, API key, licence or subscription, and there is no word limit. Cloud transcription is optional and uses your own OpenRouter or OpenAI key, which those providers may charge for."
           },
           {
             "q": "Are both apps open source?",
@@ -1411,7 +1411,7 @@
         "faq": [
           {
             "q": "TypeAloud 真的免费吗？",
-            "a": "是的。本地转写不需要账号、API key、授权码或订阅，也没有字数限制。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+            "a": "是的。本地转写不需要账号、API key、授权码或订阅，也没有字数限制。云端转写是可选项，使用你自己的 OpenRouter 或 OpenAI key，这些服务商可能会收费。"
           },
           {
             "q": "两个都是开源的吗？",
@@ -1486,7 +1486,7 @@
           },
           {
             "q": "Can TypeAloud use my own API key?",
-            "a": "Yes. Cloud transcription is optional and uses your own Groq or OpenAI key, which those providers may charge for."
+            "a": "Yes. Cloud transcription is optional and uses your own OpenRouter or OpenAI key, which those providers may charge for."
           },
           {
             "q": "Does my audio leave my Mac?",
@@ -1548,7 +1548,7 @@
           },
           {
             "q": "TypeAloud 能用自己的 API key 吗？",
-            "a": "能。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+            "a": "能。云端转写是可选项，使用你自己的 OpenRouter 或 OpenAI key，这些服务商可能会收费。"
           },
           {
             "q": "我的录音会离开 Mac 吗？",
@@ -1624,7 +1624,7 @@
           },
           {
             "q": "Is TypeAloud really free?",
-            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own Groq or OpenAI key, which those providers may charge for."
+            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own OpenRouter or OpenAI key, which those providers may charge for."
           },
           {
             "q": "Which Macs can run TypeAloud?",
@@ -1689,7 +1689,7 @@
           },
           {
             "q": "TypeAloud 真的免费吗？",
-            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 OpenRouter 或 OpenAI key，这些服务商可能会收费。"
           },
           {
             "q": "哪些 Mac 可以运行 TypeAloud？",
@@ -1754,7 +1754,7 @@
         "faq": [
           {
             "q": "Is TypeAloud really free?",
-            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own Groq or OpenAI key, which those providers may charge for."
+            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own OpenRouter or OpenAI key, which those providers may charge for."
           },
           {
             "q": "Does my audio leave my Mac?",
@@ -1818,7 +1818,7 @@
         "faq": [
           {
             "q": "TypeAloud 真的免费吗？",
-            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 OpenRouter 或 OpenAI key，这些服务商可能会收费。"
           },
           {
             "q": "我的录音会离开 Mac 吗？",
@@ -1890,7 +1890,7 @@
         "faq": [
           {
             "q": "Is TypeAloud really free?",
-            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own Groq or OpenAI key, which those providers may charge for."
+            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own OpenRouter or OpenAI key, which those providers may charge for."
           },
           {
             "q": "Does my audio leave my Mac?",
@@ -1949,7 +1949,7 @@
         "faq": [
           {
             "q": "TypeAloud 真的免费吗？",
-            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 OpenRouter 或 OpenAI key，这些服务商可能会收费。"
           },
           {
             "q": "我的录音会离开 Mac 吗？",
@@ -2026,7 +2026,7 @@
           },
           {
             "q": "Is TypeAloud really free?",
-            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own Groq or OpenAI key, which those providers may charge for."
+            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own OpenRouter or OpenAI key, which those providers may charge for."
           },
           {
             "q": "Which Macs can run TypeAloud?",
@@ -2094,7 +2094,7 @@
           },
           {
             "q": "TypeAloud 真的免费吗？",
-            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 OpenRouter 或 OpenAI key，这些服务商可能会收费。"
           },
           {
             "q": "哪些 Mac 可以运行 TypeAloud？",
@@ -2159,7 +2159,7 @@
           },
           {
             "q": "Is TypeAloud really free?",
-            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own Groq or OpenAI key, which those providers may charge for."
+            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own OpenRouter or OpenAI key, which those providers may charge for."
           },
           {
             "q": "What other dictation apps run on a Mac?",
@@ -2215,7 +2215,7 @@
           },
           {
             "q": "TypeAloud 真的免费吗？",
-            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 OpenRouter 或 OpenAI key，这些服务商可能会收费。"
           },
           {
             "q": "Mac 上还有哪些语音输入软件？",
@@ -2275,7 +2275,7 @@
         "faq": [
           {
             "q": "Is TypeAloud really free?",
-            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own Groq or OpenAI key, which those providers may charge for."
+            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own OpenRouter or OpenAI key, which those providers may charge for."
           },
           {
             "q": "Does my audio leave my Mac?",
@@ -2338,7 +2338,7 @@
         "faq": [
           {
             "q": "TypeAloud 真的免费吗？",
-            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 OpenRouter 或 OpenAI key，这些服务商可能会收费。"
           },
           {
             "q": "我的录音会离开 Mac 吗？",
@@ -2413,7 +2413,7 @@
           },
           {
             "q": "Is TypeAloud really free?",
-            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own Groq or OpenAI key, which those providers may charge for."
+            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own OpenRouter or OpenAI key, which those providers may charge for."
           },
           {
             "q": "Which Macs can run TypeAloud?",
@@ -2479,7 +2479,7 @@
           },
           {
             "q": "TypeAloud 真的免费吗？",
-            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 OpenRouter 或 OpenAI key，这些服务商可能会收费。"
           },
           {
             "q": "哪些 Mac 可以运行 TypeAloud？",
@@ -2550,7 +2550,7 @@
           },
           {
             "q": "Is TypeAloud really free?",
-            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own Groq or OpenAI key, which those providers may charge for."
+            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own OpenRouter or OpenAI key, which those providers may charge for."
           },
           {
             "q": "Which Macs can run TypeAloud?",
@@ -2616,7 +2616,7 @@
           },
           {
             "q": "TypeAloud 真的免费吗？",
-            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 OpenRouter 或 OpenAI key，这些服务商可能会收费。"
           },
           {
             "q": "哪些 Mac 可以运行 TypeAloud？",
@@ -2687,7 +2687,7 @@
           },
           {
             "q": "Is TypeAloud really free?",
-            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own Groq or OpenAI key, which those providers may charge for."
+            "a": "Yes. Local transcription needs no account, API key or subscription, and there is no word limit. Cloud transcription is optional and uses your own OpenRouter or OpenAI key, which those providers may charge for."
           },
           {
             "q": "Which Macs can run TypeAloud?",
@@ -2749,7 +2749,7 @@
           },
           {
             "q": "TypeAloud 真的免费吗？",
-            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 Groq 或 OpenAI key，这些服务商可能会收费。"
+            "a": "是的。本地转写不需要账号、API key 或订阅，也没有字数限制。云端转写是可选项，使用你自己的 OpenRouter 或 OpenAI key，这些服务商可能会收费。"
           },
           {
             "q": "哪些 Mac 可以运行 TypeAloud？",

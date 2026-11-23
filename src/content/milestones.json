@@ -37,7 +37,7 @@
     "summary": "The redesigned setup walks through privacy, engine choice, microphone access, macOS Accessibility and a practice dictation. Leave midway and continue from the same step later.",
     "details": ["Model download and permission setup can proceed alongside each other, with engine selection and readiness tracked separately.", "New installations use Qwen3-ASR 0.6B by default except on machines detected as low-end, which default to OpenAI. Existing installations keep their selected engine."],
     "scope": "OpenAI requires your own API key and sends audio to the provider. First-run setup no longer offers 1.7B up front; the larger model can be chosen later.",
-    "evolution": [{"version": "v1.15.5", "description": "Windows microphone status now reflects actual recording attempts, with ready, denied, no-device and error states in setup, Home and Settings."}, {"version": "v1.17.0", "description": "First run was simplified to local versus cloud without offering 1.7B up front. Groq and Nemotron moved under More while the active engine stays visible."}]
+    "evolution": [{"version": "v1.15.5", "description": "Windows microphone status now reflects actual recording attempts, with ready, denied, no-device and error states in setup, Home and Settings."}, {"version": "v1.17.0", "description": "First run was simplified to local versus cloud without offering 1.7B up front. Groq and Nemotron moved under More while the active engine stays visible."}, {"version": "v1.22.0", "description": "OpenRouter replaced Groq as the main cloud choice, with Qwen3-ASR 1.7B by default and Microsoft MAI-Transcribe-2 as the more accurate option; OpenAI moved under More."}]
   },
   {
     "id": "native-recording",
@@ -96,7 +96,7 @@
     "introducedVersion": "v1.4.0",
     "summary": "Qwen3-ASR brought on-device speech recognition to TypeAloud. After downloading the model, local transcription can run without an account, API key or network connection.",
     "details": ["Model download, progress and removal became available in Settings, alongside a choice between local and cloud transcription.", "The next release made local setup more prominent on Apple Silicon and added quicker engine switching from Home and the menu bar."],
-    "scope": "Introduced for Mac, with Apple Silicon recommended for local use. Optional Groq/OpenAI transcription uploads audio to the selected provider; translate mode has been removed.",
+    "scope": "Introduced for Mac, with Apple Silicon recommended for local use. Optional OpenRouter/OpenAI transcription uploads audio to the selected provider; translate mode has been removed.",
     "evolution": [{"version": "v1.5.0", "description": "Apple Silicon onboarding began leading with the local model, with Home and tray shortcuts for changing engines."}, {"version": "v1.6.0", "description": "Local decoding gained a visible word-by-word progress preview after recording. This is not the live recognition introduced later with Nemotron."}, {"version": "v1.16.0", "description": "Translate mode was removed, and Shift+Alt became a regular recording shortcut."}]
   }
 ]

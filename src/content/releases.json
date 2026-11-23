@@ -1,5 +1,13 @@
 [
   {
+    "version": "v1.22.0",
+    "publishedAt": "2026-11-23T10:26:35Z",
+    "updatedAt": "2026-11-23T10:26:35Z",
+    "url": "https://github.com/hellotaotao/typealoud/releases/tag/v1.22.0",
+    "body": "## What's new\n\n- **OpenRouter replaces Groq as a cloud transcription option.** OpenRouter offers two models: Qwen3-ASR 1.7B (default, about $0.03/hour, cheapest) and Microsoft MAI-Transcribe-2 (about $0.10/hour, more accurate on mixed Chinese/English speech). OpenRouter is now the main cloud choice shown in onboarding, Home and Settings; OpenAI has moved under \"More\".\n- If you had Groq configured, it is automatically migrated to OpenRouter the next time your settings load. Your old Groq key is not reused, so you'll need to enter a new OpenRouter API key.\n- New installs on weaker machines now default to OpenRouter (previously OpenAI) when cloud transcription is suggested.\n\n## Improvements\n\n- When using the MAI model through OpenRouter, your custom dictionary is now sent along as reference terms, so misheard names and words are more likely to come out right — matching how the dictionary already helps with OpenAI. (Qwen on OpenRouter still doesn't use the dictionary, since it doesn't support this.)\n- MAI-Transcribe-2 always disables profanity masking, so it transcribes what you actually said instead of censoring it.\n\n## 中文\n\n## 新功能\n\n- **OpenRouter 取代 Groq，成为新的云端转写选项。** OpenRouter 提供两个模型：Qwen3-ASR 1.7B（默认，约每小时 0.03 美元，最便宜）和微软 MAI-Transcribe-2（约每小时 0.10 美元，中英混说准确率更高）。引导流程、首页和设置页里，OpenRouter 现在是主要的云端选项；OpenAI 则收进了\"更多\"。\n- 如果你之前配置过 Groq，下次读取设置时会自动迁移到 OpenRouter。旧的 Groq key 不会被沿用，需要重新填写 OpenRouter 的 API key。\n- 在性能较弱的机器上，新安装默认推荐的云端服务从 OpenAI 改为了 OpenRouter。\n\n## 改进\n\n- 使用 OpenRouter 上的 MAI 模型转写时，你的自定义词典现在也会一起发给模型作参考，更容易正确写出容易听错的名字和词语——和 OpenAI 已有的行为一致（OpenRouter 上的千问模型仍不支持词典，因为该模型本身不支持这项功能）。\n- MAI-Transcribe-2 现在始终关闭脏话打码，转写出你实际说的内容，而不是被自动审查。\n\n## Download / 下载\n\nPick the one installer for your platform:\n- **macOS** — the `.dmg`\n- **Windows** — the `_x64-setup.exe` (or `.msi`)\n- **Linux** — the `.AppImage` (portable), `.deb` (Debian/Ubuntu), or `.rpm` (Fedora/RHEL)\n\nThe remaining files (`*.sig`, `latest.json`, `*.app.tar.gz`) are used by the built-in auto-updater — you don't need to download them.\n\n（各平台任选一个安装：macOS 下 `.dmg`，Windows 下 `_x64-setup.exe` 或 `.msi`，Linux 下 `.AppImage`/`.deb`/`.rpm`。带 `.sig`、`latest.json`、`*.app.tar.gz` 的是自动更新用的，无需下载。）\n",
+    "notesStatus": "available"
+  },
+  {
     "version": "v1.21.0",
     "publishedAt": "2026-11-22T12:24:11Z",
     "updatedAt": "2026-11-22T12:26:09Z",
