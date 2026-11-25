@@ -21,7 +21,28 @@
 .ma-ripple { position: absolute; inset: -0.3em; border: 2px solid var(--m-accent); border-radius: 1em; opacity: 0; }
 .ma-arrow { width: 2.2em; height: 2px; background: var(--m-soft); position: relative; }
 .ma-arrow::after { content: ''; position: absolute; right: -1px; top: -0.3em; border: 0.32em solid transparent; border-left-color: var(--m-soft); border-right: 0; }
-.ma-lock-chip { display: inline-flex; gap: 0.6em; width: auto; padding: 0 0.9em; }
+.ma-lock-chip, .ma-speak-chip { display: inline-flex; gap: 0.6em; width: auto; padding: 0 0.9em; }
+
+/* OpenRouter cloud models */
+.ma-cloud-models { display: flex; flex-direction: column; gap: 0.45em; }
+.ma-model-pill { display: inline-flex; align-items: center; justify-content: center; padding: 0.38em 0.8em; border-radius: 0.65em; background: #fff; color: var(--m-fg); font-size: 0.82em; font-weight: 750; box-shadow: 0 0.45em 1em rgba(7, 20, 27, 0.08); white-space: nowrap; }
+.ma-model-pill-accent { background: var(--m-fg); color: #fff; }
+
+/* Single right-hand key shortcut */
+.ma-key-single { width: 4.8em; }
+.ma-key-single b { font-size: 1.35em; }
+
+/* Open source & Liquid Glass */
+.ma-glass { position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 0.7em; padding: 0.8em 1.15em; border-radius: 2em; background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.45)); border: 1.5px solid rgba(255, 255, 255, 0.9); color: var(--m-fg); box-shadow: 0 0.6em 1.5em rgba(7, 20, 27, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); }
+.ma-glass::before { content: ''; position: absolute; inset: -40% auto -40% -30%; width: 45%; transform: rotate(22deg); background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent); pointer-events: none; }
+.ma-code-chip { border-radius: 50%; width: 2.6em; height: 2.6em; }
+
+/* Dictionary corrections */
+.ma-dict { gap: 0.55em; }
+.ma-dict s { padding: 0.45em 0.7em; border-radius: 0.65em; background: #fff; color: var(--m-accent); font-size: 0.85em; font-weight: 650; text-decoration-thickness: 2px; text-decoration-color: var(--m-fg); opacity: 0.55; box-shadow: 0 0.4em 1em rgba(7, 20, 27, 0.06); white-space: nowrap; }
+.ma-dict .ma-arrow { width: 1.4em; }
+.ma-dict-right { display: inline-flex; align-items: center; gap: 0.35em; padding: 0.45em 0.75em; border-radius: 0.65em; background: var(--m-fg); color: #fff; font-size: 0.85em; font-weight: 750; box-shadow: 0 0.5em 1.2em rgba(7, 20, 27, 0.1); white-space: nowrap; }
+.ma-dict-right .ma-icon { width: 1em; height: 1em; }
 
 /* Filler removal */
 .ma-filler { padding: 0.7em 1.1em; border-radius: 0.8em; background: #fff; box-shadow: 0 0.5em 1.2em rgba(7, 20, 27, 0.07); gap: 0; font-size: 1.35em; font-weight: 650; color: #24363b; white-space: nowrap; }
@@ -85,7 +106,12 @@
   [data-inview] .ma-ripple { animation: ma-ripple 2.4s ease-out both; }
   [data-inview] .ma-ripple-late { animation-delay: 0.3s; }
   [data-inview] .ma-key { animation: ma-press 2.4s ease both; }
-  [data-inview] .ma-lock-chip { animation: ma-pop 2.4s ease both; }
+  [data-inview] .ma-key-single { animation: ma-single-press 2.4s ease both; }
+  [data-inview] .ma-lock-chip, [data-inview] .ma-speak-chip { animation: ma-pop 2.4s ease both; }
+  [data-inview] .ma-model-pill { animation: ma-chunk 2.6s ease calc(var(--n) * 0.35s) both; }
+  [data-inview] .ma-code-chip { animation: ma-pop 2.4s ease 0.2s both; }
+  [data-inview] .ma-dict s { animation: ma-strike 2.6s ease both; }
+  [data-inview] .ma-dict-right { animation: ma-pop 2.6s ease both; }
   [data-inview] .ma-wave .ma-bar { animation: ma-bar 1.2s ease-in-out calc(var(--n) * -0.13s) 3 alternate; }
   [data-inview] .ma-filler s { animation: ma-strike 2.8s ease both; }
   [data-inview] .ma-caret { animation: ma-blink 0.9s steps(2, start) 4; }
@@ -105,6 +131,7 @@
 
 @keyframes ma-ripple { 0%, 8% { opacity: 0; transform: scale(0.9); } 14% { opacity: 0.9; } 40%, 100% { opacity: 0; transform: scale(1.35); } }
 @keyframes ma-press { 0%, 100% { transform: translateY(0); } 6%, 10% { transform: translateY(0.3em); } 13% { transform: translateY(0); } 18%, 22% { transform: translateY(0.3em); } 25% { transform: translateY(0); } }
+@keyframes ma-single-press { 0%, 100% { transform: translateY(0); } 8%, 22% { transform: translateY(0.3em); } 30% { transform: translateY(0); } }
 @keyframes ma-pop { 0%, 30% { opacity: 0; transform: scale(0.7); } 45% { opacity: 1; transform: scale(1.06); } 55%, 100% { opacity: 1; transform: scale(1); } }
 @keyframes ma-bar { from { transform: scaleY(0.3); } to { transform: scaleY(calc(0.35 + 0.65 * var(--h, 0.6))); } }
 @keyframes ma-strike { 0%, 25% { opacity: 1; text-decoration-color: transparent; } 45% { opacity: 1; text-decoration-color: var(--m-fg); } 70%, 100% { opacity: 0.55; } }

@@ -1,13 +1,53 @@
 [
   {
+    "id": "openrouter-cloud",
+    "title": "Two cloud models, through one OpenRouter key.",
+    "category": "Cloud models",
+    "introducedVersion": "v1.22.0",
+    "summary": "OpenRouter replaced Groq as the main cloud option, offering Qwen3-ASR 1.7B by default (about US$0.03/hour) and Microsoft MAI-Transcribe-2 (about US$0.10/hour) for stronger mixed Chinese and English accuracy.",
+    "details": ["OpenRouter now leads the cloud choice in onboarding, Home, and Settings, and is the default suggestion on weaker machines; OpenAI moved under More.", "With Microsoft MAI-Transcribe-2, your custom dictionary is sent as reference terms and profanity masking is turned off. Existing Groq setups migrate automatically, requiring a new OpenRouter API key."],
+    "scope": "Optional cloud transcription requires your own OpenRouter API key and uploads audio to the provider. Qwen3-ASR 1.7B on OpenRouter does not support custom dictionary reference terms; pricing figures are approximate.",
+    "evolution": []
+  },
+  {
+    "id": "single-key-shortcuts",
+    "title": "One right-hand key to start speaking.",
+    "category": "Single-key shortcuts",
+    "introducedVersion": "v1.21.0",
+    "summary": "Right Command, Right Option, and Right Ctrl can each act as your recording shortcut on their own, without holding a two-key combination. New macOS installs default to Right Command.",
+    "details": ["Onboarding now includes a step to choose and test your shortcut before continuing. Existing users on Ctrl+Shift or Ctrl+Alt get a one-time prompt to try the new keys without changing anything automatically.", "If a remote or shared keyboard setup cannot distinguish left and right keys, TypeAloud reverts to your last working shortcut instead of leaving you stuck."],
+    "scope": "Right Command is the default on new macOS installs (Right Option remains available but can clash with the Claude desktop app). Saved shortcuts on existing installs are preserved.",
+    "evolution": []
+  },
+  {
+    "id": "open-source-and-platform",
+    "title": "Open source as TypeAloud, with Liquid Glass on macOS.",
+    "category": "Open source & native",
+    "introducedVersion": "v1.20.0",
+    "summary": "TypeAloud completed its rename from SayType and opened its source code under GPL-3.0. The same release brought macOS 26 Liquid Glass to the main window and recording prompt, plus a Microsoft Store package for Windows.",
+    "details": ["Upgrading from earlier installs migrates your settings, history, downloaded models, and launch-at-login configuration automatically.", "On macOS 26 and later, the window and recording prompt follow your light or dark theme with native glass; older macOS, Windows, and Linux keep their existing look."],
+    "scope": "Liquid Glass requires macOS 26 or later. Windows Microsoft Store installs receive updates through the Store; direct installers keep using the built-in updater.",
+    "evolution": [{"version": "v1.20.1", "description": "Windows Start with system autostart now registers properly for both Store and direct installs, and Store builds use an unplated taskbar icon; macOS text insertion also works in apps that draw their own text (including Zed)."}]
+  },
+  {
+    "id": "dictionary-corrections",
+    "title": "Teach TypeAloud the names it keeps mishearing.",
+    "category": "Dictionary",
+    "introducedVersion": "v1.19.1",
+    "summary": "Automatic replacement rules let you map what TypeAloud mishears to what you meant across every engine, local or cloud, alongside built-in corrections and near-miss spelling fixes for common terms.",
+    "details": ["Add, edit, or remove replacement pairs through a simple two-field form in Dictionary—no special syntax required.", "Built-in corrections cover commonly misheard tech names (such as Supabase, Vercel, and Claude Code), and near-miss matching also helps offline local models."],
+    "scope": "Automatic replacements and near-miss spelling fixes apply after transcription across local and cloud engines. OpenAI and OpenRouter MAI-Transcribe-2 also receive your custom word list as reference terms; Qwen models do not.",
+    "evolution": [{"version": "v1.19.2", "description": "When a local engine is active, Dictionary shows Automatic replacements above the word list since local engines rely on replacements."}, {"version": "v1.20.0", "description": "Near-miss spelling correction now matches dictionary entries and built-in tech terms against slightly off heard words (such as Nematron or namatron), including offline local transcription."}, {"version": "v1.22.0", "description": "Microsoft MAI-Transcribe-2 on OpenRouter now receives your custom dictionary as reference terms, matching OpenAI."}]
+  },
+  {
     "id": "hands-free-dictation",
     "title": "Double-tap, let go, and keep dictating.",
     "category": "Recording shortcuts",
     "introducedVersion": "v1.18.0",
-    "summary": "Two quick presses of Ctrl+Shift lock recording so you can let go of the keys. When a failed-insertion card is showing, a single tap re-inserts its text at your cursor.",
-    "details": ["Locked recording continues until another press, Escape, or the 12-minute limit.", "The second short press must arrive within 350 ms. Without a failed card, a single tap still cancels a mis-trigger; a tap followed by a hold is normal dictation."],
-    "scope": "On Windows, switching keyboard layouts twice quickly with Ctrl+Shift can also trigger recording lock.",
-    "evolution": []
+    "summary": "Two quick presses of your recording shortcut lock recording so you can let go of the keys. When a failed-insertion card is showing, a single tap re-inserts its text at your cursor.",
+    "details": ["Locked recording continues until you press and release the shortcut again, press Escape, or reach the 12-minute limit.", "The second short press must arrive within 350 ms. Without a failed card, a single tap still cancels a mis-trigger; a tap followed by a hold is normal dictation."],
+    "scope": "If your shortcut is set to Ctrl+Shift on Windows, switching keyboard layouts twice quickly with Ctrl+Shift can also trigger recording lock.",
+    "evolution": [{"version": "v1.20.1", "description": "Tapping the shortcut on a failed-insertion card now always re-inserts the text, even into apps not on the built-in allowlist."}, {"version": "v1.21.0", "description": "Hands-free recording ends when you release the stopping press, and ignores it if you press another key alongside it (such as Option+Left Arrow to jump a word)."}]
   },
   {
     "id": "filler-removal",
@@ -34,10 +74,10 @@
     "title": "A first run that takes you all the way to dictation.",
     "category": "Getting started",
     "introducedVersion": "v1.15.3",
-    "summary": "The redesigned setup walks through privacy, engine choice, microphone access, macOS Accessibility and a practice dictation. Leave midway and continue from the same step later.",
-    "details": ["Model download and permission setup can proceed alongside each other, with engine selection and readiness tracked separately.", "New installations use Qwen3-ASR 0.6B by default except on machines detected as low-end, which default to OpenAI. Existing installations keep their selected engine."],
-    "scope": "OpenAI requires your own API key and sends audio to the provider. First-run setup no longer offers 1.7B up front; the larger model can be chosen later.",
-    "evolution": [{"version": "v1.15.5", "description": "Windows microphone status now reflects actual recording attempts, with ready, denied, no-device and error states in setup, Home and Settings."}, {"version": "v1.17.0", "description": "First run was simplified to local versus cloud without offering 1.7B up front. Groq and Nemotron moved under More while the active engine stays visible."}, {"version": "v1.22.0", "description": "OpenRouter replaced Groq as the main cloud choice, with Qwen3-ASR 1.7B by default and Microsoft MAI-Transcribe-2 as the more accurate option; OpenAI moved under More."}]
+    "summary": "The redesigned setup walks through privacy, engine choice, microphone access, macOS Accessibility, shortcut selection and a practice dictation. Leave midway and continue from the same step later.",
+    "details": ["Model download and permission setup can proceed alongside each other, with engine selection and readiness tracked separately.", "New installations use Qwen3-ASR 0.6B by default except on machines detected as low-end, which default to OpenRouter (previously OpenAI). Existing installations keep their selected engine."],
+    "scope": "Cloud engines (OpenRouter or OpenAI) require your own API key and send audio to the provider. First-run setup no longer offers 1.7B up front; the larger model can be chosen later.",
+    "evolution": [{"version": "v1.15.5", "description": "Windows microphone status now reflects actual recording attempts, with ready, denied, no-device and error states in setup, Home and Settings."}, {"version": "v1.17.0", "description": "First run was simplified to local versus cloud without offering 1.7B up front. Groq and Nemotron moved under More while the active engine stays visible."}, {"version": "v1.21.0", "description": "Onboarding gained a step to pick and test your recording shortcut before continuing."}, {"version": "v1.22.0", "description": "OpenRouter replaced Groq as the main cloud choice (defaulting to Qwen3-ASR 1.7B, with Microsoft MAI-Transcribe-2 as the more accurate option) and became the default suggestion on weaker machines; OpenAI moved under More."}]
   },
   {
     "id": "native-recording",
@@ -57,7 +97,7 @@
     "summary": "Qwen can process completed chunks while you keep talking, instead of waiting for the entire recording before starting transcription. That leaves less audio to process after you release the shortcut.",
     "details": ["Finalized chunk text appears while the remaining audio is still being captured.", "The engine starts warming up when recording begins. This is chunked processing, distinct from Nemotron’s live streaming recognition."],
     "scope": "Applies to Qwen local dictation. Completion time depends on the recording and device; no fixed speed improvement is promised.",
-    "evolution": [{"version": "v1.9.1", "description": "Recording finalization gained safeguards and recovery handling for missing or late recorder events."}, {"version": "v1.14.1", "description": "Sample-coverage checks route detected gaps into recovery instead of automatically inserting a partial result. The original intermittent tail-loss trigger was still under investigation in this release."}]
+    "evolution": [{"version": "v1.9.1", "description": "Recording finalization gained safeguards and recovery handling for missing or late recorder events."}, {"version": "v1.14.1", "description": "Sample-coverage checks route detected gaps into recovery instead of automatically inserting a partial result. The original intermittent tail-loss trigger was still under investigation in this release."}, {"version": "v1.19.1", "description": "Long dictations start splitting at 20-second pauses (down from 55 seconds) using elapsed time rather than raw capture blocks, and trailing near-silence at cut points is skipped instead of transcribed."}]
   },
   {
     "id": "recording-recovery",
@@ -66,7 +106,7 @@
     "introducedVersion": "v1.8.0",
     "summary": "Recovery first arrived for stalled local transcription: TypeAloud retries once and, if it still cannot complete, saves the recording as a pending History entry for another attempt.",
     "details": ["Later releases expanded saved-audio recovery to more transcription failures and improved the reasons shown in History.", "A manual retry uses the engine currently selected, so changing provider or correcting an API key can make the saved recording usable."],
-    "scope": "Retry requires successfully saved audio. History has a 100-entry limit; saved recordings are not a permanent backup.",
+    "scope": "Retry requires successfully saved audio. History has a 200-entry limit; saved recordings are not a permanent backup.",
     "evolution": [{"version": "v1.13.3", "description": "More failed requests retain audio and an error reason; retry uses the current engine and successful retries replace pending entries."}, {"version": "v1.13.4", "description": "Empty retry results preserve the recording, and cloud or translation failures with incomplete capture no longer miss their History entry."}]
   },
   {
@@ -86,8 +126,8 @@
     "introducedVersion": "v1.4.0",
     "summary": "Background update checks and in-app installation arrived with v1.4.0. TypeAloud checks daily, downloads an available update, and lets you choose when to restart.",
     "details": ["You can also check for updates from Settings.", "Installing an update remains an explicit action rather than an automatic restart during your work."],
-    "scope": "This describes the built-in updater in official desktop releases.",
-    "evolution": [{"version": "v1.15.6", "description": "The Home update card gained a What’s new link to that version’s GitHub release notes, so you can review changes before restarting."}]
+    "scope": "This describes the built-in updater in direct desktop releases; Microsoft Store installs on Windows receive updates through the Store.",
+    "evolution": [{"version": "v1.15.6", "description": "The Home update card gained a What’s new link to that version’s GitHub release notes, so you can review changes before restarting."}, {"version": "v1.19.1", "description": "Update checks and downloads automatically try a mainland China mirror based on your time zone when GitHub is hard to reach."}, {"version": "v1.20.0", "description": "Added a Microsoft Store (MSIX) package for Windows; Store installs automatically defer updates to the Store instead of the built-in updater."}]
   },
   {
     "id": "local-transcription",
@@ -97,6 +137,6 @@
     "summary": "Qwen3-ASR brought on-device speech recognition to TypeAloud. After downloading the model, local transcription can run without an account, API key or network connection.",
     "details": ["Model download, progress and removal became available in Settings, alongside a choice between local and cloud transcription.", "The next release made local setup more prominent on Apple Silicon and added quicker engine switching from Home and the menu bar."],
     "scope": "Introduced for Mac, with Apple Silicon recommended for local use. Optional OpenRouter/OpenAI transcription uploads audio to the selected provider; translate mode has been removed.",
-    "evolution": [{"version": "v1.5.0", "description": "Apple Silicon onboarding began leading with the local model, with Home and tray shortcuts for changing engines."}, {"version": "v1.6.0", "description": "Local decoding gained a visible word-by-word progress preview after recording. This is not the live recognition introduced later with Nemotron."}, {"version": "v1.16.0", "description": "Translate mode was removed, and Shift+Alt became a regular recording shortcut."}]
+    "evolution": [{"version": "v1.5.0", "description": "Apple Silicon onboarding began leading with the local model, with Home and tray shortcuts for changing engines."}, {"version": "v1.6.0", "description": "Local decoding gained a visible word-by-word progress preview after recording. This is not the live recognition introduced later with Nemotron."}, {"version": "v1.16.0", "description": "Translate mode was removed, and Shift+Alt became a regular recording shortcut."}, {"version": "v1.19.0", "description": "Qwen model downloads try Hugging Face first outside mainland China and ModelScope first in mainland China time zones, switching sources automatically if a download stalls."}, {"version": "v1.21.0", "description": "On Windows machines with multiple GPUs, Settings lets you choose which GPU runs local transcription, and defaults to the discrete GPU instead of the first listed adapter."}, {"version": "v1.23.0", "description": "Upgraded the local Qwen runtime to a newer llama.cpp build to fix worker crashes after repeated uses, with background runtime updates that swap in only when idle so offline dictation is not interrupted."}]
   }
 ]

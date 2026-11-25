@@ -8,11 +8,47 @@ const retryIcon = icon(<><path d="M20 12a8 8 0 1 1-2.34-5.66" /><path d="M20 4v5
 const downloadIcon = icon(<><path d="M12 4v11M7 10l5 5 5-5M5 20h14" /></>)
 const checkIcon = icon(<path d="m5 12.5 4.5 4.5L19 7.5" />)
 const offlineIcon = icon(<><path d="M3 3l18 18" /><path d="M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 5-2.7M14.5 10.4A10 10 0 0 1 19 13M2 9.5a15 15 0 0 1 4.7-2.9M11 5.1A15 15 0 0 1 22 9.5" /></>)
+const cloudIcon = icon(<path d="M17.5 19H7a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17.3 9.2 4.5 4.5 0 0 1 17.5 19Z" />)
+const codeIcon = icon(<><polyline points="8 7 3 12 8 17" /><polyline points="16 7 21 12 16 17" /><line x1="14" y1="5" x2="10" y2="19" /></>)
 
 const bars = (count: number, className = 'ma-bar') => Array.from({ length: count }, (_, index) => <i key={index} className={className} style={{ '--n': index } as CSSProperties} />)
 
 function Art({ id }: { id: string }) {
   switch (id) {
+    case 'openrouter-cloud':
+      return (
+        <div className="ma-scene ma-cloud">
+          <span className="ma-chip">{cloudIcon}</span>
+          <span className="ma-arrow" />
+          <span className="ma-cloud-models">
+            <span className="ma-model-pill" style={{ '--n': 0 } as CSSProperties}>Qwen 1.7B</span>
+            <span className="ma-model-pill ma-model-pill-accent" style={{ '--n': 1 } as CSSProperties}>MAI-2</span>
+          </span>
+        </div>
+      )
+    case 'single-key-shortcuts':
+      return (
+        <div className="ma-scene ma-single-key">
+          <span className="ma-key ma-key-single"><b>⌘</b><i className="ma-ripple" /></span>
+          <span className="ma-arrow" />
+          <span className="ma-chip ma-speak-chip">{micIcon}<span className="ma-wave">{bars(5)}</span></span>
+        </div>
+      )
+    case 'open-source-and-platform':
+      return (
+        <div className="ma-scene ma-platform">
+          <span className="ma-glass">{micIcon}<span className="ma-wave">{bars(7)}</span></span>
+          <span className="ma-chip ma-code-chip">{codeIcon}</span>
+        </div>
+      )
+    case 'dictionary-corrections':
+      return (
+        <div className="ma-scene ma-dict">
+          <s>Nematron</s>
+          <span className="ma-arrow" />
+          <span className="ma-dict-right">{checkIcon}<b>Nemotron</b></span>
+        </div>
+      )
     case 'hands-free-dictation':
       return (
         <div className="ma-scene ma-tap">

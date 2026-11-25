@@ -71,8 +71,8 @@
 .milestone-intro > p:last-child { color: var(--updates-muted); line-height: 1.6; }
 .milestone-intro a { color: var(--updates-teal); text-decoration: underline; text-underline-offset: 3px; }
 
-.milestone-timeline { margin-top: 40px; padding: 28px 28px 22px; border-radius: 10px; background: #f3f2ed; }
-.milestone-timeline > ol { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); margin: 0; padding: 0; list-style: none; }
+.milestone-timeline { margin-top: 40px; padding: 28px 28px 22px; border-radius: 10px; background: #f3f2ed; overflow-x: auto; }
+.milestone-timeline > ol { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); min-width: 1020px; margin: 0; padding: 0; list-style: none; }
 .milestone-timeline > ol::before { content: ''; position: absolute; left: 0; right: 0; top: 13px; height: 2px; background: linear-gradient(90deg, #c8d4d1, #064c5a); border-radius: 2px; }
 .milestone-timeline > ol > li { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding-right: 10px; }
 .timeline-dots { display: flex; gap: 4px; height: 28px; align-items: center; }
@@ -160,8 +160,6 @@
   .updates-shell-updates .updates-hero-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .recent-grid { grid-template-columns: minmax(0, 1fr); }
   .milestone-grid { grid-template-columns: minmax(0, 1fr); }
-  .milestone-timeline { overflow-x: auto; }
-  .milestone-timeline > ol { min-width: 760px; }
 }
 @media (max-width: 700px) {
   .updates-hero, .updates-layout, .updates-footer, .milestones-page { width: calc(100% - 40px); }

@@ -30,6 +30,24 @@ describe('release evidence and milestone history', () => {
     expect(milestones.find(item => item.id === 'local-transcription')?.introducedVersion).toBe('v1.4.0')
     expect(milestones.find(item => item.id === 'recording-recovery')?.introducedVersion).toBe('v1.8.0')
   })
+  it('keeps milestone facts current and includes major v1.19-v1.22 capabilities', () => {
+    for (const locale of ['en', 'zh'] as const) {
+      const items = getMilestones(locale)
+      const handsFree = items.find(item => item.id === 'hands-free-dictation')!
+      expect(handsFree.summary).not.toContain('Ctrl+Shift')
+      const recovery = items.find(item => item.id === 'recording-recovery')!
+      expect(recovery.scope).toContain('200')
+      expect(recovery.scope).not.toContain('100')
+      for (const [id, version] of [
+        ['openrouter-cloud', 'v1.22.0'],
+        ['single-key-shortcuts', 'v1.21.0'],
+        ['open-source-and-platform', 'v1.20.0'],
+        ['dictionary-corrections', 'v1.19.1'],
+      ]) {
+        expect(items.find(item => item.id === id)?.introducedVersion).toBe(version)
+      }
+    }
+  })
   it('uses deterministic anchors including legacy versions', () => {
     expect(releaseAnchor('v1.15.8')).toBe('release-v1-15-8')
     expect(releaseHref('1.0.67')).toBe('/changelog#release-1-0-67')
