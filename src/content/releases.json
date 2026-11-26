@@ -1,5 +1,29 @@
 [
   {
+    "version": "v1.23.3",
+    "publishedAt": "2026-11-26T13:26:39Z",
+    "updatedAt": "2026-11-26T13:26:39Z",
+    "url": "https://github.com/hellotaotao/typealoud/releases/tag/v1.23.3",
+    "body": "## Fixes\n\n- Fixed local offline speech recognition (Qwen3-ASR) downloads to point at the upstream team's refreshed model files, so new installs fetch the current, verified conversion instead of a stale one.\n- If you already have a complete Qwen 0.6B or 1.7B model pair installed, it keeps working offline and won't be re-downloaded unnecessarily. Partial/incomplete pairs are now repaired safely using only matching files, and resumed downloads can no longer get corrupted by mixing bytes from an older model version with a newer one.\n\n## 中文\n\n## 修复\n\n- 修复了本地离线语音识别（Qwen3-ASR）模型的下载地址，使其指向上游团队刷新后的模型文件，新安装将获取当前已校验的版本，而不是过时版本。\n- 如果本地已安装完整的 Qwen 0.6B 或 1.7B 模型文件对，将继续离线可用，不会被不必要地重新下载。不完整的文件对现在能被安全修复，且只会复用匹配当前版本的文件；断点续传的下载也不会再把旧版本模型的数据与新版本混在一起导致损坏。\n\n## Download / 下载\n\nPick the one installer for your platform:\n- **macOS** — the `.dmg`\n- **Windows** — the `_x64-setup.exe` (or `.msi`)\n- **Linux** — the `.AppImage` (portable), `.deb` (Debian/Ubuntu), or `.rpm` (Fedora/RHEL)\n\nThe remaining files (`*.sig`, `latest.json`, `*.app.tar.gz`) are used by the built-in auto-updater — you don't need to download them.\n\n（各平台任选一个安装：macOS 下 `.dmg`，Windows 下 `_x64-setup.exe` 或 `.msi`，Linux 下 `.AppImage`/`.deb`/`.rpm`。带 `.sig`、`latest.json`、`*.app.tar.gz` 的是自动更新用的，无需下载。）\n",
+    "notesStatus": "available"
+  },
+  {
+    "version": "v1.23.2",
+    "publishedAt": "2026-11-26T11:41:48Z",
+    "updatedAt": "2026-11-26T11:41:48Z",
+    "url": "https://github.com/hellotaotao/typealoud/releases/tag/v1.23.2",
+    "body": "## Fixes\n\n- **Windows:** Fixed the dictation prompt overlay occasionally showing a native window frame (title bar, border, system menu) around the floating recording card instead of rendering it as a clean, borderless overlay. The correct frameless style is now re-applied every time the prompt is shown, so this can no longer regress. The overlay also continues to avoid stealing keyboard focus from the app you're dictating into.\n\nNo other user-facing changes in this release — the rest of the commits are internal test-infrastructure work.\n\n## 中文\n\n## 修复\n\n- **Windows 版：** 修复了听写提示悬浮窗有时会显示原生窗口边框（标题栏、边框、系统菜单）而不是无边框悬浮卡片的问题。现在每次显示该提示窗时都会重新应用正确的无边框样式，避免此问题再次出现。悬浮窗依旧不会抢占你正在听写输入的目标应用的焦点。\n\n本次发布没有其他用户可感知的变化——其余提交均为内部测试基础设施相关工作。\n\n## Download / 下载\n\nPick the one installer for your platform:\n- **macOS** — the `.dmg`\n- **Windows** — the `_x64-setup.exe` (or `.msi`)\n- **Linux** — the `.AppImage` (portable), `.deb` (Debian/Ubuntu), or `.rpm` (Fedora/RHEL)\n\nThe remaining files (`*.sig`, `latest.json`, `*.app.tar.gz`) are used by the built-in auto-updater — you don't need to download them.\n\n（各平台任选一个安装：macOS 下 `.dmg`，Windows 下 `_x64-setup.exe` 或 `.msi`，Linux 下 `.AppImage`/`.deb`/`.rpm`。带 `.sig`、`latest.json`、`*.app.tar.gz` 的是自动更新用的，无需下载。）\n",
+    "notesStatus": "available"
+  },
+  {
+    "version": "v1.23.1",
+    "publishedAt": "2026-11-25T18:52:20Z",
+    "updatedAt": "2026-11-25T18:52:20Z",
+    "url": "https://github.com/hellotaotao/typealoud/releases/tag/v1.23.1",
+    "body": "## Fixes\n\n- **Windows:** the recording overlay no longer steals keyboard focus when it appears. Previously, showing the overlay could shift focus away from the field you were dictating into, which could send your dictated text to the wrong place. The overlay now shows and hides without activating, and keeps the correct window and field focused throughout.\n- **Windows:** the overlay now reliably stays above other always-on-top windows while it's visible, and hides correctly even after you've explicitly clicked a recovery control inside it.\n\n## 中文\n\n## 修复\n\n- **Windows：** 录音悬浮提示窗口在出现时不再抢夺键盘焦点。此前，悬浮窗显示时可能会把焦点从正在听写的输入框移走，导致听写文本被输入到错误的位置。现在悬浮窗的显示与隐藏都不会激活/抢占窗口，整个过程中原输入框的焦点保持不变。\n- **Windows：** 修复了悬浮窗在显示时可能被其他置顶窗口遮挡的问题，现在能稳定保持在最上层；同时修复了在悬浮窗内点击恢复控件后，悬浮窗隐藏行为异常的问题。\n\n## Download / 下载\n\nPick the one installer for your platform:\n- **macOS** — the `.dmg`\n- **Windows** — the `_x64-setup.exe` (or `.msi`)\n- **Linux** — the `.AppImage` (portable), `.deb` (Debian/Ubuntu), or `.rpm` (Fedora/RHEL)\n\nThe remaining files (`*.sig`, `latest.json`, `*.app.tar.gz`) are used by the built-in auto-updater — you don't need to download them.\n\n（各平台任选一个安装：macOS 下 `.dmg`，Windows 下 `_x64-setup.exe` 或 `.msi`，Linux 下 `.AppImage`/`.deb`/`.rpm`。带 `.sig`、`latest.json`、`*.app.tar.gz` 的是自动更新用的，无需下载。）\n",
+    "notesStatus": "available"
+  },
+  {
     "version": "v1.23.0",
     "publishedAt": "2026-11-25T14:04:46Z",
     "updatedAt": "2026-11-25T14:04:46Z",
